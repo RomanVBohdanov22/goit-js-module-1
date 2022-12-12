@@ -1,7 +1,7 @@
 const a = 200.1;
 let b = 5.0;
-console.log("a=", a);
-console.log("b=", b);
+console.log('a=', a);
+console.log('b=', b);
 
 const userName = 'Erika';
 const isFemale = true;
