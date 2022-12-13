@@ -79,3 +79,34 @@ const resultNrandRound = Math.round(resultNrandom);
 
 console.log(resultNrandom, resultNrandRound);
 
+let productName = "Droid";
+let pricePerItem = 2000;
+
+// Change code below this line
+
+pricePerItem = pricePerItem + 1500;
+console.log(pricePerItem);
+
+productName = "Repair droid";
+console.log(productName);
+
+// Change code below this line
+const topSpeed = 160;
+const distance = 617.54;
+const login = "mango935";
+let isOnline = true;
+let isAdmin = false;
+
+console.log(typeof(topSpeed), typeof(distance), typeof(login), typeof(isOnline), typeof(isAdmin));
+console.log(topSpeed, distance, login, isOnline, isAdmin);
+
+//////
+//const productName = "Droid";
+//const pricePerItem = 3500;
+
+// Change code below this line
+const message = `You picked ${productName}, price per item is ${pricePerItem} credits`;
+
+console.log(message);
+
+
