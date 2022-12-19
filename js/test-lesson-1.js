@@ -115,4 +115,101 @@ function sayHi() {
 }
 sayHi();
 
+/*
+// 1. Оголошення параметрів x, y, z
+function multiply(x, y, z) {
+  console.log(`Результат множення дорівнює ${x * y * z}`);
+}
 
+// 2. Передача аргументів
+multiply(2, 3, 5); // Результат множення дорівнює 30
+multiply(4, 8, 12); // Результат множення дорівнює 384
+multiply(17, 6, 25); // Результат множення дорівнює 2550
+
+
+// Change code below this line
+function add(a, b, c) {
+  console.log(`Результат сумування дорівнює ${a + b + c}`);
+}
+
+add(15, 27, 10);
+add(10, 20, 30);
+add(5, 10, 15);
+*/
+
+function multiply(x, y, z) {
+  console.log("Код до return виконується звичайним чином");
+
+  // Повертаємо результат виразу множення
+  return x * y * z;
+
+  console.log("Цей лог ніколи не виконається, він стоїть після return");
+}
+
+// Результат роботи функції можна зберегти у змінну
+let result = multiply(2, 3, 5);
+console.log(result); // 30
+
+result = multiply(4, 8, 12);
+console.log(result); // 384
+
+result = multiply(17, 6, 25);
+console.log(result); // 2550
+
+function add(a, b, c) {
+  // Change code below this line
+    console.log("Код до return виконується звичайним чином");
+
+
+  // Change code above this line
+    
+    return a + b + c;
+}
+
+add(2, 5, 8); // 15
+
+console.log(add(15, 27, 10));
+console.log(add(10, 20, 30));
+console.log(add(5, 10, 15));
+
+
+function makeMessage (name, price) {
+  // Change code below this line
+   const message = `You picked ${name}, price per item is ${price} credits`;
+  // Change code above this line
+  return message;
+};
+
+console.log(makeMessage('Radar', 6150));
+console.log(makeMessage('Scanner', 3500));
+console.log(makeMessage('Reactor', 8000));
+console.log(makeMessage('Engine', 4070));
+
+console.log();
+
+function calculateTotalPrice (orderedQuantity, pricePerItem) {
+  // Change code below this line
+  const totalPrice = orderedQuantity * pricePerItem;
+
+  // Change code above this line
+  return totalPrice;
+};
+console.log(calculateTotalPrice(5, 100));
+console.log(calculateTotalPrice(8, 60));
+console.log(calculateTotalPrice(3, 400));
+console.log(calculateTotalPrice(1, 3500));
+console.log(calculateTotalPrice(12, 70));
+
+console.log();
+
+function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+  // Change code below this line
+    //const message = `You picked ${name}, price per item is ${price} credits`;
+
+
+  // Change code above this line
+  return message;
+}
+
+
+console.log();
