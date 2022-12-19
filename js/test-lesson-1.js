@@ -325,3 +325,70 @@ console.log(checkAge(14));
 console.log(checkAge(38));
 
 console.log();
+
+///
+/*Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'checkStorage'
+Функція 'checkStorage' має два параметри. Перший - 'available', другий - 'ordered'
+Виклик checkStorage(100, 50) повертає'Order is processed, our manager will contact you.'
+Виклик checkStorage(100, 130) повертає'Not enough goods in stock!'
+Виклик checkStorage(200, 20) повертає'Order is processed, our manager will contact you.'
+Виклик checkStorage(200, 150) повертає'Order is processed, our manager will contact you.'
+Виклик checkStorage(150, 180) повертає'Not enough goods in stock!'*/
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+    if (ordered <= available) {
+        message = 'Order is processed, our manager will contact you.';
+     }
+    else { message = 'Not enough goods in stock!';}
+  // Change code above this line
+  return message;
+}
+
+console.log(checkStorage(20, 5));
+console.log(checkStorage(5, 20));
+console.log();
+
+/*
+let age = 25;
+// Класичний запис
+age = age + 1;
+console.log(age); // 26 */
+/*let age = 25;
+// Просто коротший запис, працює так само
+age += 1;
+console.log(age); // 26*/
+
+/*
+let a = 5;
+let b = 10;
+let c = 15;
+let d = 20;
+
+// Change code below this line
+a += 2;
+b -= 4;
+c *= 3;
+d /= 10;
+
+*/
+
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+  const totalPrice = (pricePerDroid * orderedQuantity);
+    if (totalPrice > customerCredits) { message = `Insufficient funds!`; }
+    else { message = `You ordered ${orderedQuantity} droids, you have ${(customerCredits - totalPrice)} credits left`; }
+  
+  // Change code above this line
+  return message;
+}
+
+console.log(makeTransaction(3000, 5, 23000));
+console.log(makeTransaction(1000, 3, 15000));
+console.log(makeTransaction(5000, 10, 8000));
+console.log(makeTransaction(2000, 8, 10000));
+console.log(makeTransaction(500, 10, 5000));
+
+console.log();
