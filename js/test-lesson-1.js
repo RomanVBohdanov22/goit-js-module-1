@@ -264,3 +264,57 @@ console.log(5 !== 5); // false
 console.log(1 === true); // false
 console.log(1 !== true); // true
 */
+function isValidPassword(password) {
+  const SAVED_PASSWORD = 'jqueryismyjam';
+  // Change code below this line
+  const isMatch = (password === SAVED_PASSWORD);
+
+  // Change code above this line
+  return isMatch;
+}
+
+//isValidPassword("mangodab3st");
+//isValidPassword("kiwirul3z");
+//isValidPassword("jqueryismyjam");
+console.log(isValidPassword("mangodab3st"));
+console.log(isValidPassword("kiwirul3z"));
+console.log(isValidPassword("jqueryismyjam"));
+console.log();
+
+//// if else
+/*
+let cost;
+const subscription = "pro";
+
+if (subscription === "pro") {
+  cost = 100;
+} else {
+  cost = 0;
+}
+
+console.log(cost); // 100
+*/
+
+/*
+let cost;
+const subscription = "free";
+
+if (subscription === "pro") {
+  cost = 100;
+} else {
+  cost = 0;
+}
+
+console.log(cost); // 0
+*/
+function checkAge(age) {
+  let message;
+
+  if (true) { // Change this line
+    message = 'You are an adult';
+  } else {
+    message = 'You are a minor';
+  }
+
+  return message;
+}
