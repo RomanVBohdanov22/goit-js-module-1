@@ -204,12 +204,63 @@ console.log();
 
 function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
   // Change code below this line
-    //const message = `You picked ${name}, price per item is ${price} credits`;
+    // You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price..
+  const message = `You ordered droids worth ${orderedQuantity*pricePerDroid + deliveryFee} credits. Delivery (${deliveryFee} credits) is included in total price.`;
 
 
   // Change code above this line
   return message;
 }
 
+console.log(makeOrderMessage(2, 100, 50));
+console.log(makeOrderMessage(4, 300, 100));
+console.log(makeOrderMessage(10, 70, 200));
+console.log(makeOrderMessage(1, 1, 1));
 
 console.log();
+
+////////////////////////////
+/*
+const a = 2;
+const b = 5;
+
+console.log(a > b); // false
+console.log(b > a); // true
+console.log(a >= b); // false
+console.log(b >= a); // true
+
+console.log(a < b); // true
+console.log(b < a); // false
+console.log(a <= b); // true
+console.log(b <= a); // false
+*/
+function isAdult(age) {
+  // Change code below this line
+  const passed = (age>=18);
+
+  // Change code above this line
+  return passed;
+}
+console.log(isAdult(20));
+console.log(isAdult(14));
+console.log(isAdult(8));
+console.log(isAdult(37));
+console.log();
+
+/* 
+// ❌ Погано, виконується приведення типів
+console.log(5 == "5"); // true
+console.log(5 != "5"); // false
+console.log(1 == true); // true
+console.log(1 != true); // false
+
+*/
+/*
+// ✅ Добре, приведення типів не виконується
+console.log(5 === "5"); // false
+console.log(5 === 5); // true
+console.log(5 !== "5"); // true
+console.log(5 !== 5); // false
+console.log(1 === true); // false
+console.log(1 !== true); // true
+*/
