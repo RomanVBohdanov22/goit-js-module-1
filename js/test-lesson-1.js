@@ -109,4 +109,10 @@ const message = `You picked ${productName}, price per item is ${pricePerItem} cr
 
 console.log(message);
 
+// Change code below this line
+function sayHi() {
+  console.log("Hello, this is my first function!");
+}
+sayHi();
+
 
