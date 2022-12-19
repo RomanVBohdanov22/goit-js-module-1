@@ -310,7 +310,7 @@ console.log(cost); // 0
 function checkAge(age) {
   let message;
 
-  if (true) { // Change this line
+  if (age>=18) { // Change this line
     message = 'You are an adult';
   } else {
     message = 'You are a minor';
@@ -318,3 +318,10 @@ function checkAge(age) {
 
   return message;
 }
+
+console.log(checkAge(20));
+console.log(checkAge(8));
+console.log(checkAge(14));
+console.log(checkAge(38));
+
+console.log();
