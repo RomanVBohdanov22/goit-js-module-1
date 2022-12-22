@@ -945,3 +945,403 @@ function getSubscriptionPrice(type) {
 Виклик getSubscriptionPrice('organization') повертає 50
 Виклик getSubscriptionPrice('starter') повертає 0 */
 
+console.log('');
+console.log('tast 28');
+
+/*
+Якщо жодного збігу значень не відбулося, необхідно виконати код 
+за замовчуванням, як у блоці else для інструкції if...else. 
+Для цього, після всіх блоків case додається блок default.
+
+switch (значення) {
+  case значення:
+    інструкції;
+    break;
+
+  case значення:
+    інструкції;
+    break;
+
+  default:
+    інструкції;
+}
+
+*/
+function checkPassword28(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+
+    switch (password)
+    { 
+        case null:
+            message = "Canceled by user!";
+            break;
+        case ADMIN_PASSWORD:
+            message = "Welcome!";
+            break;
+        default:
+            message = "Access denied, wrong password!";
+    }
+  
+  /*if (password === null) {
+    message = "Canceled by user!";
+  } else if (password === ADMIN_PASSWORD) {
+    message = "Welcome!";
+  } else {
+    message = "Access denied, wrong password!";
+  }*/
+
+  // Change code above this line
+  return message;
+}
+/*
+Функція checkPassword(password) отримує пароль в параметр password, перевіряє його на збіг з паролем адміністратора у змінній ADMIN_PASSWORD і повертає повідомлення про результат порівняння, яке зберігається у змінній message.
+
+Якщо значення параметра password:
+
+    дорівнює null, значить користувач скасував операцію і в message записується рядок "Canceled by user!".
+    збігається зі значенням ADMIN_PASSWORD, у змінну message присвоюється рядок "Welcome!".
+    не задовольняє жодну з попередніх умов, у змінну message записується рядок "Access denied, wrong password!".
+
+Зроби рефакторинг коду, замінивши інструкцію if..else на switch, і не забудь про блок default (аналог else).
+
+    Оголошена функція checkPassword(password)
+    Виклик checkPassword("mangohackzor") повертає "Access denied, wrong password!"
+    Виклик checkPassword(null) повертає "Canceled by user!"
+    Виклик checkPassword("polyhax") повертає "Access denied, wrong password!"
+    Виклик checkPassword("jqueryismyjam") повертає "Welcome!"
+
+*/
+/*
+ Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'checkPassword'
+Функція 'checkPassword' має один параметр - 'password'
+Використана інструкція switch
+Виклик checkPassword('mangohackzor') повертає 'Access denied, wrong password'
+Виклик checkPassword(null) повертає 'Canceled by user!'
+Виклик checkPassword('polyhax') повертає 'Access denied, wrong password'
+Виклик checkPassword('jqueryismyjam') повертає 'Welcome!'
+*/
+console.log('');
+
+console.log('task 29');
+
+/*
+Функція getShippingCost(country) повинна перевіряти можливість доставки товару в країну 
+користувача (параметр country) і повертати повідомлення про результат, що зберігається у 
+змінній message. Обов'язково використовуй інструкцію switch.
+
+Формат рядка, що повертається "Shipping to <country> will cost <price> credits", де замість
+ <country> і <price>, необхідно підставити відповідні значення.
+
+Список країн і вартість доставки:
+
+    China - 100 кредитів
+    Chile - 250 кредитів
+    Australia - 170 кредитів
+    Jamaica - 120 кредитів
+
+Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у списку, 
+то функція повинна повернути рядок "Sorry, there is no delivery to your country"
+
+    Оголошена функція getShippingCost(country)
+    В тілі функції використана інструкція switch
+    Виклик getShippingCost("Australia") повертає "Shipping to Australia will cost 170 credits"
+    Виклик getShippingCost("Germany") повертає "Sorry, there is no delivery to your country"
+    Виклик getShippingCost("China") повертає "Shipping to China will cost 100 credits"
+    Виклик getShippingCost("Chile") повертає "Shipping to Chile will cost 250 credits"
+    Виклик getShippingCost("Jamaica") повертає "Shipping to Jamaica will cost 120 credits"
+    Виклик getShippingCost("Sweden") повертає "Sorry, there is no delivery to your country"
+
+*/
+function getShippingCost29(country) {
+  let message;
+  // Change code below this line
+  let price;
+         switch (country)
+    { 
+        case 'China':
+          price = 100;
+          break; 
+        case 'Chile':
+            price = 250;
+            break;
+        case 'Australia': 
+            price = 170;
+            break; 
+        case 'Jamaica':
+            price = 120;
+            break;
+        default:
+            price = -1;          
+    }
+  if (price === -1) message = 'Sorry, there is no delivery to your country';
+    else message = `Shipping to ${country} will cost ${price} credits`; 
+  // Change code above this line
+  return message;
+    
+
+  // Change code above this line
+  return message;
+}
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'getShippingCost'
+Функція 'getShippingCost' має один параметр - 'country'
+Використана інструкція switch
+Виклик getShippingCost('Australia') повертає Shipping to Australia will cost 170 credits'
+Виклик getShippingCost('Germany') повертає 'Sorry, there is no delivery to your country'
+Виклик getShippingCost('China') повертає 'Shipping to China will cost 100 credits'
+Виклик getShippingCost('Chile') повертає 'Shipping to Chile will cost 250 credits'
+Виклик getShippingCost('Jamaica') повертає 'Shipping to Jamaica will cost 120 credits'
+Виклик getShippingCost('Sweden') повертає 'Sorry, there is no delivery to your country'
+*/
+console.log('');
+
+//
+
+console.log('Task 30');
+/*
+Для того щоб дізнатися довжину рядка, тобто кількість її символів, у рядків є 
+вбудована властивість length, значення якої можна отримати, звернувшись до неї 
+через крапку після імені змінної або рядкового літерала.
+
+const productName = "Repair droid";
+
+// Якщо у змінній зберігається рядок
+console.log(productName.length); // 12
+
+// Якщо рядковий літерал
+console.log("Repair droid".length); // 12
+
+*/
+
+/*
+Функція getNameLength(name) приймає ім'я (параметр name) і повертає рядок, в якому вказана його довжина. Доповни шаблонний рядок у змінній message довжиною рядка з параметра name.
+
+    Оголошена функція getNameLength(name)
+    Виклик функції getNameLength("Poly") повертає "Name Poly is 4 characters long"
+    Виклик функції getNameLength("Harambe") повертає "Name Harambe is 6 characters long"
+    Виклик функції getNameLength("Billy") повертає "Name Billy is 5 characters long"
+    Виклик функції getNameLength("Joe") повертає "Name Joe is 3 characters long"
+
+*/
+
+function getNameLength(name) {
+  const message = `Name ${name} is ${(name.length)} characters long`; // Change this line
+
+  return message;
+}
+
+/*Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'getNameLength'
+Функція 'getNameLength' має один параметр - 'name'
+Виклик getNameLength('Poly') повертає Name Poly is 4 characters long
+Виклик getNameLength('Harambe') повертає Name Harambe is 7 characters long
+Виклик getNameLength('Billy') повертає Name Billy is 5 characters long
+Виклик getNameLength('Joe') повертає Name Joe is 3 characters long*/
+
+console.log('');
+console.log('Task 31');
+
+/*
+
+
+Рядок — це індексований набір з нуля або більше символів, взятих в одинарні, подвійні або скісні лапки.
+
+Індексація елементів рядка починається з нуля. Наприклад, в рядку 'JavaScript' літера 'J' стоїть на позиції 
+з індексом 0, а 't' - під індексом 9. При цьому довжина рядка 'JavaScript' дорівнює 10, тобто індекс останнього 
+елемента завжди на одиницю менший його довжини.
+
+Для доступу до значення елемента рядка використовується синтаксис квадратних дужок рядок[індекс].
+
+const productName = "Repair droid";
+console.log(productName[0]); // "R"
+console.log(productName[5]); // "r"
+console.log(productName[11]); // "d"
+console.log(productName[productName.length - 1]); // "d"
+
+Вміст рядка не можна змінити, лише прочитати. Тобто не можна взяти якийсь символ і замінити його, щойно рядок 
+створений - він такий назавжди. Можна лише створити повністю новий рядок і присвоїти у змінну, замість старого.
+
+*/
+
+/*
+Доповни код, присвоївши оголошеним змінним вирази звертання до відповідних елементів або властивостей рядка у змінній course.
+
+    courseTopicLength - довжина рядка.
+    firstElement - перший символ рядка.
+    lastElement - останній символ рядка.
+
+    Оголошена змінна courseTopic
+    Значення змінної courseTopic - це рядок "JavaScript essentials"
+    Оголошена змінна courseTopicLength
+    Значення змінної courseTopicLength - це число 21
+    Оголошена змінна firstElement
+    Значення змінної firstElement - це рядок "J"
+    Оголошена змінна lastElement
+    Значення змінної lastElement - це рядок "s"
+
+*/
+const courseTopic = "JavaScript essentials";
+// Change code below this line
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopic.length - 1];
+
+// Change code above this line
+
+console.log(courseTopic, courseTopicLength, firstElement, lastElement);
+
+console.log('');
+console.log('Task 32');
+///
+/*
+
+
+Метод рядків slice(startIndex, endIndex) використовується для створення копії 
+частини або всього рядка. Він робить копію елементів рядка від startIndex і до, 
+але не включно endIndex, і повертає новий рядок.
+
+const productName = "Repair droid";
+console.log(productName.slice(0, 4)); // "Repa"
+console.log(productName.slice(3, 9)); // "air dr"
+console.log(productName.slice(0, productName.length)); // "Repair droid"
+console.log(productName.slice(7, productName.length)); // "droid"
+
+
+*/
+/*Функція getSubstring(string, length) приймає рядок і повертає підрядок від початку і до length символів. Вона оголошує два параметри, значення яких будуть задаватися під час її виклику:
+
+    string - оригінальний рядок
+    length - кількість символів з початку рядка для підрядка
+
+Присвой змінній substring вираз створення підрядка довжиною length символів (від початку) з рядка string.
+
+    Оголошена функція getSubstring(string, length)
+    Виклик функції getSubstring("Hello world", 3) повертає "Hel"
+    Виклик функції getSubstring("Hello world", 6) повертає "Hello"
+    Виклик функції getSubstring("Hello world", 8) повертає "Hello wo"
+    Виклик функції getSubstring("Hello world", 11) повертає "Hello world"
+    Виклик функції getSubstring("Hello world", 0) повертає ""
+
+*/
+
+
+function getSubstring(string, length) {
+  const substring = string.slice(0, length); // Change this line
+
+  return substring;
+}
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'getSubstring'
+Функція 'getSubstring' має два параметри: 1-й - 'string', 2-й -'length'
+Виклик функції getSubstring('Hello world', 3) повертає 'Hel'
+Виклик функції getSubstring('Hello world', 5) повертає 'Hello'
+Виклик функції getSubstring('Hello world', 8) повертає 'Hello wo'
+Виклик функції getSubstring('Hello world', 11) повертає 'Hello world'
+Виклик функції getSubstring('Hello world', 0) повертає ''
+*/
+
+console.log('Task 33');
+
+/*
+Функція formatMessage(message, maxLength) приймає рядок (параметр message) і форматує його, 
+якщо довжина перевищує значення в параметрі maxLength.
+
+Доповни код функції таким чином, що якщо довжина рядка:
+
+    не перевищує maxLength, функція повертає його в початковому вигляді.
+    більша за maxLength, то функція обрізає рядок до maxLength символів і додає в кінець три крапки "...",
+     після чого повертає скорочену версію.
+
+    Оголошена функція formatMessage(message, maxLength)
+    Виклик функції formatMessage("Curabitur ligula sapien", 16) повертає "Curabitur ligula..."
+    Виклик функції formatMessage("Curabitur ligula sapien", 23) повертає "Curabitur ligula sapien"
+    Виклик функції formatMessage("Vestibulum facilisis purus nec", 20) повертає "Vestibulum facilisis..."
+    Виклик функції formatMessage("Vestibulum facilisis purus nec", 30) повертає "Vestibulum facilisis purus nec"
+    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) повертає "Nunc sed turpis..."
+    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) повертає "Nunc sed turpis a felis in nunc fringilla"
+
+
+*/
+function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+    if (message.length <= maxLength) result = message;
+    else result = message.slice(0, maxLength) + '...';
+  /// Change code above this line
+  return result;
+}
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'formatMessage'
+Функція 'formatMessage' має два параметри: 1-й - 'message', 2-й -'maxLength'
+Виклик функції formatMessage('Curabitur ligula sapien', 16) повертає 'Curabitur ligula...'
+Виклик функції formatMessage('Curabitur ligula sapien', 23) повертає 'Curabitur ligula sapien'
+Виклик функції formatMessage('Vestibulum facilisis purus nec', 20) повертає 'Vestibulum facilisis...'
+Виклик функції formatMessage('Vestibulum facilisis purus nec', 30) повертає 'Vestibulum facilisis purus nec'
+Виклик функції formatMessage('Nunc sed turpis a felis in nunc fringilla', 15) повертає 'Nunc sed turpis...'
+Виклик функції formatMessage('Nunc sed turpis a felis in nunc fringilla', 41) повертає 'Nunc sed turpis a felis in nunc fringilla'
+*/
+
+console.log(' ');
+
+console.log('Task 34');
+
+/*
+
+
+Бувають ситуації, коли всі символи в рядку необхідно перетворити в один регістр, 
+верхній або нижній. Наприклад, під час пошуку за ключовим словом, коли користувач 
+вводить рядок 'saMsUng', а порівняти її потрібно з рядком 'samsung' або 'SAMSUNG'.
+
+console.log("saMsUng" === "samsung"); // false
+console.log("saMsUng" === "SAMSUNG"); // false
+
+Щоб не вимагати абсолютно точне введення, можна зробити «нормалізацію» введеного 
+користувачем рядка, тобто перетворити всі його символи у верхній або нижній регістр. 
+Методи рядка toLowerCase() і toUpperCase() повернуть новий рядок у відповідному регістрі, 
+не змінюючи оригінальний.
+
+const BRAND_NAME = "SAMSUNG";
+const userInput = "saMsUng";
+const normalizedToUpperCaseInput = userInput.toUpperCase();
+
+console.log(userInput); // 'saMsUng'
+console.log(userInput === BRAND_NAME); // false
+console.log(normalizedToUpperCaseInput); // 'SAMSUNG'
+console.log(normalizedToUpperCaseInput === BRAND_NAME); // true
+
+
+*/
+/*
+Функція normalizeInput(input) приймає рядок (параметр input) і повертає такий самий рядок, 
+але в нижньому регістрі. Присвой змінній normalizedInput вираз створення рядка у нижньому регістрі з параметра input.
+
+    Оголошена функція normalizeInput(input)
+    Виклик функції normalizeInput("Hello world") повертає "hello world"
+    Виклик функції normalizeInput("This ISN'T SpaM") повертає "this isn't spam"
+    Виклик функції normalizeInput("Big SALE") повертає "big sale"
+
+*/
+
+function normalizeInput(input) {
+  const normalizedInput = input.toLowerCase(); // Change this line
+
+  return normalizedInput;
+}
+
+/*
+ Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'normalizeInput'
+Функція 'normalizeInput' має один параметр - 'input'
+Виклик функції normalizeInput('Hello world') повертає 'hello world'
+Виклик функції normalizeInput('This ISN'T a SpaM') повертає 'this isn't a spam'
+Виклик функції normalizeInput('Big SALES') повертає 'big sales'
+*/
