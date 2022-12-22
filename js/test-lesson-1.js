@@ -689,7 +689,7 @@ console.log(isNumberNotInRange(20, 50, 76));
 
 console.log('');
 
-console.log('Завдання 24'):
+console.log('Завдання 24');
 /*
 Функція getDiscount(totalSpent) визначає значення знижки, 
 залежно від загальної суми витрачених грошей (параметр totalSpent) 
@@ -724,8 +724,224 @@ function getDiscount(totalSpent) {
   const GOLD_DISCOUNT = 0.1;
   let discount;
   // Change code below this line
-    
+    discount = BASE_DISCOUNT;
+    if (totalSpent >= 50000)  discount = GOLD_DISCOUNT; 
+    else 
+        if ((totalSpent>=20000) && (totalSpent< 50000))  discount = SILVER_DISCOUNT; 
+        else 
+            if ((totalSpent>=5000) && (totalSpent <20000)) discount = BRONZE_DISCOUNT;
+        
 
   // Change code above this line
   return discount;
 }
+/*
+ Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'getDiscount'
+Функція 'getDiscount' має один параметр - 'totalSpent'
+Виклик getDiscount(137000) повертає 0.1
+Виклик getDiscount(46900) повертає 0.05
+Виклик getDiscount(8250) повертає 0.02
+Виклик getDiscount(1300) повертає 0
+Виклик getDiscount(5000) повертає 0.02
+Виклик getDiscount(20000) повертає 0.05
+Виклик getDiscount(50000) повертає 0.1
+*/
+
+console.log('Завдання 25');
+/*
+
+
+Тернарний оператор використовується як синтаксично коротша заміна інструкції if...else, 
+коли одній і тій самій змінній необхідно присвоїти різні значення за умовою.
+
+<умова> ? <вираз, якщо умова істинна> : <вираз, якщо умова хибна>
+
+Працює за такою схемою:
+
+    Обчислюється умова.
+    Якщо умова істинна, тобто приводиться до true, обчислюється вираз після ?.
+    Якщо умова хибна, тобто приводиться до false, обчислюється вираз після :.
+    Значення обчисленого виразу повертається як результат роботи тернарного оператора.
+
+let type;
+const age = 20;
+
+if (age >= 18) {
+  type = "adult";
+} else {
+  type = "child";
+}
+
+console.log(type); // "adult"
+
+Виконаємо рефакторинг, замінивши if...else тернарним оператором.
+
+const age = 20;
+const type = age >= 18 ? "adult" : "child";
+console.log(type); // "adult"
+
+Увага
+
+Тернарний оператор повинен використовуватися у простих операціях присвоєння або повернення. 
+Застосовувати його для заміни складних розгалужень - погана практика (антипатерн).
+
+*/
+
+function checkStorage25(available, ordered) {
+  let message;
+  // Change code below this line
+
+  /*if (ordered > available) {
+    message = "Not enough goods in stock!";
+  } else {
+    message = "The order is accepted, our manager will contact you";
+  }*/
+  message = (ordered > available)? "Not enough goods in stock!" : "The order is accepted, our manager will contact you";
+  // Change code above this line
+  return message;
+}
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'checkStorage'
+Функція 'checkStorage' має два параметри: 1-й - 'available', 2-й - 'ordered'
+Використаний тернарний оператор
+Виклик checkStorage(100, 50) повертає 'The order is accepted, our manager will contact you'
+Виклик checkStorage(100, 130) повертає 'Not enough goods in stock!'
+Виклик checkStorage(200, 20) повертає 'The order is accepted, our manager will contact you'
+Виклик checkStorage(200, 150) повертає 'The order is accepted, our manager will contact you'
+Виклик checkStorage(150, 180) повертає 'Not enough goods in stock!'
+*/
+console.log('Task26');
+
+
+/*
+Функція checkPassword(password) порівнює переданий їй пароль (параметр password) зі збереженим 
+паролем адміністратора (константа ADMIN_PASSWORD) і повертає рядок з повідомленням про результат.
+
+Використовуючи тернарний оператор, доповни функцію таким чином, що:
+
+    Якщо значення password і ADMIN_PASSWORD збігаються, присвой змінній message рядок "Access is allowed".
+    В іншому випадку, присвой message рядок "Access denied, wrong password!".
+
+    Оголошена функція checkPassword(password)
+    Використаний тернарний оператор
+    Виклик checkPassword("jqueryismyjam") повертає "Access is allowed"
+    Виклик checkPassword("angul4r1sl1f3") повертає "Access denied, wrong password!"
+    Виклик checkPassword("r3actsux") повертає "Access denied, wrong password!"
+
+*/
+
+function checkPassword26(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+    message = (password===ADMIN_PASSWORD)? "Access is allowed" : "Access denied, wrong password!";
+  // Change code above this line
+  return message;
+}
+
+console.log(checkPassword26("jqueryismyjam"));
+console.log(checkPassword26("angul4r1sl1f3"));
+console.log(checkPassword26("r3actsux"));
+console.log('');
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'checkPassword'
+Функція 'checkPassword' має один параметр - 'password'
+Використаний тернарний оператор
+Виклик checkPassword('jqueryismyjam') повертає 'Access is allowed'
+Виклик checkPassword('angul4r1sl1f3') повертає 'Access denied, wrong password!'
+Виклик checkPassword('r3actsux') повертає 'Access denied, wrong password!'
+*/
+
+console.log('tast 27');
+/*
+
+
+У деяких випадках незручність читання складних розгалужень if...else можна уникнути, 
+використовуючи «плоскіший» синтаксис інструкції розгалуження switch.
+
+Сфера застосування switch обмежена задачами з одним загальним питанням (що порівнювати) 
+і безліччю варіантів відповідей (з чим порівнювати).
+
+switch (значення) {
+  case значення:
+    інструкції;
+    break;
+
+  case значення:
+    інструкції;
+    break;
+}
+
+Його синтаксис складається з блоку switch(значення) - що потрібно порівняти та безлічі 
+окремих випадків case значення: - з чим потрібно порівняти. Для порівняння використовується
+оператор строгої рівності ===. Тобто не можна порівняти на більше або менше, тільки на рівність.
+
+Значення в блоці switch(значення) - рядок або число, яке порівнюється на строгу рівність з усіма 
+значеннями в блоках case значення: по черзі, зверху вниз.
+
+Оператор break в кінці кожного блоку case необхідний, щоб перервати подальші перевірки та одразу 
+перейти до коду після switch у тому разі, коли перевірка на рівність повернула true.
+
+*/
+/*
+Функція getSubscriptionPrice(type) отримує рядок з типом передплати користувача (параметр type), перевіряє її на збіг з трьома можливими типами щомісячної передплати та повертає ціну, що зберігається у змінній price.
+
+Якщо значення параметра type - це рядок:
+
+    "starter" - ціна передплати 0 кредитів.
+    "professional" - ціна передплати 20 кредитів.
+    "organization" - ціна передплати 50 кредитів.
+
+Спочатку в тілі функції була інструкція if...else, яка виглядала ось так.
+
+if (type === "starter") {
+  price = 0;
+} else if (type === "professional") {
+  price = 20;
+} else if (type === "organization") {
+  price = 50;
+}
+
+Після рефакторингу інструкція if..else була замінена на switch. Доповни код інструкції switch, щоб функція працювала правильно.
+
+    Оголошена функція getSubscriptionPrice(type)
+    Виклик getSubscriptionPrice("professional") повертає число 20
+    Виклик getSubscriptionPrice("organization") повертає число 50
+    Виклик getSubscriptionPrice("starter") повертає число 0
+
+*/
+
+function getSubscriptionPrice(type) {
+  let price;
+  // Change code below this line
+
+ switch (type) { // Change this line
+    case "starter": // Change this line
+      price = 0; // Change this line
+      break;
+
+    case "professional": // Change this line
+      price = 20; // Change this line
+      break;
+
+    case "organization": // Change this line
+      price = 50; // Change this line
+      break;
+  }
+
+  // Change code above this line
+  return price;
+}
+/* Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'getSubscriptionPrice'
+Функція 'getSubscriptionPrice' має один параметр - 'type'
+Використана інструкція switch
+Виклик getSubscriptionPrice('_stаrter_') повертає undefined
+Виклик getSubscriptionPrice('professional') повертає 20
+Виклик getSubscriptionPrice('organization') повертає 50
+Виклик getSubscriptionPrice('starter') повертає 0 */
+
