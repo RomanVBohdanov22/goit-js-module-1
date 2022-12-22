@@ -450,3 +450,202 @@ console.log(checkPassword(null));
 console.log(checkPassword('jqueryismyjam'));
 console.log(checkPassword('advga'));
 console.log('');
+
+/////
+/*
+
+
+Функція checkStorage(available, ordered) перевіряє можливість оформлення замовлення і повертає повідомлення про результат. Вона оголошує два параметри, значення яких будуть задаватися під час її виклику.
+
+    available - доступна кількість товарів на складі
+    ordered - одиниць товару в замовленні
+
+Використовуючи розгалуження, доповни код функції таким чином, що:
+
+    Якщо в замовленні ще немає товарів, тобто значення параметра ordered дорівнює 0, у змінну message присвоюється рядок "There are no products in the order!".
+    Якщо товарів у замовленні більше, ніж доступно товарів на складі, то у змінну message присвоюється рядок "Your order is too large, there are not enough items in stock!".
+    В іншому випадку у змінну message присвоюється рядок "The order is accepted, our manager will contact you".
+
+*/
+function checkStorage1(available, ordered) {
+  let message;
+  // Change code below this line
+    if (ordered <= 0) {
+        message = 'There are no products in the order!';
+    }
+    else {
+        if (available >= ordered) {
+            message = 'The order is accepted, our manager will contact you';
+        }
+        else {
+            message = 'Your order is too large, there are not enough items in stock!';
+        }
+    }
+  // Change code above this line
+  return message;
+}
+
+/*console.log(
+    checkStorage1(2, 3)
+);*/
+//checkStorage(100, 50)
+
+console.log('');
+
+console.log(
+    checkStorage1(100, 50)
+);
+console.log(
+    checkStorage1(100, 130)
+);
+console.log(
+    checkStorage1(70, 0)
+);
+console.log(
+    checkStorage1(200, 20)
+);
+
+console.log(
+    checkStorage1(200, 250)
+);
+console.log(
+    checkStorage1(150, 0)
+);
+///
+
+
+/*Логічні оператори використовуються для перевірки умов з багатьма виразами, наприклад у розгалуженнях.
+
+Оператор && приводить всі операнди до буля і повертає значення одного з них. Лівий операнд, якщо його можна привести до false, і правий - в інших випадках.
+
+вираз && вираз
+
+У наступному прикладі обидві умови повернуть true, тому результатом всього виразу буде true - повернеться значення правого операнда.*/
+
+/*const ageY = 20;
+console.log(ageY > 10 && age < 30); // true && true -> true
+
+/*Якщо хоча б один з операндів буде приведений до false, результатом виразу буде цей операнд.*/
+
+const age = 50;
+console.log(age > 10 && age < 30); // true && false -> false
+console.log(age > 80 && age < 120); // false && true -> false 
+
+/*Тобто логічне «І» запинається на хибності і повертає те, на чому запнувся або останній операнд.*/
+
+console.log(true && false); // false
+console.log(false && true); // false
+console.log(true && true); // true
+
+console.log(3 && false); // false
+console.log(false && 3); // false
+console.log(3 && true); // true
+console.log(true && 3); // 3
+
+/*Корисно*/
+
+/*Запам'ятайте шість значень, які в булевому перетворенні приводяться до 
+`false`: `0`, `NaN`, `null`, `undefined`, порожній рядок `""` або `''` і саме значення 
+`false`. Абсолютно все інше приводиться до `true`.*/
+
+console.log(1 && 5); // true && true -> 5
+console.log(5 && 1); // true && true -> 1
+console.log(0 && 2); // false && true -> 0
+console.log(2 && 0); // true && false -> 0
+console.log("" && "Mango"); // false && true -> ''
+console.log("Mango" && ""); // true && false -> ''
+console.log("Mango" && "Poly"); // true && true -> 'Poly'
+console.log("Poly" && "Mango"); // true && true -> 'Mango'
+
+console.log('');
+console.log('Завдання 21');
+
+/*
+Функція isNumberInRange(start, end, number) перевіряє, чи входить число у проміжок. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+
+    number - число, входження якого перевіряється
+    start - початок числового проміжку
+    end - кінець числового проміжку
+
+Присвой змінній isInRange вираз перевірки входження number у числовий проміжок від start до end. Тобто число повинно бути більшим або дорівнювати start, і меншим або дорівнювати end. Результатом виразу перевірки буде буль true або false.
+*/
+
+function isNumberInRange(start, end, number) {
+  const isInRange = (number >= start) && (number<=end); // Change this line
+
+  return isInRange;
+}
+
+console.log(isNumberInRange(10, 30, 17));
+console.log(isNumberInRange(10, 30, 5));
+console.log(isNumberInRange(20, 50, 24));
+console.log(isNumberInRange(20, 50, 76));
+console.log('');
+
+
+console.log('Завдання 22');
+/*
+
+
+Оператор || приводить всі операнди до буля і повертає значення одного з них. Лівий операнд, якщо його можна привести до true, і правий - в інших випадках.
+
+вираз || вираз
+
+У наступному прикладі умова зліва поверне true, тому результатом всього виразу буде true - повернеться значення першого операнда, яке було приведене до true.
+
+const age = 5;
+console.log(age < 10 || age > 30); // true || false -> true
+
+Тут результатом теж буде true, оскільки хоча б один з операндів, у цьому випадку правий, був приведений до true.
+
+const age = 40;
+console.log(age < 10 || age > 30); // false || true -> true
+
+А тут жодна з умов не виконується, тому отримуємо false - значення останнього операнда.
+
+const age = 20;
+console.log(age < 10 || age > 30); // false || false -> false
+
+Тобто логічне «АБО» запинається на істині і повертає те, на чому запнулося або останній операнд.
+
+console.log(true || false); // true
+console.log(false || true); // true
+console.log(true || true); // true
+
+console.log(3 || false); // 3
+console.log(false || 3); // 3
+console.log(3 || true); // 3
+console.log(true || 3); // true
+
+
+*/
+
+/*
+Функція checkIfCanAccessContent(subType) перевіряє, чи може користувач отримати доступ до контенту.
+Перевірка відбувається за типом передплати. Отримати доступ можуть тільки користувачі з передплатою pro або vip.
+
+Присвой змінній canAccessContent вираз перевірки передплати. Якщо значення параметра subType дорівнює 
+рядкам "pro" або "vip", користувач отримає доступ. Результатом виразу перевірки буде буль true або false.
+
+    Оголошена функція checkIfCanAccessContent(subType)
+    У виразі перевірки використаний оператор ||
+    Виклик checkIfCanAccessContent("pro") повертає true
+    Виклик checkIfCanAccessContent("starter") повертає false
+    Виклик checkIfCanAccessContent("vip") повертає true
+    Виклик checkIfCanAccessContent("free") повертає false
+
+*/
+
+function checkIfCanAccessContent(subType) {
+    const canAccessContent = (subType === 'pro')||(subType === 'vip'); // Change this line
+
+  return canAccessContent;
+}
+
+console.log(checkIfCanAccessContent('pro'));
+console.log(checkIfCanAccessContent('starter'));
+console.log(checkIfCanAccessContent('vip'));
+console.log(checkIfCanAccessContent('free'));
+
+console.log('');
+
