@@ -1445,3 +1445,77 @@ function checkForSpam(message) {
 Виклик функції checkForSpam('Get rid of sPaM emails. Our book in on sale!') повертає true
 Виклик функції checkForSpam('[SPAM] How to earn fast money?') повертає true
 */
+
+//------------------------------
+
+// Funtions part 2 // Task1
+
+function checkAge2_1(age) {
+  if (age >= 18) { // Change this line
+    return "You are an adult";
+  }
+
+  return "You are a minor";
+}
+
+// Funtions part 2 // Task2
+/*
+Функція checkPassword отримує пароль користувача у параметр password, перевіряє його на збіг з паролем адміністратора у змінній ADMIN_PASSWORD і повертає повідомлення про результат порівняння.
+
+Виконай рефакторинг коду функції checkPassword, використовуючи патерн «раннє повернення»:
+
+    видали змінну message
+    видали else
+    код повинен працювати так само, як і до оптимізації
+
+    Оголошена функція checkPassword(password)
+    Виклик checkPassword("mangohackzor") повертає "Access denied, wrong password!"
+    Виклик checkPassword("polyhax") повертає "Access denied, wrong password!"
+    Виклик checkPassword("jqueryismyjam") повертає "Welcome!"
+
+*/
+function checkPassword2_2(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  // Change code below this line
+
+  if (password === ADMIN_PASSWORD) {
+    return "Welcome!";
+  } 
+
+  return "Access denied, wrong password!";
+  // Change code above this line
+}
+//////////////
+
+/* Функція checkStorage перевіряє можливість оформлення замовлення і повертає повідомлення про результат. 
+Вона приймає два параметри, значення яких будуть задаватися під час її виклику.
+
+    available - доступна кількість товарів на складі
+    ordered - кількість одиниць товару в замовленні
+
+Виконай рефакторинг коду функції checkStorage, використовуючи патерн «раннє повернення».
+
+    Оголошена функція checkStorage(available, ordered)
+    Виклик checkStorage(100, 50) повертає "The order is accepted, our manager will contact you"
+    Виклик checkStorage(100, 130) повертає "Your order is too large, not enough goods in stock!"
+    Виклик checkStorage(70, 0) повертає "Your order is empty!"
+    Виклик checkStorage(200, 20) повертає "The order is accepted, our manager will contact you"
+    Виклик checkStorage(200, 250) повертає "Your order is too large, not enough goods in stock!"
+    Виклик checkStorage(150, 0) повертає "Your order is empty!"
+*/
+
+function checkStorage(available, ordered) {
+  // Change code below this line
+  
+  if (ordered === 0) 
+  {return  "Your order is empty!";  }
+  if (ordered > available) 
+  {return  "Your order is too large, not enough goods in stock!";}
+  
+  return "The order is accepted, our manager will contact you";
+  // Change code above this line
+}
+
+///-------------------------------------
+
+// task 2.4 - array
