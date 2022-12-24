@@ -1504,7 +1504,7 @@ function checkPassword2_2(password) {
     Виклик checkStorage(150, 0) повертає "Your order is empty!"
 */
 
-function checkStorage(available, ordered) {
+function checkStorage36(available, ordered) {
   // Change code below this line
   
   if (ordered === 0) 
