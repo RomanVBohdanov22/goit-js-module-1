@@ -495,3 +495,64 @@ console.log(allClients);
 Змінна 'allClients' оголошена за допомогою 'const' і має значення ['Mango', 'Ajax', 'Poly', 'Kiwi', 'Peach', 'Houston']
 Змінній 'allClients' присвоєний масив, що складається з копії масиву 'oldClients' і 'newClients' після застосування методу 'concat' з правильними аргументами
  */
+
+console.log('');
+console.log('tsk 2.16');
+
+/*
+Напиши функцію makeArray(firstArray, secondArray, maxLength) для створення нового масиву з усіма елементами двох вихідних 
+firstArray і secondArray. Параметр maxLength містить максимально допустиму довжину нового масиву.
+
+Якщо кількість елементів нового масиву більша за maxLength, функція повинна повернути копію масиву довжиною maxLength 
+елементів. В іншому випадку функція повинна повернути новий масив повністю.
+
+    Оголошена функція makeArray(firstArray, secondArray, maxLength)
+    Виклик makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) повертає ["Mango", "Poly", "Ajax"]
+    Виклик makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4) повертає ["Mango", "Poly", "Houston", "Ajax"]
+    Виклик makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) повертає ["Mango", "Ajax", "Chelsea"]
+    Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) повертає ["Earth", "Jupiter"]
+    Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) повертає ["Earth", "Jupiter", "Neptune", "Uranus"]
+    Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) повертає []
+    Виклик функції makeArray() з випадковими масивами і випадковим числом повертає правильний масив
+
+*/
+
+function makeArray(firstArray, secondArray, maxLength) {
+    // Change code below this line
+    const finArray = firstArray.concat(secondArray);
+
+    if (finArray.length > maxLength) { return finArray.slice(0, maxLength); }
+
+    return finArray;
+    
+    // Change code above this line
+}
+  
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
+
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3));
+
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2));
+
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4));
+
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'makeArray'
+Функція 'makeArray' має три параметри: 'firstArray', 'secondArray' і 'maxLength'
+Функція 'makeArray' використовує методи 'concat' і 'slice'
+Виклик makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3) повертає ['Mango', 'Poly', 'Ajax']
+Виклик makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4) повертає ['Mango', 'Poly', 'Houston', 'Ajax']
+Виклик makeArray(['Mango'], ['Ajax', 'Chelsea', 'Poly', 'Houston'], 3) повертає ['Mango', 'Ajax', 'Chelsea']
+Виклик makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 2) повертає ['Earth', 'Jupiter']
+Виклик makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 4) повертає ['Earth', 'Jupiter', 'Neptune', 'Uranus']
+Виклик makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus', 'Venus'], 0) повертає []
+
+    Виклик функції makeArray() з випадковими масивами і випадковим числом повертає правильний масив
+
+
+*/
