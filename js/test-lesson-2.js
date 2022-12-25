@@ -675,3 +675,325 @@ console.log(calculateTotal(44));
 Виклик функції calculateTotal(24) повертає 300
 Виклик функції calculateTotal() з випадковим числом повертає правильне значення
  */
+
+
+console.log('');
+console.log('tsk 2.19');
+
+/*
+Цикл for можна використовувати для ітерації по масиву, тобто «перебрати» його поелементно.
+
+const planets = ["Earth", "Mars", "Venus"];
+
+for (let i = 0; i < planets.length; i += 1) {
+  console.log(planets[i]);
+}
+
+Для доступу до елементів використовується синтаксис квадратних дужок масив[індекс], де індекс 
+- це значення лічильника циклу від 0 і до останнього індексу масиву, який на одиницю менший за довжину масиву.
+*/
+
+/*
+Доповни код циклу for таким чином, щоб він послідовно логував усі елементи масиву fruits.
+
+    Оголошена змінна fruits
+    Значення змінної fruits - це масив ["apple", "plum", "pear", "orange"]
+    Оголошена змінна i - лічильник циклу
+    Початкове значення змінної i дорівнює 0
+    Умова циклу приводиться до true доти, доки i менше за 4
+    На кожній ітерації значення змінної i збільшується на одиницю
+    В тілі циклу for оголошується змінна const fruit і цій змінній присвоюється значення - елемент масиву
+    В тілі циклу for використовується виведення у консоль змінної fruit
+*/
+
+const fruits19 = ['apple', 'plum', 'pear', 'orange'];
+
+for (let i = 0; i < fruits19.length; i+=1) { // Change this line
+  const fruit = fruits19[i]; // Change this line
+  console.log(fruit);
+}
+/*
+Змінна 'fruits' оголошена за допомогою 'const' і має значення ['apple', 'plum', 'pear', 'orange']
+Очікується ініціалізація циклу 'for' за допомогою 'let'
+Очікується 'i' як ім'я змінної під час ініціалізації циклу 'for'
+Очікується 'start' як значення змінної під час ініціалізації циклу 'for'
+Очікується оператор '<' і операнди 'i' та 'fruits.length' як умова циклу 'for'
+Очікується оператор '+=' , змінна 'i' і значення 1 як фінальний вираз циклу 'for'
+В тілі циклу 'for' оголошується змінна 'fruit' за допомогою 'const' і цій змінній присвоюється значення - елемент масиву
+В тілі циклу 'for' використовується виведення у консоль змінної 'fruit'
+
+    Виведення у консоль змінної 'fruit' покаже рядки 'apple', 'plum', 'pear', 'orange'
+
+Результат виконання коду:
+
+apple
+plum
+pear
+orange
+
+
+*/
+
+
+console.log('');
+console.log('tsk 2.20');
+
+/* 
+Напиши функцію calculateTotalPrice(order), яка приймає один параметр order - масив чисел, і 
+обчислює загальну суму його елементів. Загальна сума елементів повинна зберігатися у змінній total, 
+яка повертається як результат роботи функції.
+
+    Оголошена функція calculateTotalPrice(order)
+    Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+    Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+    Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+    Виклик функції calculateTotalPrice() з випадковим масивом повертає правильне значення
+
+*/
+
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
+    for (let i = 0; i < order.length; i += 1) { 
+        total += order[i];
+    }
+  // Change code above this line
+  return total;
+}
+
+
+console.log(calculateTotalPrice([12, 85, 37, 4]));
+console.log(calculateTotalPrice([164, 48, 291]));
+console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+
+console.log(calculateTotalPrice([1, 1, 1, 1, 0]));
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'calculateTotalPrice'
+Функція 'calculateTotalPrice' має один параметр 'order'
+Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+Виклик функції calculateTotalPrice() з випадковим масивом повертає правильне значення
+*/
+
+
+console.log('');
+console.log('tsk 2.21');
+
+// let words = message.split(delimiter);
+//return ((title.toLowerCase()).split(" ")).join("-");
+//const substring = string.slice(0, length); // Change this line
+
+/*const courseTopic = "JavaScript essentials";
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopic.length - 1]; */
+
+//const message = `Name ${name} is ${(name.length)} characters long`; // Change this line
+
+/*
+Напиши функцію findLongestWord(string), яка приймає довільний рядок, що складається тільки зі слів, 
+розділених пробілом (параметр string), і повертає найдовше слово в цьому рядку.
+
+    Оголошена функція findLongestWord(string)
+    Виклик функції findLongestWord("The quick brown fox jumped over the lazy dog") повертає jumped
+    Виклик функції findLongestWord("Google do a roll") повертає Google
+    Виклик функції findLongestWord("May the force be with you") повертає force
+    Виклик функції findLongestWord() з випадковим рядком повертає правильне значення
+
+*/
+
+function findLongestWord(string) {
+  // Change code below this line
+    const wordsArray21 = string.split(" ");
+    let longWord = wordsArray21[0];
+    for (let i=1; i<wordsArray21.length; i+=1)
+    { 
+        if (longWord.length <= wordsArray21[i].length) longWord = wordsArray21[i];
+    }
+    return longWord;
+  // Change code above this line
+}
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+console.log(findLongestWord("Google do a roll"));
+console.log(findLongestWord("May the force be with you"));
+//console.log(findLongestWord("May the force be with you"));
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'findLongestWord'
+Функція 'findLongestWord' має один параметр 'string'
+findLongestWord('The quick brown fox jumped over the lazy dog') повертає 'jumped'
+findLongestWord('Google do a roll') повертає 'Google'
+findLongestWord('May the force be with you') повертає 'force'
+Виклик функції findLongestWord() з випадковим рядком повертає правильне значення
+*/
+
+
+console.log('');
+console.log('tsk 2.22');
+/*
+Метод push() дозволяє додати один або кілька елементів в кінець масиву, без необхідності вказувати
+ індекси елементів, що додаються.
+
+const planets = ["Earth", "Mars", "Venus"];
+planets.push("Jupiter");
+planets.push("Saturn", "Uranus", "Neptune");
+
+console.log(planets); // ['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+*/
+/*
+Доповни код функції createArrayOfNumbers(min, max) таким чином, щоб вона повертала масив усіх 
+цілих чисел від значення min до max.
+
+    Оголошена функція createArrayOfNumbers(min, max)
+    Виклик функції createArrayOfNumbers(1, 3) повертає [1, 2, 3]
+    Виклик функції createArrayOfNumbers(14, 17) повертає [14, 15, 16, 17]
+    Виклик функції createArrayOfNumbers(29, 34) повертає [29, 30, 31, 32, 33, 34]
+    Виклик функції createArrayOfNumbers() з випадковими min і max повертає правильний масив
+    В циклі for використовувався метод push
+
+*/
+
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Change code below this line
+    for (let i=min; i<=max; i+=1) { 
+        numbers.push(i);
+    }
+  // Change code above this line
+  return numbers;
+}
+
+console.log(createArrayOfNumbers(1, 3));
+
+console.log(createArrayOfNumbers(14, 17));
+
+console.log(createArrayOfNumbers(29, 34));
+
+//createArrayOfNumbers(1, 3);
+
+/*
+ Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'createArrayOfNumbers'
+Функція 'createArrayOfNumbers' має два параметри: 'min' і 'max'
+Виклик функції createArrayOfNumbers(1, 3) повертає [1, 2, 3]
+Виклик функції createArrayOfNumbers(14, 17) повертає [14, 15, 16, 17]
+Виклик функції createArrayOfNumbers(29, 34) повертає [29, 30, 31, 32, 33, 34]
+Виклик функції createArrayOfNumbers() з випадковими 'min' і 'max' повертає правильний масив
+В циклі for використовувався метод 'push'
+*/
+
+console.log('');
+console.log('tsk 2.23');
+
+/*
+Напиши функцію filterArray(numbers, value), яка приймає масив чисел (параметр numbers) і повертає 
+новий масив, в якому будуть тільки ті елементи масиву numbers, які більші за значення параметра value (число).
+
+    Оголошена функція filterArray(numbers, value)
+    Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
+    Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
+    Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
+    Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
+    Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
+    Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+    В циклі for використовувався метод push
+*/
+
+function filterArray(numbers, value) {
+   // Change code below this line
+    let filtered = [];
+        for (let i=0; i<numbers.length; i+=1) { 
+        if (numbers[i] > value) filtered.push(numbers[i]);
+    }
+    return filtered;
+  // Change code above this line
+}
+
+console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+console.log(filterArray([1, 2, 3, 4, 5], 4));
+
+console.log(filterArray([1, 2, 3, 4, 5], 5));
+
+console.log(filterArray([12, 24, 8, 41, 76], 38));
+
+console.log(filterArray([12, 24, 8, 41, 76], 20));
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'filterArray'
+Функція 'filterArray' має два параметри 'numbers' і 'value'
+Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
+Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
+Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
+Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
+Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
+Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+В циклі for використовувався метод 'push'
+ */
+
+
+console.log('');
+console.log('tsk 2.24');
+/*
+Метод includes(value) перевіряє, чи присутній в масиві елемент зі значенням value,
+ і повертає true або false відповідно. Сфера застосування цього методу зводиться до ситуацій, 
+ коли необхідно перевірити, чи присутній елемент в масиві, і не важлива його позиція (індекс).
+
+const planets = ["Earth", "Mars", "Venus"];
+
+console.log(planets.includes("Earth")); // true
+console.log(planets.includes("Mars")); // true
+console.log(planets.includes("Venus")); // true
+console.log(planets.includes("Jupiter")); // false
+*/
+
+/*
+Функція checkFruit(fruit) приймає рядок з назвою фрукта (параметр fruit), і перевіряє, 
+чи присутній такий фрукт в масиві fruits.
+
+Доповни код функції таким чином, що якщо:
+
+    фрукт присутній в масиві, то функція повертає true;
+    фрукт відсутній в масиві, то функція повертає false.
+
+    Оголошена функція checkFruit(fruit)
+    Виклик checkFruit("plum") повертає true
+    Виклик checkFruit("mandarin") повертає false
+    Виклик checkFruit("pear") повертає true
+    Виклик checkFruit("Pear") повертає false
+    Виклик checkFruit("apple") повертає true
+    Виклик функції checkFruit() з випадковим словом повертає правильне значення boolean
+    У функції використовувався метод includes
+*/
+function checkFruit(fruit) {
+  const fruits = ["apple", "plum", "pear", "orange"];
+
+  return fruits.includes(fruit); // Change this line
+}
+
+console.log(checkFruit("plum"));
+console.log(checkFruit("mandarin"));
+console.log(checkFruit("pear"));
+console.log(checkFruit("Pear"));
+console.log(checkFruit("apple"));
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'checkFruit'
+Функція 'checkFruit' має один параметр 'fruit'
+Виклик checkFruit('plum') повертає true
+Виклик checkFruit('mandarin') повертає false
+Виклик checkFruit('pear') повертає true
+Виклик checkFruit('Pear') повертає false
+Виклик checkFruit('apple') повертає true
+Виклик функції checkFruit() з випадковим словом повертає правильне значення boolean
+У функції використовувався метод 'includes'
+*/
+
+
