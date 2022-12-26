@@ -996,4 +996,110 @@ console.log(checkFruit("apple"));
 У функції використовувався метод 'includes'
 */
 
+console.log('');
+console.log('tsk 2.25');
 
+/*
+Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
+
+Наприклад, у двох масивах [1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5, оскільки вони присутні 
+в обох вихідних масивах. А числа 0, 1 і 8 присутні тільки в одному з масивів.
+
+Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри 
+array1 і array2, і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
+
+    Оголошена функція getCommonElements(array1, array2)
+    Виклик getCommonElements([1, 2, 3], [2, 4]) повертає [2]
+    Виклик getCommonElements([1, 2, 3], [2, 1, 17, 19]) повертає [1, 2]
+    Виклик getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) повертає [12, 27, 3]
+    Виклик getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) повертає [10, 30, 40]
+    Виклик getCommonElements([1, 2, 3], [10, 20, 30]) повертає []
+    Виклик функції getCommonElements() з випадковими двома масивами повертає правильний масив
+    В циклі for використовувалися методи includes і push
+
+*/
+
+function getCommonElements(array1, array2) {
+  // Change code below this line
+    let CommonElementsArray = [];
+    for (let i=0; i<array1.length; i+=1) { 
+        if (array2.includes(array1[i])) CommonElementsArray.push(array1[i]);
+    }
+    return CommonElementsArray;
+ // Change code above this line
+}
+
+console.log(getCommonElements([1, 2, 3], [2, 4]));
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+
+console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
+
+/*
+ Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'getCommonElements'
+Функція 'getCommonElements' має два параметри: 'array1' і 'array2'
+Виклик getCommonElements([1, 2, 3], [2, 4]) повертає [2]
+Виклик getCommonElements([1, 2, 3], [2, 1, 17, 19]) повертає [1, 2]
+Виклик getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) повертає [12, 27, 3]
+Виклик getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) повертає [10, 30, 40]
+Виклик getCommonElements([1, 2, 3], [10, 20, 30]) повертає []
+Виклик функції getCommonElements() з випадковими двома масивами повертає правильний масив
+В циклі 'for' використовувалися методи 'includes' і 'push'
+*/
+
+
+
+console.log('');
+console.log('tsk 2.25');
+
+/*
+
+
+
+Інструкція for...of оголошує цикл, який перебирає ітерабельні об'єкти, такі як масиви та рядки. Тіло циклу буде виконуватися для значення кожного елемента. Це хороша заміна циклу for, якщо не потрібен доступ до лічильника ітерації.
+
+for (const variable of iterable) {
+  // тіло цикла
+}
+
+    variable - змінна, яка буде зберігати значення елемента на кожній ітерації
+    iterable - колекція, яка містить ітерабельні елементи, наприклад масив
+
+const planets = ["Earth", "Mars", "Venus"];
+
+for (const planet of planets) {
+  console.log(planet);
+}
+
+
+
+
+Виконай рефакторинг коду функції calculateTotalPrice(order), замінивши цикл for на for...of.
+
+    Оголошена функція calculateTotalPrice(order)
+    Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+    Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+    Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+    Виклик функції calculateTotalPrice([]) повертає 0
+    Виклик функції calculateTotalPrice() з випадковим масивом чисел повертає правильну суму
+
+    */
+
+
+function calculateTotalPrice26(order) {
+  let total = 0;
+  // Change code below this line
+
+  for (let i = 0; i < order.length; i += 1) {
+    total += order[i];
+  }
+
+  // Change code above this line
+  return total;
+}
+/*
+console.log(Number('OMG!' !== true));
+
+console.log(Number(1!== true));*/
