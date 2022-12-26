@@ -1249,3 +1249,198 @@ const e = 8 % 3;
 Оголошена змінна e
 Значення змінної e - це число 2
   */
+
+console.log('');
+console.log('tsk 2.29');
+/*
+ Напиши функцію getEvenNumbers(start, end), яка повертає масив усіх парних чисел від start до end. 
+ Парним вважається число, яке ділиться на 2 без остачі (10 % 2 === 0).
+
+    Оголошена функція getEvenNumbers(start, end)
+    Виклик функції getEvenNumbers(2, 5) повертає [2, 4]
+    Виклик функції getEvenNumbers(3, 11) повертає [4, 6, 8, 10]
+    Виклик функції getEvenNumbers(6, 12) повертає [6, 8, 10, 12]
+    Виклик функції getEvenNumbers(8, 8) повертає [8]
+    Виклик функції getEvenNumbers(7, 7) повертає []
+    Виклик функції getEvenNumbers() з випадковими start і end повертає правильний масив
+
+*/
+
+function getEvenNumbers(start, end) {
+   // Change code below this line
+  const EvenNumbers = [];
+  for (let i=start; i<=end; i+=1)
+  { 
+    if (i % 2 === 0) {
+      EvenNumbers.push(i);
+  
+    }
+  }
+
+  return EvenNumbers;
+
+    // Change code above this line
+}
+
+console.log(getEvenNumbers(2, 5));
+
+console.log(getEvenNumbers(3, 11));
+
+console.log(getEvenNumbers(6, 12));
+
+console.log(getEvenNumbers(8, 8));
+
+console.log(getEvenNumbers(7, 7));
+  
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'getEvenNumbers'
+Функція 'getEvenNumbers' має два параметри: 'start' і 'end'
+Виклик функції getEvenNumbers(2, 5) повертає [2, 4]
+Виклик функції getEvenNumbers(3, 11) повертає [4, 6, 8, 10]
+Виклик функції getEvenNumbers(6, 12) повертає [6, 8, 10, 12]
+Виклик функції getEvenNumbers(8, 8) повертає [8]
+Виклик функції getEvenNumbers(7, 7) повертає []
+Виклик функції getEvenNumbers() з випадковим масивом і числом повертає правильний масив
+*/
+
+
+console.log('');
+console.log('tsk 2.30');
+/*
+Перервати виконання циклу можна в будь-який момент. Для цього існує оператор break, який повністю припиняє 
+виконання циклу і передає управління на рядок за його тілом.
+
+У прикладі шукаємо число 3. Щойно виконається умова if, цикл припинить своє виконання (буде перерваний).
+
+for (let i = 0; i <= 5; i += 1) {
+  console.log(i);
+
+  if (i === 3) {
+    console.log("Знайшли число 3, перериваємо виконання циклу");
+    break;
+  }
+}
+
+console.log("Лог після циклу");
+*/
+
+/*
+Доповни код таким чином, щоб у змінну number записувалося перше число від start до end, яке ділиться на 5 без остачі.
+
+    Оголошена змінна start зі значенням 6
+    Оголошена змінна end зі значенням 27
+    Оголошена змінна number без ініціалізації
+    Підсумкове значення змінної number дорівнює 10
+    В циклі for використовується break для виходу до завершення усіх ітерацій циклу
+
+*/
+
+{ 
+const start = 6;
+const end = 27;
+let number;
+
+for (let i = start; i < end; i += 1) {
+  if (i % 5 === 0) {
+    number = i;
+    break;
+  }
+}
+
+}
+
+/*
+ Оголошена змінна start зі значенням 6
+Оголошена змінна end зі значенням 27
+Оголошена змінна number без ініціалізації
+Підсумкове значення змінної number дорівнює 10
+В циклі for використовується break для виходу до завершення усіх ітерацій циклу
+*/
+
+
+console.log('');
+console.log('tsk 2.31');
+
+/*
+
+
+Якщо цикл знаходиться в тілі функції, то оператор break не припиняє виконання функції, а тільки перерве цикл. Для того щоб переривати виконання відразу циклу і функції, є оператор return.
+
+У прикладі шукаємо число 3. Щойно виконається умова if, робимо повернення, яке перерве виконання циклу і функції.
+
+function fn() {
+  for (let i = 0; i <= 5; i += 1) {
+    console.log(i);
+
+    if (i === 3) {
+      console.log("Знайшли число 3, робимо повернення, перериваючи цикл і функцію");
+      return i;
+    }
+  }
+
+  // Цей console.log не виконається
+  console.log("Лог після циклу в тілі функції");
+}
+
+const result = fn();
+console.log("Лог після виходу з функції");
+console.log(`Результат виконання функції ${result}`);
+
+
+*/
+/*
+Виконай рефакторинг функції findNumber(start, end, divisor) таким чином, щоб вона:
+
+    повертала перше число від start до end, яке ділиться на divisor без остачі
+    не використала оператор break
+    не використала змінну number
+
+    Оголошена функція findNumber(start, end, divisor)
+    Виклик findNumber(2, 6, 5) повертає 5
+    Виклик findNumber(8, 17, 3) повертає 9
+    Виклик findNumber(6, 9, 4) повертає 8
+    Виклик findNumber(16, 35, 7) повертає 21
+    Виклик findNumber() з випадковим набором чисел повертає правильний результат
+    В циклі for не повинен використовуватися break для виходу до завершення всіх ітерацій циклу
+
+
+*/
+
+function findNumber(start, end, divisor) {
+  // Change code below this line
+  //let number;
+
+  for (let i = start; i < end; i += 1) {
+    if (i % divisor === 0) {
+      return i;
+      //number = i;
+      //break;
+    }
+  }
+
+  //return number;
+  // Change code above this line
+}
+
+console.log(findNumber(2, 6, 5));
+
+console.log(findNumber(8, 17, 3));
+
+console.log(findNumber(6, 9, 4));
+
+console.log(findNumber(16, 35, 7));
+
+/* 
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'findNumber'
+Функція 'findNumber' має три параметри: 'start', 'end' і ''divisor
+Виклик findNumber(2, 6, 5) повертає 5
+Виклик findNumber(8, 17, 3) повертає 9
+Виклик findNumber(6, 9, 4) повертає 8
+Виклик findNumber(16, 35, 7) повертає 21
+Виклик `findNumber()` з випадковим набором чисел повертає правильний результат
+В циклі for не повинен використовуватися `break` для виходу до завершення всіх ітерацій циклу
+*/
+
