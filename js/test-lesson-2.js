@@ -1052,7 +1052,7 @@ console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
 
 
 console.log('');
-console.log('tsk 2.25');
+console.log('tsk 2.26');
 
 /*
 
@@ -1093,15 +1093,159 @@ for (const planet of planets) {
 function calculateTotalPrice26(order) {
   let total = 0;
   // Change code below this line
-
+  for (const orderI of order)
+  {
+    total += orderI;
+    }
+  /*
   for (let i = 0; i < order.length; i += 1) {
     total += order[i];
-  }
+  }*/
 
   // Change code above this line
   return total;
 }
+
+console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+console.log(calculateTotalPrice([164, 48, 291]));
+
+console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+
+console.log(calculateTotalPrice([]));
 /*
 console.log(Number('OMG!' !== true));
 
 console.log(Number(1!== true));*/
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'calculateTotalPrice'
+Функція 'calculateTotalPrice' має один параметр 'order'
+Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+Виклик функції calculateTotalPrice([]) повертає 0
+Виклик функції calculateTotalPrice() з випадковим масивом чисел повертає правильну суму
+Функція calculateTotalPrice() використовує цикл for..o
+*/
+
+
+console.log('');
+console.log('tsk 2.27');
+
+/*
+Виконай рефакторинг функції filterArray(numbers, value), замінивши цикл for на for...of.
+
+    Оголошена функція filterArray(numbers, value)
+    Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
+    Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
+    Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
+    Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
+    Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
+    Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+    Функція filterArray() використовує цикл for..of
+
+*/
+
+
+ function filterArray27(numbers, value) {
+  // Change code below this line
+  const filteredNumbers = [];
+
+  for (const number of numbers) {
+       if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }
+
+  return filteredNumbers;
+  // Change code above this line
+}
+
+console.log(filterArray27([1, 2, 3, 4, 5], 3));
+
+console.log(filterArray27([1, 2, 3, 4, 5], 4));
+
+console.log(filterArray27([1, 2, 3, 4, 5], 5));
+
+console.log(filterArray27([12, 24, 8, 41, 76], 38));
+
+console.log(filterArray27([12, 24, 8, 41, 76], 20));
+
+/*
+Очікується оголошення 'Function Declaration'
+Функції присвоєно ім'я 'filterArray'
+Функція 'filterArray' має два параметри: 'numbers' і 'value'
+Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
+Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
+Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
+Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
+Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
+Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+Функція calculateTotalPrice() використовує цикл for..of
+*/
+
+
+
+
+console.log('');
+console.log('tsk 2.28');
+/*
+
+
+Замість того, щоб повертати результат ділення, операція за модулем (%) повертає цілочисельну остачу від ділення двох чисел - діленого і дільника.
+
+5 % 1 = 0;
+// 5, поділене на 1, дорівнює 5, а остача - 0
+
+5 % 2 = 1;
+//  5, поділене на 2, дорівнює 2, а остача - 1
+
+5 % 3 = 2;
+//  5, поділене на 3, дорівнює 1, а остача - 2
+
+5 % 4 = 1;
+//  5, поділене на 4, дорівнює 1, а остача - 1
+
+5 % 5 = 0;
+//  5, поділене на 5, дорівнює 1, а остача - 0
+
+
+*/
+
+/*
+Доповни вираз остачі від ділення таким чином, щоб код проходив тести.
+
+    Оголошена змінна a
+    Значення змінної a - це число 0
+    Оголошена змінна b
+    Значення змінної b - це число 1
+    Оголошена змінна c
+    Значення змінної c - це число 3
+    Оголошена змінна d
+    Значення змінної d - це число 5
+    Оголошена змінна e
+    Значення змінної e - це число 2
+
+*/
+{
+const a = 3 % 3;
+const b = 4 % 3;
+const c = 11 % 4;
+const d = 12 % 7;
+const e = 8 % 3;
+}
+
+/*
+Оголошена змінна a
+Значення змінної a - це число 0
+Оголошена змінна b
+Значення змінної b - це число 1
+Оголошена змінна c
+Значення змінної c - це число 3
+Оголошена змінна d
+Значення змінної d - це число 5
+Оголошена змінна e
+Значення змінної e - це число 2
+  */
