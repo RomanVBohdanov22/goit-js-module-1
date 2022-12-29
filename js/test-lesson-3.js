@@ -123,3 +123,85 @@ const apartment2 = {
 В об'єкті 'owner' присутня властивість 'name'. Значення властивості 'name' - це 'Henry'
 В об'єкті 'owner' присутня властивість phone'. Значення властивості 'phone' - це '982-126-1588'.
 В об'єкті 'owner' присутня властивість 'email'. Значення властивості 'email' - це 'henry.carter@aptmail.com'. */
+
+
+console.log('');
+console.log('tsk 3.3');
+
+/*
+Перший спосіб отримати доступ до властивості об'єкта - це синтаксис об'єкт.ключ_властивості.
+ Здебільшого використовується синтаксис «через крапку» і підходить тоді, коли ми заздалегідь знаємо ім'я (ключ)
+  властивості, до якої хочемо отримати доступ.
+
+    На місце звернення буде повернуте значення властивості з таким ім'ям.
+    Якщо в об'єкті відсутня властивість з таким ім'ям, на місце звернення повернеться undefined.
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  public: true,
+  rating: 8.38,
+};
+
+const bookTitle = book.title;
+console.log(bookTitle); // "The Last Kingdom"
+
+const bookGenres = book.genres;
+console.log(bookGenres); // ["historical prose", "adventure"]
+
+const bookPrice = book.price;
+console.log(bookPrice); // undefined
+
+*/
+
+/*
+Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта apartment.
+
+    aptRating - рейтинг;
+    aptDescr - опис;
+    aptPrice - ціна;
+    aptTags - теги.
+
+    Оголошена змінна apartment
+    Значення змінної apartment - це об'єкт
+    В об'єкта змінної apartment присутні властивості imgUrl, descr, rating, price і tag зі значеннями
+    Оголошена змінна aptRating
+    Значення змінної aptRating - це число 4
+    Оголошена змінна aptDescr
+    Значення змінної aptDescr - це рядок "Spacious apartment in the city center"
+    Оголошена змінна aptPrice
+    Значення змінної aptPrice - це число 2153
+    Оголошена змінна aptTags
+    Значення змінної aptTags - це масив рядків ["premium", "promoted", "top"]
+
+*/
+
+const apartment3 = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+};
+
+// Change code below this line
+const aptRating = apartment3.rating;
+const aptDescr = apartment3.descr;
+const aptPrice = apartment3.price;
+const aptTags = apartment3.tags;
+// Change code above this line
+
+/*
+Оголошена змінна 'apartment'
+Значення змінної 'apartment' - це об'єкт
+В об'єкта змінної 'apartment' присутні властивості 'imgUrl', 'descr', 'rating', 'price' і 'tag' зі значеннями.
+Оголошена змінна 'aptRating'
+Значення змінної 'aptRating'- це число '4'.
+Оголошена змінна 'aptDescr'
+Значення змінної 'aptDescr' - це рядок 'Spacious apartment in the city center'.
+Оголошена змінна 'aptPrice'
+Значення змінної 'aptPrice'- це число 2153.
+Оголошена змінна 'aptTags'
+Значення змінної 'aptTags' - це масив рядків `['premium', 'promoted', 'top'].
+*/
