@@ -389,3 +389,155 @@ console.log(aptRating5, aptDescr5, aptPrice5, aptTags5);
 Встановлюючи значення змінної `aptTags`, потрібно використовувати синтаксис квадратних дужок
 Значення змінної `aptTags` - це масив ['premium', 'promoted', 'top']
 */
+
+
+console.log('');
+console.log('tsk 3.6');
+
+/*
+Після того як об'єкт створений, значення його властивостей можна змінити. 
+Для цього необхідно звернутися до них за ім'ям, наприклад, «через крапку», і присвоїти нове значення.
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  public: true,
+  rating: 8.38,
+};
+
+book.rating = 9;
+book.public = false;
+book.genres.push("drama");
+
+console.log(book.rating); // 9
+console.log(book.public); // false
+console.log(book.genres); // ["historical prose", "adventure", "drama"]
+*/
+/*
+Доповни код, оновивши значення властивостей об'єкта apartment:
+
+    ціну у властивості price на 5000;
+    рейтинг квартири у властивості rating на 4.7;
+    ім'я власника у вкладеній властивості name на "Henry Sibola";
+    масив тегів у властивості tags, додавши в кінець рядок "trusted".
+
+    Оголошена змінна apartment
+    Значення змінної apartment - це об'єкт
+    Значення вкладеної властивості price - це число 5000
+    Значення вкладеної властивості rating - це число 4.7
+    Значення вкладеної властивості name - це рядок "Henry Sibola"
+    Значення вкладеної властивості tags - це масив ["premium", "promoted", "top", "trusted"]
+
+*/
+
+const apartment6 = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+  owner: {
+    name: "Henry",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",
+  },
+};
+
+// Change code below this line
+
+apartment6.price = 5000;
+apartment6.rating = 4.7;
+apartment6.owner.name = "Henry Sibola";
+apartment6.tags.push("trusted");
+
+/*
+Оголошена змінна 'apartment' за допомогою 'const'
+Значення змінної 'apartment' - це об'єкт
+Значення вкладеної властивості 'price' - це число 5000
+Значення вкладеної властивості 'rating' - це число 4.7
+Значення вкладеної властивості 'name' - це рядок 'Henry Sibola'
+Значення вкладеної властивості 'tags' - це масив ['premium', 'promoted', 'top', 'trusted
+*/
+
+console.log(apartment6);
+
+
+console.log('');
+console.log('tsk 3.7');
+
+/*
+
+
+Операція додавання нової властивості після створення об'єкта нічим не відрізняється від зміни 
+значення вже існуючої властивості. Якщо під час запису значення за ім'ям, така властивість 
+відсутня в об'єкті, вона буде створена.
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  public: true,
+  rating: 8.38,
+};
+
+book.pageCount = 836;
+book.originalLanguage = "en";
+book.translations = ["ua", "ru"];
+
+console.log(book.pageCount); // 836
+console.log(book.originalLanguage); // "en"
+console.log(book.translations); // ["ua", "ru"]
+
+
+ */
+/*
+Додай об'єкту apartment кілька нових властивостей:
+
+    area - площа в квадратних метрах, число 60;
+    rooms - кількість кімнат, число 3;
+    location - місце розташування квартири, об'єкт з наступними вкладеними властивостями;
+        country - країна, рядок "Jamaica";
+        city - місто, рядок "Kingston".
+
+    Оголошена змінна apartment
+    Значення змінної apartment - це об'єкт
+    Значення вкладеної властивості area - це число 60
+    Значення вкладеної властивості rooms - це число 3
+    Значення вкладеної властивості location - це об'єкт
+    Значення вкладеної властивості location.country - це рядок "Jamaica"
+    Значення вкладеної властивості location.city - це рядок "Kingston"
+
+*/
+const apartment7 = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4.7,
+  price: 5000,
+  tags: ["premium", "promoted", "top", "trusted"],
+  owner: {
+    name: "Henry Sibola",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",
+  },
+};
+
+// Change code below this line
+apartment7.area = 60;
+apartment7.rooms = 3;
+apartment7.location = {
+    country: "Jamaica",
+    city: "Kingston"
+};
+
+console.log(apartment7);
+
+/*
+Оголошена змінна 'apartment' за допомогою 'const'
+Значення змінної 'apartment' - це об'єкт
+Значення вкладеної властивості 'area' - це число 60
+Значення вкладеної властивості 'rooms' - це число 3
+Значення вкладеної властивості 'location' - це об'єкт
+Значення вкладеної властивості 'location.country' - це рядок 'Jamaica'
+Значення вкладеної властивості 'location.city' - це рядок 'Kingston'
+*/
