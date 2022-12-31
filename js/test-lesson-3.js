@@ -298,14 +298,13 @@ const lastTag = apartment4.tags[apartment4.tags.length-1];
 Значення змінної `lastTag` - це рядок 'top'
 */
 
-onsole.log('');
+console.log('');
 console.log('tsk 3.5');
 
 /*
-
-
 Другий спосіб отримати доступ до властивості об'єкта - це синтаксис об'єкт["ключ_властивості"]. 
-Схоже на звернення до елемента масиву з відмінністю в тому, що в дужках зазначається не індекс елемента, а ім'я властивості як рядок.
+Схоже на звернення до елемента масиву з відмінністю в тому, що в дужках зазначається не індекс елемента, 
+а ім'я властивості як рядок.
 
 Синтаксис «квадратних дужок» використовується значно рідше. Як правило у випадках, 
 коли ім'я властивості заздалегідь невідоме або воно зберігається у змінній (як значення параметра функції, наприклад).
@@ -367,8 +366,26 @@ const apartment5 = {
 };
 
 // Change code below this line
-const aptRating5 = apartment;
-const aptDescr5 = apartment;
-const aptPrice5 = apartment;
-const aptTags5 = apartment;
+const aptRating5 = apartment5["rating"];
+const aptDescr5 = apartment5["descr"];
+const aptPrice5 = apartment5["price"];
+const aptTags5 = apartment5["tags"];
 // Change code above this line
+
+console.log(aptRating5, aptDescr5, aptPrice5, aptTags5);
+
+/*
+Оголошена змінна 'apartment' за допомогою 'const'
+Оголошена змінна 'aptRating' за допомогою 'const'
+Оголошена змінна 'aptDescr' за допомогою 'const'
+Оголошена змінна 'aptPrice' за допомогою 'const'
+Оголошена змінна 'aptTags' за допомогою 'const'
+Встановлюючи значення змінної `aptRating`, потрібно використовувати синтаксис квадратних дужок
+Значення змінної `aptRating` - це число 4
+Встановлюючи значення змінної `aptDescr`, потрібно використовувати синтаксис квадратних дужок
+Значення змінної `aptDescr` - це рядок 'Spacious apartment in the city center'
+Встановлюючи значення змінної `aptPrice`, потрібно використовувати синтаксис квадратних дужок
+Значення змінної `aptPrice` - це число 2153
+Встановлюючи значення змінної `aptTags`, потрібно використовувати синтаксис квадратних дужок
+Значення змінної `aptTags` - це масив ['premium', 'promoted', 'top']
+*/
