@@ -595,12 +595,62 @@ console.log(user.age); // 25
 
 */
 
-const name = "Repair Droid";
-const price = 2500;
-const image = "https://via.placeholder.com/640x480";
-const tags = ["on sale", "trending", "best buy"];
+const name8 = "Repair Droid";
+const price8 = 2500;
+const image8 = "https://via.placeholder.com/640x480";
+const tags8 = ["on sale", "trending", "best buy"];
 
-const product = {
+const product8 = {
   // Change code below this line
+    name8,
+    price8,
+    image8,
+    tags8
   // Change code above this line
 };
+console.log(product8);
+
+/*
+Оголошена змінна 'product' за допомогою 'const'
+Значення змінної 'product' - це об'єкт
+Вкладена властивість 'name' присвоєна за допомогою короткого синтаксису
+Значення вкладеної властивості 'name' - це рядок 'Repair Droid'
+Вкладена властивість 'price' присвоєна за допомогою короткого синтаксису
+Значення вкладеної властивості 'price' - це число 2500
+Вкладена властивість 'image' присвоєна за допомогою короткого синтаксису
+Значення вкладеної властивості 'image' - це рядок 'https://via.placeholder.com/640x480'
+Вкладена властивість 'tags' присвоєна за допомогою короткого синтаксису
+Значення вкладеної властивості 'tags' - це масив ['on sale', 'trending', 'best buy']
+*/
+
+
+console.log('');
+console.log('tsk 3.9');
+
+/*
+Бувають ситуації, коли під час оголошення об'єкта необхідно додати властивість з ім'ям, 
+яке ми заздалегідь не знаємо, тому що воно зберігається як значення змінної або як результат виконання функції.
+
+Раніше для цього необхідно було спочатку створити об'єкт, а потім додавати властивості 
+через квадратні дужки, що не зовсім зручно.
+
+const propName = "name";
+const user = {
+  age: 25,
+};
+
+user[propName] = "Генрі Сибола";
+console.log(user.name); // "Генрі Сибола"
+
+Синтаксис обчислюваних властивостей (computed properties) допомагає уникнути зайвого коду і, 
+в деяких випадках, спростити його. Значенням обчислюваної властивості може бути будь-який валідний вираз.
+
+const propName = "name";
+const user = {
+  age: 25,
+  // Ім'я цієї властивості буде взято зі значення змінної propName
+  [propName]: "Генрі Сибола",
+};
+
+console.log(user.name); // "Генрі Сибола"
+*/
