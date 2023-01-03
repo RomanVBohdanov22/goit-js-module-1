@@ -1,7 +1,9 @@
 console.log('');
 console.log('tsk 3.1');
 /*
-Об'єкти дозволяють описати і згрупувати характеристики об'єктів реального світу - користувача, книги, продукту магазину, чого завгодно. Об'єкти ще називають словниками, тобто вони містять терміни (властивості) та їх визначення (значення).
+Об'єкти дозволяють описати і згрупувати характеристики об'єктів реального світу - користувача, книги, 
+продукту магазину, чого завгодно. Об'єкти ще називають словниками, 
+тобто вони містять терміни (властивості) та їх визначення (значення).
 
 const book = {
   title: "The Last Kingdom",
@@ -11,7 +13,9 @@ const book = {
   rating: 8.38,
 };
 
-Для оголошення використовуються фігурні дужки {} - літерал об'єкта. При створенні об'єкта можна додати властивості, кожна з яких описується парами ключ:значення. Ключ ще називають ім'ям властивості і це завжди рядок. Значенням властивості можуть бути будь-які типи: примітиви, масиви, об'єкти, булі, функції тощо. Властивості розділяються комою.
+Для оголошення використовуються фігурні дужки {} - літерал об'єкта. При створенні об'єкта можна 
+додати властивості, кожна з яких описується парами ключ:значення. Ключ ще називають ім'ям властивості і це завжди рядок. 
+Значенням властивості можуть бути будь-які типи: примітиви, масиви, об'єкти, булі, функції тощо. Властивості розділяються комою.
 
 */
 
@@ -211,7 +215,10 @@ console.log('tsk 3.4');
 
 
 /*
-Для доступу до вкладених властивостей використовується ланцюжок звернень «через крапку». Наприклад, якщо необхідно отримати значення країни користувача, записуємо user.location.country, де user.location - це звернення (шлях) до об'єкта у властивості location, а user.locaton.country - звернення до властивості country в цьому об'єкті. Тобто, «крапка» вказує наступну вкладеність.
+Для доступу до вкладених властивостей використовується ланцюжок звернень «через крапку». Наприклад, 
+якщо необхідно отримати значення країни користувача, записуємо user.location.country, де user.location
+ - це звернення (шлях) до об'єкта у властивості location, а user.locaton.country - звернення до властивості 
+ country в цьому об'єкті. Тобто, «крапка» вказує наступну вкладеність.
 
 const location = user.location;
 console.log(location); // Об'єкт location
@@ -219,7 +226,8 @@ console.log(location); // Об'єкт location
 const country = user.location.country;
 console.log(country); // "Jamaica"
 
-Якщо значення властивості - це масив, то у нашому прикладі user.hobbies - звернення до цього масиву. Далі можна отримати доступ до його елементів через квадратні дужки та індекс або використовувати властивості і методи.
+Якщо значення властивості - це масив, то у нашому прикладі user.hobbies - звернення до цього масиву. 
+Далі можна отримати доступ до його елементів через квадратні дужки та індекс або використовувати властивості і методи.
 
 const hobbies = user.hobbies;
 console.log(hobbies); // ["swiming", "music", "sci-fi"]
@@ -333,11 +341,8 @@ console.log(bookAuthor); // "Bernard Cornwell"
 
 */
 /*
-
-
 Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта apartment, 
 використовуючи синтаксис «квадратних дужок».
-
     aptRating - рейтинг;
     aptDescr - опис;
     aptPrice - ціна;
@@ -353,8 +358,6 @@ console.log(bookAuthor); // "Bernard Cornwell"
     Значення змінної aptPrice - це 2153
     Оголошена змінна aptTags
     Значення змінної aptTags - це ["premium", "promoted", "top"]
-
-
 */
 
 const apartment5 = {
@@ -467,8 +470,6 @@ console.log('');
 console.log('tsk 3.7');
 
 /*
-
-
 Операція додавання нової властивості після створення об'єкта нічим не відрізняється від зміни 
 значення вже існуючої властивості. Якщо під час запису значення за ім'ям, така властивість 
 відсутня в об'єкті, вона буде створена.
@@ -488,12 +489,9 @@ book.translations = ["ua", "ru"];
 console.log(book.pageCount); // 836
 console.log(book.originalLanguage); // "en"
 console.log(book.translations); // ["ua", "ru"]
-
-
  */
 /*
 Додай об'єкту apartment кілька нових властивостей:
-
     area - площа в квадратних метрах, число 60;
     rooms - кількість кімнат, число 3;
     location - місце розташування квартири, об'єкт з наступними вкладеними властивостями;
@@ -507,7 +505,6 @@ console.log(book.translations); // ["ua", "ru"]
     Значення вкладеної властивості location - це об'єкт
     Значення вкладеної властивості location.country - це рядок "Jamaica"
     Значення вкладеної властивості location.city - це рядок "Kingston"
-
 */
 const apartment7 = {
   imgUrl: "https://via.placeholder.com/640x480",
@@ -842,15 +839,65 @@ const advert = {
   service: "apt",
 };
 const apartment11 = Object.create(advert);
-apartment.descr = "Spacious apartment in the city center";
-apartment.rating = 4;
-apartment.price = 2153;
+apartment11.descr = "Spacious apartment in the city center";
+apartment11.rating = 4;
+apartment11.price = 2153;
 
 for (const key in apartment11) {
   // Change code below this line
-
-  keys.push(key);
-  values.push(apartment11[key]);
+    if (apartment11.hasOwnProperty(key)) {
+        keys11.push(key);
+        values11.push(apartment11[key]);
+    }
 
   // Change code above this line
 }
+
+console.log(keys11, values11);
+/*
+ Оголошена змінна 'advert'
+Значення змінної 'advert' - це об'єкт
+Оголошена змінна 'apartment'
+Значення змінної 'apartment' - це об'єкт
+Оголошена змінна 'keys'
+Значення змінної 'keys' - це масив ['descr', 'rating', 'price']
+Оголошена змінна 'values'
+Значення змінної 'values' - це масив ['descr', 'rating', 'price']
+Використовується цикл 'for...in'
+Всередині циклу 'for...in' використовується 'if' з перевіркою власних властивостей об'єкта 'apartment' 
+ */
+
+console.log('');
+console.log('tsk 3.12');
+
+/*
+Напиши функцію countProps(object), яка рахує і повертає кількість власних властивостей об'єкта в параметрі object.
+ Використовуй змінну propCount для зберігання кількості властивостей об'єкта.
+
+    Оголошена функція countProps(object)
+    Виклик countProps({}) повертає 0
+    Виклик countProps({ name: "Mango", age: 2 }) повертає 2
+    Виклик countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }) повертає 3
+    Функція підраховує тільки власні властивості об'єкта
+
+*/
+function countProps(object) {
+  let propCount = 0;
+  // Change code below this line
+    for (const key in object) { 
+        if (object.hasOwnProperty(key)) { propCount += 1; }
+    }
+  // Change code above this line
+  return propCount;
+}
+
+console.log(countProps({ name: "Mango", age: 2 }));
+console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));
+
+/*
+Оголошена функція countProps(object)
+Виклик countProps({}) повертає 0
+Виклик countProps({ name: 'Mango', age: 2 }) повертає 2
+Виклик countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }}) повертає 3
+Функція підраховує тільки власні властивості об'єкта
+*/
