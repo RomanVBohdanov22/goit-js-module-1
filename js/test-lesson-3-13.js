@@ -378,7 +378,7 @@ function getAllPropValues(propName) {
             //console.log(Object.values(productItem));
             for (const key in productItem) {
                 if (key === propName) collectionFromPropName.push(productItem[key]);
-             }
+             }            
         }
         
     }
@@ -427,8 +427,31 @@ const products20 = [
 
 function calculateTotalPrice(productName) {
   // Change code below this line
-
+    let itemsWithPrice = 0;
+    for (const productItem of products20) { 
+        if (productItem.name === productName)
+        { 
+            itemsWithPrice = productItem.price * productItem.quantity;
+        }
+        
+    }
+    return itemsWithPrice;
 
 
   // Change code above this line
 }
+
+console.log(calculateTotalPrice("Blaster"));
+console.log(calculateTotalPrice("Radar"));
+console.log(calculateTotalPrice("Droid"));
+console.log(calculateTotalPrice("Grip"));
+console.log(calculateTotalPrice("Scanner"));
+
+/*
+Оголошена функція calculateTotalPrice(productName)
+Виклик calculateTotalPrice('Radar') повертає 5200
+Виклик calculateTotalPrice('Droid') повертає 2800
+Виклик calculateTotalPrice('Grip') повертає 10800
+Виклик calculateTotalPrice('Scanner') повертає 8100
+Виклик calculateTotalPrice('Blaster') повертає 0
+*/
