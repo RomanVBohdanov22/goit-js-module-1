@@ -165,5 +165,53 @@ const apartment15 = {
   price: 2153,
 };
 // Change code below this line
-const keys15 = apartment;
-const values15 = apartment;
+const keys15 = Object.keys(apartment15);
+const values15 = Object.values(apartment15);
+
+console.log(keys15);
+console.log(values15);
+
+/*
+Оголошена змінна 'apartment'
+Значення змінної 'apartment' - це об'єкт
+Оголошена змінна 'keys'
+Значення змінної 'keys' - це масив ['descr', 'rating', 'price']
+Значення змінної 'keys' отримане за допомогою метода Object.keys()
+Оголошена змінна 'values'
+Значення змінної 'values' - це масив ['Spacious apartment in the city center', 4, 2153]
+Значення змінної 'values' отримане за допомогою метода Object.values()
+*/
+
+console.log('');
+console.log('tsk 3.16');
+
+//Задача: витрати на зарплату
+/*
+Напиши функцію countTotalSalary(salaries), яка приймає об'єкт зарплат, 
+де ім'я властивості - це ім'я співробітника, а значення властивості - це зарплата. 
+Функція повинна розрахувати загальну суму зарплат співробітників і повернути її. 
+Використовуй змінну totalSalary для зберігання загальної суми зарплати.
+
+    Оголошена функція countTotalSalary(salaries)
+    Виклик countTotalSalary({}) повертає 0
+    Виклик countTotalSalary({ mango: 100, poly: 150, alfred: 80 }) повертає 330
+    Виклик countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }) повертає 400
+    Функція враховує тільки власні властивості об'єкта
+
+*/
+
+function countTotalSalary16(salaries)
+{ 
+    let salaryAll = 0;
+    for (const valueOfsalary of Object.values(salaries)) { 
+        salaryAll += valueOfsalary;
+    }
+
+    return salaryAll;
+}
+//console.log(Object.values({ mango: 100, poly: 150, alfred: 80 }));
+console.log(countTotalSalary16({}));
+
+console.log(countTotalSalary16({ mango: 100, poly: 150, alfred: 80 }));
+
+console.log(countTotalSalary16({ kiwi: 200, poly: 50, ajax: 150 }));
