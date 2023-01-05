@@ -373,12 +373,90 @@ console.log(bookShelf.getBooks()); // ["Останнє королівство", 
 
 const bookShelf35 = {
   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  getBooks() {
+    return this.books;
+  },
   updateBook(oldName, newName) {
     // Change code below this line
-    const bookIndex = this.books.indexOf(bookName);
-    this.books.splice(bookIndex, 1);
+    const bookIndex = this.books.indexOf(oldName);
+    this.books.splice(bookIndex, 1, newName);
 
 
     // Change code above this line
   },
 };
+
+console.log(bookShelf35.getBooks());
+console.log(bookShelf35.updateBook("Haze", "Dungeon chronicles"));
+console.log(bookShelf35.getBooks());
+/*
+Оголошена змінна 'bookShelf'
+Значення змінної 'bookShelf' - це об'єкт
+Значення властивості `bookShelf.updateBook` - це метод об'єкта
+Після виклику методу `bookShelf.updateBook('Haze', 'Dungeon chronicles')`, значення властивості `books` - це масив `['The last kingdom', 'Dungeon chronicles', 'The guardian of dreams']`
+Після виклику методу `bookShelf.updateBook('The last kingdom', 'Dune')`, значення властивості `books` - це масив `['Dune', 'Haze', 'The guardian of dreams']`
+*/
+
+console.log('');
+console.log('tsk 3.36');
+//Задача. Крамниця зілля «У старої жаби»
+/*
+До нас звернулася власниця крамниці зілля «У старої жаби» і замовила програму для ведення інвентарю - додавання, видалення, пошуку та оновлення зілля. Додай об'єкту atTheOldToad властивість potions, значенням якої зроби порожній масив.
+
+    Оголошена змінна atTheOldToad
+    Значення змінної atTheOldToad - це об'єкт
+    Значення властивості atTheOldToad.potions - це масив []
+
+*/
+const atTheOldToad = {
+  // Change code below this line
+    potions: [],
+
+
+  // Change code above this line
+};
+
+console.log(atTheOldToad.potions);
+
+/*
+Оголошена змінна 'atTheOldToad'
+Значення змінної `atTheOldToad` - це об'єкт
+Значення властивості `atTheOldToad.potions` - це масив `[]`
+*/
+
+console.log('');
+console.log('tsk 3.37');
+
+//Задача. Отримуємо все зілля
+/*
+Додай об'єкту atTheOldToad метод getPotions(), який просто повертає значення властивості potions.
+
+    Оголошена змінна atTheOldToad
+    Значення змінної atTheOldToad - це об'єкт
+    Значення властивості atTheOldToad.potions - це масив ["Speed potion", "Dragon breath", "Stone skin"]
+    Значення властивості atTheOldToad.getPotions - це метод об'єкта
+    Виклик методу atTheOldToad.getPotions() повертає ["Speed potion", "Dragon breath", "Stone skin"]
+
+*/
+
+const atTheOldToad37 = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  // Change code below this line
+    getPotions() {
+    return this.potions;
+  },
+  // Change code above this line
+};
+
+console.log(atTheOldToad37.getPotions());
+
+/*
+Оголошена змінна 'atTheOldToad'
+Значення змінної `atTheOldToad` - це об'єкт
+Значення властивості `atTheOldToad.getPotions` - це метод об'єкта
+Значення властивості `atTheOldToad.potions` - це масив `['Speed potion', 'Dragon breath', 'Stone skin']`
+Виклик методу `atTheOldToad.getPotions()` повертає `['Speed potion', 'Dragon breath', 'Stone skin']
+*/
+
+console.log('');
+console.log('tsk 3.38');
