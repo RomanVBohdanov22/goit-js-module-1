@@ -54,6 +54,77 @@ multiply(1, 2, 3, 4);
 */
 
 // Change code below this line
-function add() {
+function add(...args) {
+    let summ = 0;
+    for (const argument of args) { summ += argument; }
+    return summ;
   // Change code above this line
 }
+
+console.log(add(15, 27));
+console.log(add(12, 4, 11, 48));
+console.log(add(32, 6, 13, 19, 8));
+console.log(add(74, 11, 62, 46, 12, 36));
+
+/*
+ Оголошена функція 'add'
+Функція `add` використовує параметр `args`
+Для збирання аргументів у змінну `args`, у підписі функції використовується синтаксис `...` (оператор `rest`)
+Виклик `add(15, 27)` повертає 42
+Виклик `add(12, 4, 11, 48)` повертає 75
+Виклик `add(32, 6, 13, 19, 8)` повертає 78
+Виклик `add(74, 11, 62, 46, 12, 36)` повертає 241
+*/
+
+console.log('');
+console.log('tsk 3.32');
+
+/*
+
+
+Операція ... (rest) також дозволяє зібрати в масив тільки ту частину аргументів, яка необхідна, 
+оголосивши параметри до «збирання».
+
+function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значення першого аргументу
+  console.log(secondNumber); // Значення другого аргументу
+  console.log(otherArgs); // Масив інших аргументів
+}
+
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);
+
+Всі агументи, для яких будуть оголошені параметри, передадуть їм свої значення, 
+інші аргументи будуть поміщені в масив. Операція rest збирає решту усіх аргументів,
+ а тому повинна бути останньою у підписі функції, інакше виникне помилка.
+
+*/
+/*
+Функція addOverNum() рахує суму всіх аргументів. Зміни параметри і тіло функції addOverNum()
+ таким чином, щоб вона рахувала суму тільки тих аргументів, які більші за задане число. 
+ Це число повинно бути першим параметром функції.
+
+    Оголошена функція addOverNum()
+    Виклик addOverNum(50, 15, 27) повертає 0
+    Виклик addOverNum(10, 12, 4, 11, 48, 10, 8) повертає 71
+    Виклик addOverNum(15, 32, 6, 13, 19, 8) повертає 51
+    Виклик addOverNum(20, 74, 11, 62, 46, 12, 36) повертає 218
+
+
+*/
+
+
+// Change code below this line
+function addOverNum(...args) {
+  let total = 0;
+
+  for (const arg of args) {
+    total += arg;
+  }
+
+  return total;
+  // Change code above this line
+}
+
+/* */
