@@ -116,15 +116,28 @@ multiply(1, 2, 3, 4);
 
 
 // Change code below this line
-function addOverNum(...args) {
+function addOverNum(firstNumber, ...args) {
   let total = 0;
 
   for (const arg of args) {
-    total += arg;
+    if (arg > firstNumber) total += arg;
   }
 
   return total;
   // Change code above this line
 }
 
-/* */
+console.log(addOverNum(50, 15, 27));
+console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+console.log(addOverNum(15, 32, 6, 13, 19, 8));
+console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
+/* 
+Оголошена функція 'addOverNum'
+Виклик addOverNum(50, 15, 27) повертає 0
+Виклик addOverNum(10, 12, 4, 11, 48, 10, 8) повертає 71
+Виклик addOverNum(15, 32, 6, 13, 19, 8) повертає 51
+Виклик addOverNum(20, 74, 11, 62, 46, 12, 36) повертає 218
+*/
+
+console.log('');
+console.log('tsk 3.33');
