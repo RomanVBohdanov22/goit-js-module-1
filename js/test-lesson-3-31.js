@@ -55,9 +55,11 @@ multiply(1, 2, 3, 4);
 
 // Change code below this line
 function add(...args) {
-    let summ = 0;
-    for (const argument of args) { summ += argument; }
-    return summ;
+  let summ = 0;
+  for (const argument of args) {
+    summ += argument;
+  }
+  return summ;
   // Change code above this line
 }
 
@@ -114,7 +116,6 @@ multiply(1, 2, 3, 4);
 
 */
 
-
 // Change code below this line
 function addOverNum(firstNumber, ...args) {
   let total = 0;
@@ -141,3 +142,242 @@ console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
 
 console.log('');
 console.log('tsk 3.33');
+
+//Задача. Масив збігів
+
+/*
+Функція findMatches() приймає довільну кількість аргументів. Першим аргументом 
+завжди буде масив чисел, а решта аргументів будуть просто числами.
+
+Доповни код функції таким чином, щоб вона повертала новий масив matches, 
+в якому будуть тільки ті аргументи, починаючи з другого, які є в масиві першого аргументу.
+
+Наприклад, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) повинна повернути масив [1, 2], 
+тому що тільки вони є в масиві першого аргументу.
+
+    Оголошена функція findMatches()
+    Виклик findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) повертає [1, 2]
+    Виклик findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) повертає [17, 89, 2]
+    Виклик findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) повертає [24, 9, 41]
+    Виклик findMatches([63, 11, 8, 29], 4, 7, 16) повертає []
+
+*/
+
+// Change code below this line
+function findMatches(tempArray, ...args) {
+  const matches = []; // Don't change this line
+  for (const item of args) {
+    if (tempArray.includes(item)) matches.push(item);
+  }
+  //console.log(temps);
+  //console.log(args);
+  // Change code above this line
+  return matches;
+}
+
+console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+console.log(findMatches([63, 11, 8, 29], 4, 7, 16));
+
+/*
+Оголошена функція 'findMatches'
+Виклик `findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)` повертає `[1, 2]`
+Виклик `findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2)` повертає `[17, 89, 2]`
+Виклик `findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41)` повертає `[24, 9, 41]`
+Виклик `findMatches([63, 11, 8, 29], 4, 7, 16)` повертає `[]`
+*/
+
+console.log('');
+console.log('tsk 3.34');
+
+/*
+
+
+Досі ми розглядали об'єкти тільки як сховища взаємопов'язаних даних, наприклад, 
+інформація про книгу тощо. Об'єкти-сховища, зазвичай, знаходяться в масиві таких 
+самих об'єктів, який є колекцією однотипних елементів.
+
+Об'єкти можуть зберігати не тільки дані, але і функції для роботи з цими даними - методи. 
+Якщо значення властивості - це функція, така властивість називається методом об'єкта.
+
+// ✅ Логічно і синтаксично згруповані сутності
+const bookShelf = {
+  books: ["Останнє королівство", "Страж снів"],
+  // Це метод об'єкта
+  getBooks() {
+    console.log("Цей метод буде повертати всі книги - властивість books");
+  },
+  // Це метод об'єкта
+  addBook(bookName) {
+    console.log("Цей метод буде додавати нову книгу у властивість books");
+  },
+};
+
+// Виклики методів
+bookShelf.getBooks();
+bookShelf.addBook("Нова книга");
+
+Такі об'єкти можна назвати «моделями». Вони пов'язують дані і методи для роботи з цими даними. 
+Наприклад, можна було оголосити змінну books і дві функції getBooks() і addBook(bookName),
+ але тоді це були б три незалежні сутності без явного синтаксичного, і зі слабким логічним зв'язком.
+
+// ❌ Слабкопозв'язані, незалежні сутності
+const books = [];
+function getBooks() {}
+function addBook() {}
+
+
+*/
+/*
+Додай об'єкту bookShelf ще два методи, які поки що будуть повертати просто рядки 
+за аналогією з getBooks() і addBook(bookName).
+
+Метод removeBook(bookName) буде видаляти книгу за назвою. 
+Повертає рядок "Deleting book <назва книги>", де <назва книги> - це значення параметра bookName.
+
+Метод updateBook(oldName, newName) буде оновлювати назву книги на нову. 
+Повертає рядок "Updating book <стара назва> to <нова назва>", де <стара назва> і <нова назва> - 
+це значення параметрів oldName і newName відповідно.
+
+    Оголошена змінна bookShelf
+
+    Значення змінної bookShelf - це об'єкт
+
+    Значення властивості bookShelf.getBooks - це метод об'єкта
+
+    Виклик методу bookShelf.getBooks() повертає рядок "Returning all books"
+
+    Значення властивості bookShelf.addBook - це метод об'єкта
+
+    Виклик методу bookShelf.addBook("Haze") повертає рядок "Adding book Haze"
+
+    Значення властивості bookShelf.removeBook - це метод об'єкта
+
+    Виклик методу bookShelf.removeBook("Red sunset") повертає рядок "Deleting book Red sunset"
+
+    Значення властивості bookShelf.updateBook - це метод об'єкта
+
+    Виклик методу bookShelf.updateBook("Sands of dune", "Dune") повертає рядок "Updating book Sands of dune to Dune"
+
+*/
+
+const bookShelf = {
+  // Change code below this line
+  books: ['The last kingdom', 'The guardian of dreams'],
+  getBooks() {
+    return 'Returning all books';
+  },
+  addBook(bookName) {
+    //this.books.push(bookName);
+    return `Adding book ${bookName}`;
+  },
+  removeBook(bookName) {
+    //this.books.pop(bookName);
+    return `Deleting book ${bookName}`;
+  },
+  updateBook(bookName1, bookName2) {
+    return `Updating book ${bookName1} to ${bookName2}`;
+  },
+  // Change code above this line
+};
+
+console.log(bookShelf.getBooks());
+console.log(bookShelf.addBook("Haze"));
+console.log(bookShelf.removeBook("Red sunset"));
+console.log(bookShelf.updateBook("Sands of dune", "Dune"));
+
+/*
+ Оголошена змінна 'bookShelf'
+Значення змінної 'bookShelf' - це об'єкт
+Значення властивості `bookShelf.getBooks` - це метод об'єкта
+Виклик методу `bookShelf.getBooks()` повертає рядок 'Returning all books'
+Значення властивості `bookShelf.addBook` - це метод об'єкта
+Виклик методу `bookShelf.addBook('Haze')` повертає рядок 'Adding book Haze'
+Значення властивості `bookShelf.removeBook` - це метод об'єкта
+Виклик методу `bookShelf.removeBook('Red sunset')` повертає рядок 'Deleting book Red sunset'
+Значення властивості `bookShelf.updateBook` - це метод об'єкта
+Виклик методу `bookShelf.updateBook('Sands of dune', 'Dune')` повертає рядок 'Updating book Sands of Dune to Dune
+*/
+
+console.log('');
+console.log('tsk 3.35');
+/*
+
+
+Методи використовуються для роботи з властивостями об'єкта, їх зміни. Для доступу до об'єкта в методі 
+використовується не ім'я змінної, наприклад bookShelf, а ключове слово this - контекст. 
+Значенням this буде об'єкт перед «крапкою», тобто об'єкт, який викликав цей метод, у нашому випадку - 
+це посилання на об'єкт bookShelf.
+
+const bookShelf = {
+  books: ["Останнє королівство"],
+  getBooks() {
+    console.log(this);
+  },
+};
+
+// Перед крапкою знаходиться об'єкт bookShelf,
+// тому, викликаючи метод, this буде зберігати посилання на нього.
+bookShelf.getBooks(); // {books: ["Останнє королівство"], getBooks: f}
+
+Для того щоб отримати доступ до властивостей об'єкта в методах, ми звертаємось до нього через this і далі, 
+стандартно - «через крапку» до властивостей.
+
+const bookShelf = {
+  books: ["Останнє королівство"],
+  getBooks() {
+    return this.books;
+  },
+  addBook(bookName) {
+    this.books.push(bookName);
+  },
+  removeBook(bookName) {
+    const bookIndex = this.books.indexOf(bookName);
+    this.books.splice(bookIndex, 1);
+  },
+};
+
+console.log(bookShelf.getBooks()); // ["Останнє королівство"]
+bookShelf.addBook("Імла");
+bookShelf.addBook("Страж снів");
+console.log(bookShelf.getBooks()); // ["Останнє королівство", "Імла", "Страж снів"]
+bookShelf.removeBook("Імла");
+console.log(bookShelf.getBooks()); // ["Останнє королівство", "Страж снів"]
+
+Логічно замислитися - чому б не використовувати ім'я об'єкта у зверненні до властивостей, адже ми явно не 
+збираємося його змінювати. Справа в тому, що ім'я об'єкта - річ ненадійна, методи одного об'єкта можна копіювати 
+в інший (з іншим ім'ям), а в майбутньому дізнаємось, що часто під час створення об'єкта, ми наперед зовсім не знаємо імені.
+ Використання this гарантує, що метод працює саме з тим об'єктом, який його викликав.
+
+*/
+
+/*
+Доповни метод updateBook(oldName, newName) таким чином, щоб він змінював назву книги з oldName на newName
+ у властивості books. Використовуй indexOf() для того, щоб знайти потрібний елемент масиву, і splice()
+  для того, щоб замінити цей елемент.
+
+    Оголошена змінна bookShelf
+
+    Значення змінної bookShelf - це об'єкт
+
+    Значення властивості bookShelf.updateBook - це метод об'єкта
+
+    Після виклику методу bookShelf.updateBook("Haze", "Dungeon chronicles"), значення 
+    властивості books - це масив ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+
+    Після виклику методу bookShelf.updateBook("The last kingdom", "Dune"), значення 
+    властивості books - це масив ["Dune", "Haze", "The guardian of dreams"]
+
+*/
+
+const bookShelf35 = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    // Change code below this line
+
+
+
+    // Change code above this line
+  },
+};
