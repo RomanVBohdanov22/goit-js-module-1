@@ -460,3 +460,53 @@ console.log(atTheOldToad37.getPotions());
 
 console.log('');
 console.log('tsk 3.38');
+
+//Задача: додаємо нове зілля
+
+/*
+Доповни метод addPotion(potionName) таким чином, щоб він додавав зілля potionName в кінець масиву зілля у властивості potions.
+
+    Оголошена змінна atTheOldToad
+    Значення змінної atTheOldToad - це об'єкт
+    Значення властивості atTheOldToad.potions - це масив ["Speed potion", "Dragon breath", "Stone skin"]
+    Значення властивості atTheOldToad.addPotion - це метод об'єкта
+    Після першого виклику методу atTheOldToad.addPotion("Invisibility"), 
+    у властивості potions буде масив ["Speed potion", "Dragon breath", "Stone skin", "Invisibility"]
+    Після другого виклику методу atTheOldToad.addPotion("Power potion"), 
+    у властивості potions буде масив ["Speed potion", "Dragon breath", "Stone skin", "Invisibility", "Power potion"]
+
+*/
+
+const atTheOldToad38 = {
+    potions: ["Speed potion", "Dragon breath", "Stone skin"],
+    getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    // Change code below this line
+      this.potions.push(potionName);
+
+
+    // Change code above this line
+  },
+};
+
+console.log(atTheOldToad38.getPotions());
+console.log(atTheOldToad38.addPotion("Invisibility"));
+console.log(atTheOldToad38.getPotions());
+console.log(atTheOldToad38.addPotion("Power potion"));
+console.log(atTheOldToad38.getPotions());
+
+/*
+ Оголошена змінна 'atTheOldToad'
+Значення змінної `atTheOldToad` - це об'єкт
+Значення властивості `atTheOldToad.addPotion` - це метод об'єкта
+Значення властивості `atTheOldToad.potions` - це масив `['Speed potion', 'Dragon breath', 'Stone skin']`
+Після першого виклику методу `atTheOldToad.addPotion('Invisibility')`, 
+у властивості `potions` буде масив `['Speed potion', 'Dragon breath', 'Stone skin', 'Invisibility']`
+Після другого виклику методу `atTheOldToad.addPotion('Power potion')`, 
+у властивості `potions` буде масив `['Speed potion', 'Dragon breath', 'Stone skin', 'Invisibility', 'Power potion']`
+*/
+
+console.log('');
+console.log('tsk 3.39');
