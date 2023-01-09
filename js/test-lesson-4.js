@@ -162,7 +162,7 @@ registerGuest("Poly", function notify(name) {
     функція eatPizza з єдиним параметром pizzaName
 
 */
-/*
+
 function makePizza03(pizzaName, callback) {
   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
   callback(pizzaName);
@@ -173,4 +173,94 @@ makePizza03("Royal Grand", function deliverPizza(pizzaName) {
 });
 // Change code below this line
 
-makePizza03("Ultracheese");*/
+makePizza03("Ultracheese", function eatPizza(pizzaName)
+{
+   console.log(`Eating pizza ${pizzaName}.`); 
+});
+
+/*
+Оголошена функція `makePizza`
+Функція `makePizza` приймає два параметри
+
+    Другим аргументом під час виклику `makePizza('Ultracheese')` 
+    передана функція `eatPizza` з єдиним параметром `pizzaName`
+
+Результат виконання коду:
+
+Pizza Royal Grand is being prepared, please wait...
+Delivering pizza Royal Grand.
+Pizza Ultracheese is being prepared, please wait...
+Eating pizza Ultracheese.
+*/
+
+console.log('');
+console.log('tsk 4.04');
+
+/*
+
+
+Функція може приймати довільну кількість колбеків. Наприклад, 
+уявімо, що ми пишемо логіку прийняття дзвінків для телефону. 
+Програма повинна увімкнути автовідповідач, якщо абонент - недоступний, 
+або з'єднати дзвінок в іншому випадку. Доступність абонента будемо імітувати
+ генератором випадкового числа, щоб між різними викликами функції можна було отримати різні результати.
+
+function processCall(recipient) {
+  // Імітуємо доступність абонента випадковим числом
+  const isRecipientAvailable = Math.random() > 0.5;
+
+  if (!isRecipientAvailable) {
+    console.log(`Абонент ${recipient} недоступний, залиште повідомлення.`);
+    // Логіка активації автовідповідача
+  } else {
+    console.log(`З'єднуємо з ${recipient}, очікуйте...`);
+    // Логіка прийняття дзвінка
+  }
+}
+
+processCall("Mango");
+
+Проблема такого підходу полягає у тому, що функція processCall робить 
+занадто багато і прив'язує перевірку доступності абонента до двох заздалегідь 
+визначених дій. Що буде, якщо в майбутньому, замість автовідповідача, потрібно буде залишати голограму?
+
+Ми могли б написати функцію таким чином, щоб вона повертала якесь значення, 
+і потім за результатом її виконання, робити перевірки і виконувати потрібний код. 
+Але перевірки не стосуються зовнішнього коду і будуть його засмічувати.
+
+Виконаємо рефакторинг функції таким чином, щоб вона приймала два колбеки onAvailable
+ і onNotAvailable, і викликала їх за умовою.
+
+function processCall(recipient, onAvailable, onNotAvailable) {
+  // Імітуємо доступність абонента випадковим числом
+  const isRecipientAvailable = Math.random() > 0.5;
+
+  if (!isRecipientAvailable) {
+    onNotAvailable(recipient);
+    return;
+  }
+
+  onAvailable(recipient);
+}
+
+function takeCall(name) {
+  console.log(`З'єднуємо з ${name}, очікуйте...`);
+  // Логіка прийняття дзвінка
+}
+
+function activateAnsweringMachine(name) {
+  console.log(`Абонент ${name} недоступний, залиште повідомлення.`);
+  // Логіка активації автовідповідача
+}
+
+function leaveHoloMessage(name) {
+  console.log(`Абонент ${name} недоступний, записуємо голограму.`);
+  // Логіка запису голограми
+}
+
+processCall("Mango", takeCall, activateAnsweringMachine);
+processCall("Poly", takeCall, leaveHoloMessage);
+
+Колбеки застосовуються для обробки дій користувача на сторінці, на момент обробки запитів на сервер, виконання заздалегідь невідомих функцій тощо. У цьому і полягає їх суть - це функції, призначені для відкладеного виконання.
+
+*/
