@@ -108,7 +108,69 @@ function makePizza02(pizzaName) {
   return `Pizza ${pizzaName} is being prepared, please wait...`;
 }
 
-// Chande code below this line
-function makeMessage02(pizzaName) {
-  return;
+// Change code below this line
+function makeMessage02(pizzaName, callback) {
+   
+  return  callback(pizzaName);
 }
+
+console.log(makeMessage02("Royal Grand", makePizza02));
+console.log(makeMessage02("Ultracheese", deliverPizza02));
+
+/*Оголошена функція `deliverPizza`
+Оголошена функція `makePizza`
+Оголошена функція `makeMessage`
+Функція `makeMessage` приймає два параметри, названі відповідно до завдання, `pizzaName` і `callback`
+Виклик `makeMessage('Royal Grand', makePizza)` повертає рядок 'Pizza Royal Grand is being prepared, please wait...'
+Виклик `makeMessage('Ultracheese', deliverPizza)` повертає рядок 'Delivering Ultracheese pizza' */
+
+console.log('');
+console.log('tsk 4.03');
+
+/*
+
+
+Якщо колбек-функція - маленька, і потрібна тільки для передачі аргументом, 
+її можна оголосити безпосередньо на момент виклику функції, в яку передаємо колбек.
+Така функція буде доступна тільки у якості значення параметра і більше ніде в коді.
+
+function registerGuest(name, callback) {
+  console.log(`Реєструємо гостя ${name}.`);
+  callback(name);
+}
+
+// Передаємо інлайн-функцію greet у якості колбека
+registerGuest("Mango", function greet(name) {
+  console.log(`Ласкаво просимо ${name}.`);
+});
+
+// Передаємо інлайн-функцію notify у якості колбека
+registerGuest("Poly", function notify(name) {
+  console.log(`Шановний(а) ${name}, ваш номер буде готовий за 30 хвилин.`);
+});
+
+
+*/
+
+/*
+Доповни другий виклик функції makePizza(pizzaName, callback), передавши
+ другим аргументом інлайн колбек-функцію eatPizza(pizzaName), яка логує рядок "Eating pizza <назва піци>".
+
+    Оголошена функція makePizza
+    Функція makePizza приймає два параметри
+    Другим аргументом під час виклику makePizza("Ultracheese") передана 
+    функція eatPizza з єдиним параметром pizzaName
+
+*/
+/*
+function makePizza03(pizzaName, callback) {
+  console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+  callback(pizzaName);
+}
+
+makePizza03("Royal Grand", function deliverPizza(pizzaName) {
+  console.log(`Delivering pizza ${pizzaName}.`);
+});
+// Change code below this line
+
+makePizza03("Ultracheese");*/
