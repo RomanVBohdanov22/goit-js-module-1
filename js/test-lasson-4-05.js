@@ -216,3 +216,163 @@ getCommonElements([11,21,24,24,18,24,11,11,8,16,9,22,22,16,21,23,7,14,22,11,17,1
 console.log('');
 console.log('tsk 4.08');
 
+/*
+
+
+Стрілочні функції мають скорочений, лаконічніший синтаксис, що зменшує обсяг коду, особливо коли функція маленька 
+або якщо вона використовується як колбек.
+
+Усі стрілки створюються як функціональний вираз, і якщо функція - не анонімна, її необхідно присвоювати змінній.
+
+// Звичайне оголошення функції
+function classicAdd(a, b, c) {
+  return a + b + c;
+}
+
+// Те саме стрілочною функцією
+const arrowAdd = (a, b, c) => {
+  return a + b + c;
+};
+
+Ключове слово function не використовується, замість цього відразу зазначається оголошення параметрів, 
+після нього - символ => і тіло функції.
+
+Якщо параметрів декілька, то вони перераховуються через кому в круглих дужках, між знаками рівності = і стрілкою =>.
+
+const add = (a, b, c) => {
+  return a + b + c;
+};
+
+Якщо параметр один, його можна оголошувати без круглих дужок.
+
+const add = a => {
+  return a + 5;
+};
+
+Якщо параметри відсутні, то обов'язково повинні бути порожні круглі дужки.
+
+const greet = () => {
+  console.log("Привіт!");
+};
+*/
+
+/*
+Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона була оголошена як стрілочна.
+
+    Оголошена змінна calculateTotalPrice
+    Змінній calculateTotalPrice присвоєна стрілочна функція з параметрами (quantity, pricePerItem)
+    Виклик calculateTotalPrice(5, 100) повертає 500
+    Виклик calculateTotalPrice(8, 60) повертає 480
+    Виклик calculateTotalPrice(3, 400) повертає 1200
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+*/
+
+// Change code below this line
+
+function calculateTotalPrice08(quantity, pricePerItem) {
+  // Change code above this line
+  return quantity * pricePerItem;
+}
+
+console.log(calculateTotalPrice08(5, 100));
+console.log(calculateTotalPrice08(8, 60));
+console.log(calculateTotalPrice08(3, 400));
+console.log('');
+
+const calculateTotalPrice008 = (quantity, pricePerItem) => { return quantity * pricePerItem; };
+
+console.log(calculateTotalPrice008(5, 100));
+console.log(calculateTotalPrice008(8, 60));
+console.log(calculateTotalPrice008(3, 400));
+console.log('');
+
+const calculateTotalPrice080 = (quantity, pricePerItem) =>  quantity * pricePerItem; 
+
+console.log(calculateTotalPrice080(5, 100));
+console.log(calculateTotalPrice080(8, 60));
+console.log(calculateTotalPrice080(3, 400));
+console.log('');
+
+/*
+Оголошена змінна `calculateTotalPrice`
+Змінній `calculateTotalPrice` присвоєна стрілочна функція з параметрами `(quantity, pricePerItem)`
+Виклик `calculateTotalPrice(5, 100)` повертає `500`
+Виклик `calculateTotalPrice(8, 60)` повертає `480`
+Виклик `calculateTotalPrice(3, 400)` повертає `1200`
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення.
+Результатом виклику функції calculateTotalPrice(11, 12) буде 132
+*/
+
+console.log('');
+console.log('tsk 4.09');
+
+/*
+
+
+У стрілочної функції після символу => знаходиться її тіло. Існує два варіанти: з фігурними дужками і без них.
+
+const add = (a, b, c) => {
+  console.log(a, b, c);
+  return a + b + c;
+};
+
+Якщо є фігурні дужки, і функція повинна повертати якесь значення, необхідно явно поставити return. 
+Це називається явне повернення (explicit return). Такий синтаксис використовується у разі, якщо в тілі функції 
+потрібно виконати ще якісь інструкції, крім повернення значення.
+
+const add = (a, b, c) => a + b + c;
+
+Якщо фігурні дужки відсутні, то повертається результат виразу, який стоїть після =>. Це називається неявне 
+повернення (implicit return). У прикладі повернеться результат виразу додавання параметрів a, b і c.
+
+Синтаксис неявного повернення суттєво скорочує «шум» оголошення функції з тілом і виразом, що повертається, 
+але доречний тільки тоді, коли в тілі функції не потрібно виконувати жодних додаткових інструкцій, крім повернення значення.
+
+// До
+function classicAdd(a, b, c) {
+  return a + b + c;
+}
+
+// Після
+const arrowAdd = (a, b, c) => a + b + c;
+
+
+*/
+/*
+Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона використовувала неявне повернення.
+
+    Оголошена змінна calculateTotalPrice
+    Змінній calculateTotalPrice присвоєна стрілочна функція з параметрами (quantity, pricePerItem)
+    У функції використане неявне повернення
+    Виклик calculateTotalPrice(5, 100) повертає 500
+    Виклик calculateTotalPrice(8, 60) повертає 480
+    Виклик calculateTotalPrice(3, 400) повертає 1200
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+
+*/
+
+/*const calculateTotalPrice09 = (quantity, pricePerItem) => {
+  return quantity * pricePerItem;
+};*/
+
+const calculateTotalPrice09 = (quantity, pricePerItem) => quantity * pricePerItem; 
+console.log(calculateTotalPrice09(5, 100));
+console.log(calculateTotalPrice09(8, 60));
+console.log(calculateTotalPrice09(3, 400));
+console.log('');
+
+/*
+Оголошена змінна `calculateTotalPrice`
+Змінній `calculateTotalPrice` присвоєна стрілочна функція з параметрами `(quantity, pricePerItem)`
+У функції `calculateTotalPrice` використане неявне повернення
+Виклик `calculateTotalPrice(5, 100)` повертає `500`
+Виклик `calculateTotalPrice(8, 60)` повертає `480`
+Виклик `calculateTotalPrice(3, 400)` повертає `1200`
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення.Результатом 
+виклику функції calculateTotalPrice(22, 21) буде 462
+*/
+
+console.log('');
+console.log('tsk 4.10');
