@@ -376,3 +376,77 @@ console.log('');
 
 console.log('');
 console.log('tsk 4.10');
+/*
+
+
+Анонімні стрілочні функції відмінно підходять як колбеки для перебираючих методів масиву завдяки 
+коротшому синтаксису оголошення, особливо, якщо не потрібне тіло функції.
+
+const numbers = [5, 10, 15, 20, 25];
+
+// Оголошення функції
+numbers.forEach(function (number, index) {
+  console.log(`Індекс ${index}, значення ${number}`);
+});
+
+// Анонімна стрілочна функція
+numbers.forEach((number, index) => {
+  console.log(`Індекс ${index}, значення ${number}`);
+});
+
+Стрілочну колбек-функцію також можна оголошувати окремо і передавати на неї посилання. Це варто робити, 
+якщо одна функція використовується у декількох місцях програми або якщо вона громіздка.
+
+const numbers = [5, 10, 15, 20, 25];
+
+const logMessage = (number, index) => {
+  console.log(`Індекс ${index}, значення ${number}`);
+};
+
+numbers.forEach(logMessage);
+
+
+*/
+/*
+Виконай рефакторинг функції calculateTotalPrice(orderedItems), замінивши її оголошення на стрілочну функцію. 
+Заміни колбек-функцію, передану в метод forEach(), на стрілочну функцію.
+
+    Оголошена змінна calculateTotalPrice
+    Змінній calculateTotalPrice присвоєна стрілочна функція з параметром (orderedItems)
+    Для перебирання масиву orderedItems використаний метод forEach
+    Колбек для методу forEach - це стрілочна функція
+    Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+    Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+    Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+*/
+
+// Change code below this line
+
+const calculateTotalPriceA = orderedItems => { 
+    let totalPrice = 0;
+    orderedItems.forEach(item => {
+        totalPrice += item;
+    });
+    return totalPrice;
+}
+/*
+function calculateTotalPriceA(orderedItems) {
+  let totalPrice = 0;
+
+  orderedItems.forEach(function (item) {
+    totalPrice += item;
+  });
+
+  return totalPrice;
+}*/
+// Change code above this line
+
+console.log(calculateTotalPriceA([12, 85, 37, 4]));
+console.log(calculateTotalPriceA([164, 48, 291]));
+console.log(calculateTotalPriceA([412, 371, 94, 63, 176]));
+
+
+console.log('');
+console.log('tsk 4.11');
