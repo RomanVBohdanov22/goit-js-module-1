@@ -693,3 +693,120 @@ console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
 Виклик функції з випадковими, але валідними аргументами, повертає правильне значення.Результатом виклику 
 функції changeEven([20,6,19,5,8], 5 )) буде [25,11,19,5,13]
 */
+
+console.log('');
+console.log('tsk 4.14');
+
+/*
+
+Більшість перебираючих методів масиву - це чисті функції. Вони створюють новий масив, 
+заповнюють його, застосовуючи до значення кожного елемента зазначену колбек-функцію, після чого повертають цей новий масив.
+
+Метод map(callback) використовується для трансформації масиву. Він викликає колбек-функцію 
+для кожного елемента вихідного масиву, а результат її роботи записує у новий масив, який і буде результатом виконання методу.
+
+масив.map((element, index, array) => {
+  // Тіло колбек-функції
+});
+
+    Поелементо перебирає оригінальний масив.
+    Не змінює оригінальний масив.
+    Результат роботи колбек-функції записується у новий масив.
+    Повертає новий масив однакової довжини.
+
+Його можна використовувати для того, щоб змінити кожен елемент масиву. Оригінальний масив 
+використовується як еталон, на основі якого можна зробити іншу колекцію.
+
+const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+const planetsInUpperCase = planets.map(planet => planet.toUpperCase());
+console.log(planetsInUpperCase); // ["EARTH", "MARS", "VENUS", "JUPITER"]
+
+const planetsInLowerCase = planets.map(planet => planet.toLowerCase());
+console.log(planetsInLowerCase); // ["earth", "mars", "venus", "jupiter"]
+
+// Оригінальний масив не змінився
+console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
+
+Використання анонімних стрілочних функцій з неявним поверненням суттєво скорочує «шум» оголошення 
+колбек-функції, що робить код чистішим і простішим для сприйняття.
+*/
+/*
+Доповни код таким чином, щоб у змінній planetsLengths вийшов масив довжин назв планет. Обов'язково використовуй метод map().
+
+    Оголошена змінна planets
+    Значення змінної planets - це масив ["Earth", "Mars", "Venus", "Jupiter"]
+    Оголошена змінна planetsLengths
+    Значення змінної planetsLengths - це масив [5, 4, 5, 7]
+    Для перебирання масиву планет використаний метод map()
+*/
+
+const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// Change code below this line
+const planetsLengths = planets.map(planets => planets.length);
+
+console.log(planetsLengths);
+
+/*
+ Оголошена змінна `planets`
+Оголошена змінна `planetsLengths`
+Значення змінної `planets` - це масив `['Earth', 'Mars', 'Venus', 'Jupiter']`
+Значення змінної `planetsLengths` - це масив `[5, 4, 5, 7]`
+Для перебирання масиву планет використаний метод `map()`
+*/
+
+console.log('');
+console.log('tsk 4.15');
+
+/*
+Ми вже знаємо, що повсякденне завдання - це маніпуляція масивом об'єктів. Наприклад, отримати 
+масив значень властивості з усіх об'єктів. У нас є масив студентів, а потрібно отримати окремий масив їхніх імен.
+
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+];
+
+const names = students.map(student => student.name);
+console.log(names); // ["Mango", "Poly", "Ajax", "Kiwi", "Houston"]
+
+Використовуючи метод map(), ми можемо перебрати масив об'єктів, і в колбек-функції повернути 
+значення властивості кожного з них.
+*/
+/*
+Використовуючи метод map(), зроби так, щоб у змінній titles вийшов масив назв книг (властивість title) 
+з усіх об'єктів масиву books.
+
+    Оголошена змінна books
+    Значення змінної books - це масив
+    Оголошена змінна titles
+    Значення змінної titles - це масив ["The Last Kingdom", "Beside Still Waters", "The Dream of a Ridiculous Man", 
+    "Redder Than Blood", "Enemy of God"]
+    Для перебирання масиву books використовується метод map() як чиста функція
+*/
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const titles = books;
