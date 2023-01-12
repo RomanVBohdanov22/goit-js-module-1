@@ -470,6 +470,15 @@ console.log('tsk 4.11');
 */
 
 // Change code below this line
+const filterArrayB = (numbers, value) => {
+  const filteredNumbers = [];
+
+  numbers.forEach( (number) => {
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  });
+/*
 function filterArrayB(numbers, value) {
   const filteredNumbers = [];
 
@@ -479,6 +488,102 @@ function filterArrayB(numbers, value) {
     }
   });
 
+*/
   // Change code above this line
   return filteredNumbers;
 }
+
+console.log(filterArrayB([1, 2, 3, 4, 5], 3));
+console.log(filterArrayB([1, 2, 3, 4, 5], 4));
+console.log(filterArrayB([1, 2, 3, 4, 5], 5));
+console.log(filterArrayB([12, 24, 8, 41, 76], 38));
+console.log(filterArrayB([12, 24, 8, 41, 76], 20));
+
+/*
+ Оголошена змінна `filterArray`
+Змінній `filterArray` присвоєна стрілочна функція з параметрами `(numbers, value)`
+Для перебирання масиву `numbers` використаний метод `forEach`
+Колбек для методу `forEach` - це стрілочна функція
+Виклик функції `filterArray([1, 2, 3, 4, 5], 3)` повертає `[4, 5]`
+Виклик функції `filterArray([1, 2, 3, 4, 5], 4)` повертає `[5]`
+Виклик функції `filterArray([1, 2, 3, 4, 5], 5)` повертає `[]`
+Виклик функції `filterArray([12, 24, 8, 41, 76], 38)` повертає `[41, 76]`
+Виклик функції `filterArray([12, 24, 8, 41, 76], 20)` повертає `[24, 41, 76]`
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення.
+Результатом виклику функції filterArray([21,8,21,21,10,13,6,21,5,15,18,13,6,18,5,10], 15) буде [21,21,21,21,18,18]
+*/
+
+
+console.log('');
+console.log('tsk 4.12');
+//Задача. Спільні елементи 2.0
+
+/*
+Заміни оголошення функції getCommonElements() і колбек для методу forEach() на стрілочні функції.
+
+    Оголошена змінна getCommonElements.
+    Змінній getCommonElements присвоєна стрілочна функція з параметрами (firstArray, secondArray)
+    Для перебирання масиву firstArray використаний метод forEach
+    Колбек для методу forEach - це стрілочна функція
+    Виклик getCommonElements([1, 2, 3], [2, 4]) повертає [2]
+    Виклик getCommonElements([1, 2, 3], [2, 1, 17, 19]) повертає [1, 2]
+    Виклик getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) повертає [12, 27, 3]
+    Виклик getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) повертає [10, 30, 40]
+    Виклик getCommonElements([1, 2, 3], [10, 20, 30]) повертає []
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+*/
+
+
+/*
+// Change code below this line
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+
+  firstArray.forEach(function (element) {
+    if (secondArray.includes(element)) {
+      commonElements.push(element);
+    }
+  });
+
+  // Change code above this line
+  return commonElements;
+}
+*/
+// Change code below this line
+const getCommonElementsC = (firstArray, secondArray) => {
+  const commonElements = [];
+
+  firstArray.forEach(element => {
+    if (secondArray.includes(element)) {
+      commonElements.push(element);
+    }
+  });
+
+  // Change code above this line
+  return commonElements;
+}
+
+console.log(getCommonElementsC([1, 2, 3], [2, 4]));
+console.log(getCommonElementsC([1, 2, 3], [2, 1, 17, 19]));
+
+console.log(getCommonElementsC([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+console.log(getCommonElementsC([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+console.log(getCommonElementsC([1, 2, 3], [10, 20, 30]));
+
+/*
+Оголошена змінна `getCommonElements`
+Змінній `getCommonElements` присвоєна стрілочна функція з параметрами `(firstArray, secondArray)`
+Для перебирання масиву `firstArray` використаний метод `forEach`
+Колбек для методу `forEach` - це стрілочна функція
+Виклик `getCommonElements([1, 2, 3], [2, 4])` повертає `[2]`
+Виклик `getCommonElements([1, 2, 3], [2, 1, 17, 19])` повертає `[1, 2]`
+Виклик `getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])` повертає `[12, 27, 3]`
+Виклик `getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])` повертає `[10, 30, 40]`
+Виклик `getCommonElements([1, 2, 3], [10, 20, 30])` повертає `[]`
+
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення.
+    Результатом виклику функції getCommonElements([16,23,8,15,11,12,22,10,8,23,12,14,6,22,10,11,20,14], 
+        [16,11,9,18,11,15,13,23,22,17,19,20,14,20,10,19,15,22]) буде [16,23,15,11,22,10,23,14,22,10,11,20,14]
+
+*/
