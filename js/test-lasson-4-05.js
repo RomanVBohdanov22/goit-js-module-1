@@ -58,9 +58,9 @@ function calculateTotalPrice(orderedItems) {
   /*for (let i = 0; i < orderedItems.length; i += 1) {
     totalPrice += orderedItems[i];
   }*/
-    orderedItems.forEach(function(number) {
-        totalPrice += number;
-    });
+  orderedItems.forEach(function (number) {
+    totalPrice += number;
+  });
 
   // Change code above this line
   return totalPrice;
@@ -78,7 +78,6 @@ numbers.forEach(function (number, index) {
   console.log(`Індекс ${index}, значення ${number}`);
 });*/
 
-
 /*
 function greet(name) {
   return `Ласкаво просимо ${name}.`;
@@ -90,7 +89,6 @@ console.log(greet("Манго")); // Ласкаво просимо Манго.
 // Виводимо функцію greet у консоль, не викликаючи її
 console.log(greet); // ƒ greet() { return `Ласкаво просимо ${name}.`; }*/
 
-
 /*  Оголошена функція `calculateTotalPrice(orderedItems)`
 Для перебирання масиву `orderedItems` використаний метод `forEach`
 Виклик функції `calculateTotalPrice([12, 85, 37, 4])` повертає `138`
@@ -98,8 +96,6 @@ console.log(greet); // ƒ greet() { return `Ласкаво просимо ${name
 Виклик функції `calculateTotalPrice([412, 371, 94, 63, 176])` повертає `1116`
 Виклик функції з випадковими, але валідними аргументами, повертає правильне значення.
 Результатом виклику функції calculateTotalPrice([6,10,21,10,13,8]) буде число 68 */
-
-
 
 console.log('');
 console.log('tsk 4.06');
@@ -125,14 +121,13 @@ console.log('tsk 4.06');
 function filterArray(numbers, value) {
   const filteredNumbers = [];
   // Change code below this line
-    numbers.forEach(function(number) { 
-        if (number > value) filteredNumbers.push(number);
-    });
+  numbers.forEach(function (number) {
+    if (number > value) filteredNumbers.push(number);
+  });
 
   // Change code above this line
   return filteredNumbers;
 }
-
 
 console.log(filterArray([1, 2, 3, 4, 5], 3));
 console.log(filterArray([1, 2, 3, 4, 5], 4));
@@ -179,10 +174,9 @@ function getCommonElements(firstArray, secondArray) {
   const commonElements = [];
   // Change code below this line
 
-    firstArray.forEach(function(pickValue)
-    { 
-        if (secondArray.includes(pickValue)) commonElements.push(pickValue);
-    });
+  firstArray.forEach(function (pickValue) {
+    if (secondArray.includes(pickValue)) commonElements.push(pickValue);
+  });
   /*for (let i = 0; i < firstArray.length; i += 1) {
     if (secondArray.includes(firstArray[i])) {
       commonElements.push(firstArray[i]);
@@ -192,7 +186,6 @@ function getCommonElements(firstArray, secondArray) {
   return commonElements;
   // Change code above this line
 }
-
 
 console.log(getCommonElements([1, 2, 3], [2, 4]));
 console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
@@ -280,14 +273,16 @@ console.log(calculateTotalPrice08(8, 60));
 console.log(calculateTotalPrice08(3, 400));
 console.log('');
 
-const calculateTotalPrice008 = (quantity, pricePerItem) => { return quantity * pricePerItem; };
+const calculateTotalPrice008 = (quantity, pricePerItem) => {
+  return quantity * pricePerItem;
+};
 
 console.log(calculateTotalPrice008(5, 100));
 console.log(calculateTotalPrice008(8, 60));
 console.log(calculateTotalPrice008(3, 400));
 console.log('');
 
-const calculateTotalPrice080 = (quantity, pricePerItem) =>  quantity * pricePerItem; 
+const calculateTotalPrice080 = (quantity, pricePerItem) => quantity * pricePerItem;
 
 console.log(calculateTotalPrice080(5, 100));
 console.log(calculateTotalPrice080(8, 60));
@@ -357,7 +352,7 @@ const arrowAdd = (a, b, c) => a + b + c;
   return quantity * pricePerItem;
 };*/
 
-const calculateTotalPrice09 = (quantity, pricePerItem) => quantity * pricePerItem; 
+const calculateTotalPrice09 = (quantity, pricePerItem) => quantity * pricePerItem;
 console.log(calculateTotalPrice09(5, 100));
 console.log(calculateTotalPrice09(8, 60));
 console.log(calculateTotalPrice09(3, 400));
@@ -424,13 +419,13 @@ numbers.forEach(logMessage);
 
 // Change code below this line
 
-const calculateTotalPriceA = orderedItems => { 
-    let totalPrice = 0;
-    orderedItems.forEach(item => {
-        totalPrice += item;
-    });
-    return totalPrice;
-}
+const calculateTotalPriceA = orderedItems => {
+  let totalPrice = 0;
+  orderedItems.forEach(item => {
+    totalPrice += item;
+  });
+  return totalPrice;
+};
 /*
 function calculateTotalPriceA(orderedItems) {
   let totalPrice = 0;
@@ -446,7 +441,6 @@ function calculateTotalPriceA(orderedItems) {
 console.log(calculateTotalPriceA([12, 85, 37, 4]));
 console.log(calculateTotalPriceA([164, 48, 291]));
 console.log(calculateTotalPriceA([412, 371, 94, 63, 176]));
-
 
 console.log('');
 console.log('tsk 4.11');
@@ -473,12 +467,12 @@ console.log('tsk 4.11');
 const filterArrayB = (numbers, value) => {
   const filteredNumbers = [];
 
-  numbers.forEach( (number) => {
+  numbers.forEach(number => {
     if (number > value) {
       filteredNumbers.push(number);
     }
   });
-/*
+  /*
 function filterArrayB(numbers, value) {
   const filteredNumbers = [];
 
@@ -491,7 +485,7 @@ function filterArrayB(numbers, value) {
 */
   // Change code above this line
   return filteredNumbers;
-}
+};
 
 console.log(filterArrayB([1, 2, 3, 4, 5], 3));
 console.log(filterArrayB([1, 2, 3, 4, 5], 4));
@@ -513,7 +507,6 @@ console.log(filterArrayB([12, 24, 8, 41, 76], 20));
 Результатом виклику функції filterArray([21,8,21,21,10,13,6,21,5,15,18,13,6,18,5,10], 15) буде [21,21,21,21,18,18]
 */
 
-
 console.log('');
 console.log('tsk 4.12');
 //Задача. Спільні елементи 2.0
@@ -533,7 +526,6 @@ console.log('tsk 4.12');
     Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
 
 */
-
 
 /*
 // Change code below this line
@@ -562,7 +554,7 @@ const getCommonElementsC = (firstArray, secondArray) => {
 
   // Change code above this line
   return commonElements;
-}
+};
 
 console.log(getCommonElementsC([1, 2, 3], [2, 4]));
 console.log(getCommonElementsC([1, 2, 3], [2, 1, 17, 19]));
@@ -666,17 +658,15 @@ function changeEven(numbers, value) {
 */
 const changeEven = (numbers, value) => {
   // Change code below this line
-    let finalArray = [];
-    numbers.forEach(element => {
-        if (element % 2 === 0) {
-            finalArray.push(element + value);
-        }
-        else finalArray.push(element);
-    });
-    return finalArray;
+  let finalArray = [];
+  numbers.forEach(element => {
+    if (element % 2 === 0) {
+      finalArray.push(element + value);
+    } else finalArray.push(element);
+  });
+  return finalArray;
   // Change code above this line
-}
-
+};
 
 console.log(changeEven([1, 2, 3, 4, 5], 10));
 console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
@@ -741,7 +731,7 @@ console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
     Для перебирання масиву планет використаний метод map()
 */
 
-const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+const planets = ['Earth', 'Mars', 'Venus', 'Jupiter'];
 // Change code below this line
 const planetsLengths = planets.map(planets => planets.length);
 
@@ -790,23 +780,509 @@ console.log(names); // ["Mango", "Poly", "Ajax", "Kiwi", "Houston"]
 
 const books = [
   {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+];
+// Change code below this line
+
+const titles = books.map(books => books.title);
+
+console.log(titles);
+
+/*
+ Оголошена змінна `books`
+Оголошена змінна `titles`
+Значение переменной `books` - це масив
+Значение переменной `titles` - це масив `['The Last Kingdom', 'Beside Still Waters', 
+'The Dream of a Ridiculous Man', 'Redder Than Blood', 'Enemy of God']`
+Для перебирання масиву `books` використовується метод `map()` як чиста функція
+*/
+
+console.log('');
+console.log('tsk 4.16');
+
+/*
+
+
+Метод flatMap(callback) - аналогічний методу map(), але застосовується у випадках, коли результат
+ - це багатовимірний масив, який необхідно «розгладити».
+
+масив.flatMap((element, index, array) => {
+  // Тіло колбек-функції
+});
+
+У масиві students зберігається список студентів зі списком предметів, які відвідує студент, 
+у властивості courses. Кілька студентів можуть відвідувати один і той самий предмет.
+ Необхідно скласти список всіх предметів, які відвідує ця група студентів, поки що, навіть повторюваних.
+
+const students = [
+  { name: "Mango", courses: ["mathematics", "physics"] },
+  { name: "Poly", courses: ["science", "mathematics"] },
+  { name: "Kiwi", courses: ["physics", "biology"] },
+];
+
+students.map(student => student.courses);
+// [["mathematics", "physics"], ["science", "mathematics"], ["physics", "biology"]]
+
+students.flatMap(student => student.courses);
+// ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+
+Він викликає колбек-функцію для кожного елемента вихідного масиву, а результат її роботи записує у новий масив. 
+Відмінність від map() у тому, що новий масив «розгладжується» на глибину, що дорівнює одиниці (одна вкладеність). 
+Цей розгладжений масив і є результатом роботи flatMap().
+
+*/
+/*
+Використовуючи метод flatMap(), зроби так, щоб у змінній genres вийшов масив усіх жанрів 
+книг (властивість genres) з масиву книг books.
+
+    Оголошена змінна books
+    Значення змінної books - це масив об'єктів
+    Оголошена змінна genres
+    Значення змінної genres - це масив [ "adventure", "history", "fiction", "horror", "mysticism" ]
+    Для перебирання масиву books використовується метод flatMap()
+
+*/
+
+const books16 = [
+  {
     title: "The Last Kingdom",
     author: "Bernard Cornwell",
-    rating: 8.38,
+    genres: ["adventure", "history"],
   },
   {
     title: "Beside Still Waters",
     author: "Robert Sheckley",
-    rating: 8.51,
+    genres: ["fiction"],
   },
   {
-    title: "The Dream of a Ridiculous Man",
-    author: "Fyodor Dostoevsky",
-    rating: 7.75,
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    genres: ["horror", "mysticism"],
   },
-  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
-  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
 ];
 // Change code below this line
 
-const titles = books;
+const genres = books16.flatMap(books16 => books16.genres);
+
+console.log(genres);
+
+/*
+Оголошена змінна `books`
+Ваш код занадто довго виконується
+Оголошена змінна `genres`
+Значення змінної `books` - це масив об'єктів
+Для перебирання масиву `books` використовується метод `flatMap()`
+*/
+
+console.log('');
+console.log('tsk 4.17');
+
+/*
+
+
+Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+
+[
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
+
+
+*/
+
+/*
+Доповни функцію getUserNames(users) таким чином, щоб вона повертала масив імен користувачів (властивість name)
+ з масиву об'єктів в параметрі users.
+
+    Оголошена змінна getUserNames
+    Змінній getUserNames присвоєна стрілочна функція з параметром (users).
+    Для перебирання параметра users використовується метод map()
+    Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush", 
+    "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+
+*/
+
+// Change code below this line
+const getUserNames = users => {
+    
+  return users.map(users => users.name);
+
+  };
+  // Change code above this line
+
+console.log(getUserNames(
+  [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+]
+));
+
+/*
+Оголошена змінна `getUserNames`
+Змінній `getUserNames` присвоєна стрілочна функція з параметром `users`
+Для перебирання масиву `users` використаний метод `map()`
+Виклик функції із зазначеним масивом користувачів повертає масив["Moore Hensley","Sharlene Bush","Ross Vazquez",
+"Elma Head","Carey Barr","Blackburn Dotson","Sheree Anthony"]
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+*/
+
+console.log('');
+console.log('tsk 4.18');
+
+
+const testUsersArray = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
+];
+
+/*
+Доповни функцію getUserEmails(users) таким чином, щоб вона повертала масив поштових адрес 
+користувачів (властивість email) з масиву об'єктів в параметрі users.
+
+    Оголошена змінна getUserNames
+    Змінній getUserNames присвоєна стрілочна функція з параметром (users)
+    Для перебирання параметра users використовується метод map()
+    Виклик функції із зазначеним масивом користувачів повертає масив 
+    ["moorehensley@indexia.com", "sharlenebush@tubesys.com", "rossvazquez@xinware.com", "elmahead@omatom.com", 
+    "careybarr@nurali.com", "blackburndotson@furnigeer.com", "shereeanthony@kog.com"]
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+*/
+// Change code below this line
+const getUserEmails = users => {
+    
+    return users.map(users => users.email);
+  };
+  // Change code above this line
+
+
+
+console.log(getUserEmails(testUsersArray));
+
+/*
+Оголошена змінна `getUserEmails`
+Змінній `getUserEmails` присвоєна стрілочна функція з параметром `users`
+Для перебирання масиву `users` використаний метод `map()`
+Виклик функції із зазначеним масивом користувачів повертає 
+масив["moorehensley@indexia.com","sharlenebush@tubesys.com","rossvazquez@xinware.com","elmahead@omatom.com",
+"careybarr@nurali.com","blackburndotson@furnigeer.com","shereeanthony@kog.com"]
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+*/
+
+console.log('');
+console.log('tsk 4.19');
+
+/*
+
+
+Метод filter(callback) використовується для єдиної операції - фільтрації масиву, тобто, 
+коли необхідно вибрати більше одного елемента з колекції за певним критерієм.
+
+масив.filter((element, index, array) => {
+  // Тіло колбек-функції
+});
+
+    Не змінює оригінальний масив.
+    Поелементо перебирає оригінальний масив.
+    Повертає новий масив.
+    Додає у масив, що повертається, елементи, які задовольняють умови колбек-функції.
+    Якщо колбек повернув true, елемент додається у масив, що повертається.
+    Якщо колбек повернув false, елемент не додається у масив, що повертається.
+    Якщо жоден елемент не задовольнив умову, повертає порожній масив.
+
+const values = [51, -3, 27, 21, -68, 42, -37];
+
+const positiveValues = values.filter(value => value >= 0);
+console.log(positiveValues); // [51, 27, 21, 42]
+
+const negativeValues = values.filter(value => value < 0);
+console.log(negativeValues); // [-3, -68, -37]
+
+const bigValues = values.filter(value => value > 1000);
+console.log(bigValues); // []
+
+// Оригінальний масив не змінився
+console.log(values); // [51, -3, 27, 21, -68, 42, -37]
+
+Тобто метод filter викликає колбек-функцію для кожного елемента вихідного масиву і, 
+якщо результат її виконання - true, додає поточний елемент у новий масив.
+
+*/
+
+/*
+Доповни код таким чином, щоб у змінній evenNumbers утворився масив парних чисел з масиву numbers, 
+а в змінній oddNumbers - масив непарних. Обов'язково використовуй метод filter().
+
+    Оголошена змінна numbers
+    Значення змінної numbers - це масив [17, 24, 82, 61, 36, 18, 47, 52, 73]
+    Оголошена змінна evenNumbers
+    Значення змінної evenNumbers - це масив [24, 82, 36, 18, 52]
+    Оголошена змінна oddNumbers
+    Значення змінної oddNumbers - це масив [17, 61, 47, 73]
+    Для перебирання масиву numbers використаний метод filter()
+
+*/
+
+const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// Change code below this line
+
+const evenNumbers = numbers.filter(numbers => ((numbers % 2)===0));
+const oddNumbers = numbers.filter(numbers => ((numbers % 2) != 0));
+
+console.log(evenNumbers);
+console.log(oddNumbers);
+
+/*
+Оголошена змінна `numbers`
+Оголошена змінна `evenNumbers`
+Оголошена змінна `oddNumbers`
+Значення змінної `numbers` - це масив `[17, 24, 82, 61, 36, 18, 47, 52, 73]`
+Значення змінної `evenNumbers` - це масив `[24, 82, 36, 18, 52]`
+Значення змінної `oddNumbers` - це масив `[17, 61, 47, 73]`
+Для перебирання масиву `numbers` використаний метод `filter()`
+*/
+
+console.log('');
+console.log('tsk 4.20');

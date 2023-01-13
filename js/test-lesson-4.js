@@ -349,4 +349,3 @@ console.log(pizzaPalace.order("Vienna", makePizza, onOrderError));
 Виклик `pizzaPalace.order('Vienna', makePizza, onOrderError)`
  повертає 'Error! There is no pizza with a name Vienna in the assortment.'
 */
-
