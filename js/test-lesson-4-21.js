@@ -701,3 +701,49 @@ console.log('tsk 4.27');
 const getInactiveUsers = (users) => users.filter(({ isActive }) => !isActive);
 
 console.log(getInactiveUsers(testUsers26));
+
+/*
+Оголошена змінна `getInactiveUsers`
+Змінній `getInactiveUsers` присвоєна стрілочна функція з параметром `(users)`
+Для перебирання параметра `users` використаний метод `filter()`
+Виклик функції із зазначеним масивом користувачів повертає масив об'єктів користувачів з іменами `Sharlene Bush`, `Elma Head`, `Carey Barr` і `Sheree Anthony`
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+*/
+
+console.log('');
+console.log('tsk 4.28');
+
+/*
+
+
+Якщо метод filter(callback) використовується для пошуку всіх елементів, що задовольняють умову, 
+то метод find(callback) дозволяє знайти і повернути перший відповідний елемент, 
+після чого перебирання масиву припиняється. 
+Тобто він шукає до першого збігу.
+
+масив.find((element, index, array) => {
+  // Тіло колбек-функції
+});
+
+    Не змінює оригінальний масив.
+    Поелементо перебирає оригінальний масив.
+    Повертає перший елемент, що задовольняє умову, тобто коли колбек повертає true.
+    Якщо жоден елемент не задовольнив умову, тобто для всіх елементів колбек повернув false, метод повертає undefined.
+
+Метод find() використовується для одного завдання - пошуку елемента за унікальним значенням властивості. 
+Наприклад, пошук користувача за поштою, автомобіля - за серійним номером, книги - за назвою тощо.
+
+const colorPickerOptions = [
+  { label: "red", color: "#F44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigo", color: "#3F51B5" },
+];
+
+colorPickerOptions.find((option) => option.label === "blue"); // { label: "blue", color: "#2196F3" }
+colorPickerOptions.find((option) => option.label === "pink"); // { label: "pink", color: "#E91E63" }
+colorPickerOptions.find((option) => option.label === "white"); // undefined
+
+
+ */
