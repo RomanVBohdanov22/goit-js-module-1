@@ -86,6 +86,3 @@ const propertyValue = (arrLit, key) => {
 
 console.log(propertyValue(litmir, "title")); // Улетела сказка,Восстание Аркан,Золотая лилия
 console.log(propertyValue(litmir, "author")); // Хэленка,Коул Кресли,Райчел Мид
-
-
-
