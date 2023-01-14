@@ -747,3 +747,373 @@ colorPickerOptions.find((option) => option.label === "white"); // undefined
 
 
  */
+/*
+Використовуючи метод find(), доповни код таким чином, щоб:
+
+    У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+    У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
+
+    Оголошена змінна books
+    Значення змінної books - це масив
+    Оголошена змінна BOOK_TITLE
+    Значення змінної BOOK_TITLE - це рядок "The Dream of a Ridiculous Man"
+    Оголошена змінна AUTHOR
+    Значення змінної AUTHOR - це рядок "Robert Sheckley"
+    Оголошена змінна bookWithTitle
+    Значення змінної bookWithTitle - це об'єкт книги з назвою вище "The Dream of a Ridiculous Man"
+    Оголошена змінна bookByAuthor
+    Значення змінної bookByAuthor - це об'єкт книги автора "Robert Sheckley"
+    Для перебирання масиву books використаний метод find()
+
+*/
+const books28 = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+];
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR_28 = 'Robert Sheckley';
+// Change code below this line
+
+const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+const bookByAuthor = books.find((book) => book.author === AUTHOR_28);
+
+console.log(bookWithTitle);
+console.log(bookByAuthor);
+
+/*
+Оголошена змінна `books`
+Оголошена змінна `BOOK_TITLE`
+Оголошена змінна `AUTHOR`
+Оголошена змінна `bookWithTitle`
+Оголошена змінна `bookByAuthor`
+Значення змінної `books` - це масив
+Значення змінної `BOOK_TITLE` - це рядок `'The Dream of a Ridiculous Man'
+Значення змінної `AUTHOR` - це рядок `'Robert Sheckley'`
+Значення змінної `bookWithTitle` - це об'єкт книги з назвою вище `'The Dream of a Ridiculous Man'
+Значення змінної `bookByAuthor` - це об'єкт книги автора `'Robert Sheckley'`
+Для перебирання масиву `books` використаний метод `find()`
+*/
+
+console.log('');
+console.log('tsk 4.29');
+
+const testUsers29 = [
+    {
+        name: "Moore Hensley",
+        email: "moorehensley@indexia.com",
+        eyeColor: "blue",
+        friends: ["Sharron Pace"],
+        isActive: false,
+        balance: 2811,
+        gender: "male"
+    },
+    {
+        name: "Sharlene Bush",
+        email: "sharlenebush@tubesys.com",
+        eyeColor: "blue",
+        friends: ["Briana Decker", "Sharron Pace"],
+        isActive: true,
+        balance: 3821,
+        gender: "female"
+    },
+    {
+        name: "Ross Vazquez",
+        email: "rossvazquez@xinware.com",
+        eyeColor: "green",
+        friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+        isActive: false,
+        balance: 3793,
+        gender: "male"
+    },
+    {
+        name: "Elma Head",
+        email: "elmahead@omatom.com",
+        eyeColor: "green",
+        friends: ["Goldie Gentry", "Aisha Tran"],
+        isActive: true,
+        balance: 2278,
+        gender: "female"
+    },
+    {
+        name: "Carey Barr",
+        email: "careybarr@nurali.com",
+        eyeColor: "blue",
+        friends: ["Jordan Sampson", "Eddie Strong"],
+        isActive: true,
+        balance: 3951,
+        gender: "male"
+    },
+    {
+        name: "Blackburn Dotson",
+        email: "blackburndotson@furnigeer.com",
+        eyeColor: "brown",
+        friends: ["Jacklyn Lucas", "Linda Chapman"],
+        isActive: false,
+        balance: 1498,
+        gender: "male"
+    },
+    {
+        name: "Sheree Anthony",
+        email: "shereeanthony@kog.com",
+        eyeColor: "brown",
+        friends: ["Goldie Gentry", "Briana Decker"],
+        isActive: true,
+        balance: 2764,
+        gender: "female"
+    }
+];
+
+/*
+Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала об'єкт користувача, 
+пошта якого (властивість email) збігається зі значенням параметра email.
+
+    Оголошена функція getUserWithEmail(users, email)
+
+    Для перебирання параметра users використовується метод find()
+
+    Якщо значення параметра email - це "shereeanthony@kog.com", функція повертає об'єкт користувача з ім'ям Sheree Anthony
+
+    Якщо значення параметра email - це "elmahead@omatom.com", функція повертає об'єкт користувача з ім'ям Elma Head
+
+    Якщо значення параметра email - це "blackburndotson@furnigeer.com", функція повертає об'єкт користувача з ім'ям Blackburn Dotson
+
+    Якщо в масиві users відсутній користувач з поштою із параметра email, функція повертає undefined
+
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+*/
+//const bookWithTitle = books.find((book) => book.title === BOOK_TITLE);
+// Change code below this line
+const getUserWithEmail = (users, email) => users.find((user) => user.email === email);
+// Change code above this line
+
+
+console.log(getUserWithEmail(testUsers29, "shereeanthony@kog.com"));
+console.log(getUserWithEmail(testUsers29, "elmahead@omatom.com"));
+console.log(getUserWithEmail(testUsers29, "blackburndotson@furnigeer.com"));
+console.log(getUserWithEmail(testUsers29, "blackburndotson@furnigeer.com"));
+
+/*
+Оголошена змінна `getUserWithEmail`
+Змінній `getUserWithEmail` присвоєна стрілочна функція з параметрами `(users, email))`
+Для перебирання параметра `users` використаний метод `find()`
+Якщо значення параметра `email` - це `'shereeanthony@kog.com'`, функція повертає об'єкт користувача з ім'ям `Sheree Anthony`
+Якщо значення параметра `email` - це `'elmahead@omatom.com'`, функція повертає об'єкт користувача з ім'ям `Elma Head`
+Якщо значення параметра `email` - це `'blackburndotson@furnigeer.com'`, функція повертає об'єкт користувача з ім'ям `Blackburn Dotson`
+Якщо в масиві `users` відсутній користувач з поштою із параметра `email`, функція повертає `undefined`
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+*/
+
+console.log('');
+console.log('tsk 4.30');
+
+/*
+
+
+Метод every(callback) перевіряє, чи проходять всі елементи масиву тест колбек-функції. Повертає true або false.
+
+масив.every((element, index, array) => {
+  // Тіло колбек-функції
+});
+
+    Не змінює оригінальний масив.
+    Поелементо перебирає оригінальний масив.
+    Повертає true, якщо всі елементи масиву задовольняють умову.
+    Повертає false, якщо хоча б один елемент масиву не задовольняє умову.
+    Перебирання масиву припиняється, якщо колбек повертає false.
+
+// Усі елементи більші або дорівнюють нулю? - так
+[1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// Усі елементи більші або дорівнюють нулю? - ні
+[1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+
+При роботі з масивом об'єктів перевіряється значення якоїсь їх властивості.
+
+*/
+/*
+Використовуючи метод every(), доповни код таким чином, щоб:
+
+    У змінній eachElementInFirstIsEven був результат перевірки всіх елементів масиву firstArray на парність.
+    У змінній eachElementInFirstIsOdd був результат перевірки всіх елементів масиву firstArray на непарність.
+    У змінній eachElementInSecondIsEven був результат перевірки всіх елементів масиву secondArray на парність.
+    У змінній eachElementInSecondIsOdd був результат перевірки всіх елементів масиву secondArray на непарність.
+    У змінній eachElementInThirdIsEven був результат перевірки всіх елементів масиву thirdArray на парність.
+    У змінній eachElementInThirdIsOdd був результат перевірки всіх елементів масиву thirdArray на непарність.
+
+    Оголошена змінна firstArray
+    Значення змінної firstArray - це масив [26, 94, 36, 18]
+    Оголошена змінна secondArray
+    Значення змінної secondArray - це масив [17, 61, 23]
+    Оголошена змінна thirdArray
+    Значення змінної thirdArray - це масив [17, 26, 94, 61, 36, 23, 18]
+    Оголошена змінна eachElementInFirstIsEven
+    Значення змінної eachElementInFirstIsEven - це буль true
+    Оголошена змінна eachElementInFirstIsOdd
+    Значення змінної eachElementInFirstIsOdd - це буль false
+    Оголошена змінна eachElementInSecondIsEven
+    Значення змінної eachElementInSecondIsEven - це буль false
+    Оголошена змінна eachElementInSecondIsOdd
+    Значення змінної eachElementInSecondIsOdd - це буль true
+    Оголошена змінна eachElementInThirdIsEven
+    Значення змінної eachElementInThirdIsEven - це буль false
+    Оголошена змінна eachElementInThirdIsOdd
+    Значення змінної eachElementInThirdIsOdd - це буль false
+    Для перебирання масивів використаний метод every()
+
+*/
+//[1, 2, 3, 4, 5].every((value) => value >= 0);
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// Change code below this line
+
+const eachElementInFirstIsEven = firstArray.every((value) => (value % 2) === 0);
+const eachElementInFirstIsOdd = firstArray.every((value) => (value % 2) != 0);
+
+const eachElementInSecondIsEven = secondArray.every((value) => (value % 2) === 0);
+const eachElementInSecondIsOdd = secondArray.every((value) => (value % 2) != 0);
+
+const eachElementInThirdIsEven = thirdArray.every((value) => (value % 2) === 0);
+const eachElementInThirdIsOdd = thirdArray.every((value) => (value % 2) != 0);
+
+console.log(eachElementInFirstIsEven);
+console.log(eachElementInFirstIsOdd);
+
+console.log(eachElementInSecondIsEven);
+console.log(eachElementInSecondIsOdd);
+
+console.log(eachElementInThirdIsEven);
+console.log(eachElementInThirdIsOdd);
+
+/*
+ Оголошена змінна `firstArray`
+Оголошена змінна `secondArray`
+Оголошена змінна `thirdArray`
+Оголошена змінна `eachElementInFirstIsEven`
+Оголошена змінна `eachElementInFirstIsOdd`
+Оголошена змінна `eachElementInSecondIsEven`
+Оголошена змінна `eachElementInSecondIsOdd`
+Оголошена змінна `eachElementInThirdIsEven`
+Оголошена змінна `eachElementInThirdIsOdd`
+Значення змінної `firstArray` - це масив `[26, 94, 36, 18]`
+Значення змінної `secondArray` - це масив `[17, 61, 23]`
+Значення змінної `thirdArray` - це масив `[17, 26, 94, 61, 36, 23, 18]`
+Значення змінної `eachElementInFirstIsEven` - це буль `true`
+Значення змінної `eachElementInFirstIsOdd` - це буль `false`
+Значення змінної `eachElementInSecondIsEven` - це буль `false`
+Значення змінної `eachElementInSecondIsOdd` - це буль `true`
+Значення змінної `eachElementInThirdIsEven` - це буль `false`
+Значення змінної `eachElementInThirdIsOdd` - це буль `false`
+Для перебирання масивів використаний метод `every()`
+*/
+
+console.log('');
+console.log('tsk 4.31');
+
+const testUsers31 = [
+    {
+        name: "Moore Hensley",
+        email: "moorehensley@indexia.com",
+        eyeColor: "blue",
+        friends: ["Sharron Pace"],
+        isActive: false,
+        balance: 2811,
+        gender: "male"
+    },
+    {
+        name: "Sharlene Bush",
+        email: "sharlenebush@tubesys.com",
+        eyeColor: "blue",
+        friends: ["Briana Decker", "Sharron Pace"],
+        isActive: true,
+        balance: 3821,
+        gender: "female"
+    },
+    {
+        name: "Ross Vazquez",
+        email: "rossvazquez@xinware.com",
+        eyeColor: "green",
+        friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+        isActive: false,
+        balance: 3793,
+        gender: "male"
+    },
+    {
+        name: "Elma Head",
+        email: "elmahead@omatom.com",
+        eyeColor: "green",
+        friends: ["Goldie Gentry", "Aisha Tran"],
+        isActive: true,
+        balance: 2278,
+        gender: "female"
+    },
+    {
+        name: "Carey Barr",
+        email: "careybarr@nurali.com",
+        eyeColor: "blue",
+        friends: ["Jordan Sampson", "Eddie Strong"],
+        isActive: true,
+        balance: 3951,
+        gender: "male"
+    },
+    {
+        name: "Blackburn Dotson",
+        email: "blackburndotson@furnigeer.com",
+        eyeColor: "brown",
+        friends: ["Jacklyn Lucas", "Linda Chapman"],
+        isActive: false,
+        balance: 1498,
+        gender: "male"
+    },
+    {
+        name: "Sheree Anthony",
+        email: "shereeanthony@kog.com",
+        eyeColor: "brown",
+        friends: ["Goldie Gentry", "Briana Decker"],
+        isActive: true,
+        balance: 2764,
+        gender: "female"
+    }
+];
+/*
+Доповни функцію isEveryUserActive(users) таким чином, щоб вона перевіряла, чи всі користувачі зараз активні (властивість isActive) і повертала true або false.
+
+    Оголошена змінна isEveryUserActive
+    Змінній isEveryUserActive присвоєна стрілочна функція з параметром (users)
+    Для перебирання параметра users використовується метод every()
+    Виклик функції із зазначеним масивом користувачів повертає false
+    Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+*/
+//const eachElementInFirstIsEven = firstArray.every((value) => (value % 2) === 0);
+// Change code below this line
+const isEveryUserActive = (users) => users.every(({isActive})=> isActive);
+// Change code above this line
+
+console.log(isEveryUserActive(testUsers31));
+
+/*
+Оголошена змінна `isEveryUserActive`
+Змінній `isEveryUserActive` присвоєна стрілочна функція з параметром `(users)`
+Для перебирання параметра `users` використаний метод `every()`
+Виклик функції із зазначеним масивом користувачів повертає буль `false`
+Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+*/
+
+
