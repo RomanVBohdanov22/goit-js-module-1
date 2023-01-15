@@ -924,12 +924,65 @@ const books = [
   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
 ];
+
+
+/*
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+];
+
+const inAscendingScoreOrder = students.sort(
+  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+);
+
+const inDescendingScoreOrder = students.sort(
+  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+);
+
+const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
+  firstStudent.name.localeCompare(secondStudent.name)
+);
+
+*/
+/*
+У змінній sortedByAuthorName вийшов масив книг, відсортований за ім'ям автора в алфавітному порядку.
+У змінній sortedByReversedAuthorName вийшов масив книг, відсортований за ім'ям автора у зворотному алфавітному порядку.
+У змінній sortedByAscendingRating вийшов масив книг, відсортований за зростанням рейтингу.
+У змінній sortedByDescentingRating вийшов масив книг, відсортований за спаданням рейтингу.
+*/
 // Change code below this line
 
-const sortedByAuthorName = books;
+const sortedByAuthorName = [...books].sort((firstBook, secondBook) => (firstBook.author).localeCompare(secondBook.author));
 
-const sortedByReversedAuthorName = books;
+const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) => (secondBook.author).localeCompare(firstBook.author));
 
-const sortedByAscendingRating = books;
+const sortedByAscendingRating = [...books].sort((firstBook, secondBook) => firstBook.rating - secondBook.rating);
 
-const sortedByDescentingRating = books;
+const sortedByDescentingRating = [...books].sort((firstBook, secondBook) => secondBook.rating - firstBook.rating);
+
+
+console.log(sortedByAuthorName);
+
+console.log(sortedByReversedAuthorName);
+
+console.log(sortedByAscendingRating);
+
+console.log(sortedByDescentingRating);
+
+
+/*
+Оголошена змінна `books`
+Оголошена змінна `sortedByAuthorName`
+Оголошена змінна `sortedByReversedAuthorName`
+Оголошена змінна `sortedByAscendingRating`
+Оголошена змінна `sortedByDescentingRating`
+Значення змінної `books` - це вихідний масив об'єктів книг
+Значення змінної `sortedByAuthorName` - це масив книг, відсортований за ім'ям автора в алфавітному порядку
+Значення змінної `sortedByReversedAuthorName` - це масив книг, відсортований за ім'ям автора у зворотному алфавітному порядку
+Значення змінної `sortedByAscendingRating` - це масив книг, відсортований за зростанням рейтингу
+Значення змінної `sortedByDescentingRating` - це масив книг, відсортований за спаданням рейтингу
+Для перебирання масиву `books` використовується метод `sort()`
+*/
