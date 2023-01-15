@@ -212,3 +212,173 @@ console.log(isAnyUserActive(testUsers33));
 
 console.log('');
 console.log('tsk 4.34');
+
+
+/*
+
+
+Метод reduce(callback, initialValue) використовується для послідовної обробки кожного елемента 
+масиву із збереженням проміжного результату, як акумулятор. Трохи складніший за інші методи для засвоєння, 
+але результат вартий того.
+
+массив.reduce((previousValue, element, index, array) => {
+  // Тіло колбек-функції
+}, initialValue);
+
+    Не змінює оригінальний масив.
+    Поелементо перебирає оригінальний масив.
+    Повертає все, що завгодно.
+    Робить все, що завгодно.
+
+Найлегше уявити його роботу на прикладі підрахунку суми елементів масиву.
+
+const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+  return previousValue + number;
+}, 0);
+
+console.log(total); // 32
+
+Перший параметр колбек-функції (previousValue) - це акумулятор, тобто проміжний результат. Значення, 
+яке поверне колбек-функція на поточній ітерації, буде значенням цього параметра на наступній ітерації.
+
+Другим аргументом для reduce() можна передати необов'язкове початкове значення акумулятора - параметр initialValue.
+
+# Спочатку метод reduce() створює внутрішню змінну-акумулятор і
+# присвоює їй значення параметра initialValue або першого елемента
+# масиву, що перебирається, якщо initialValue не задане.
+previousValue = 0
+
+# Потім колбек-функція викликається для кожного елемента масиву. Поточне значення
+# параметра previousValue - це те, що повернула колбек-функція на минулій ітерації.
+Ітерація 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+Ітерація 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+Ітерація 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+Ітерація 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+Ітерація 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+# Після завершення перебирання всього масиву, метод reduce() повертає значення акумулятора.
+Результат - 32
+
+Тобто метод reduce() використовується, коли необхідно взяти «багато» і привести до «одного».
+ У повсякденних завданнях його застосування зводиться до роботи з числами.
+
+*/
+/*
+Ігровому сервісу необхідний функціонал підрахунку середнього часу, проведеного в іграх. Доповни 
+код таким чином, щоб у змінній totalPlayTime вийшло загальний ігровий час з масиву playtimes.
+
+    Оголошена змінна players
+    Значення змінної players - це об'єкт гравців з ігровим часом кожного
+    Оголошена змінна playtimes
+    Значення змінної playtimes - це масив [1270, 468, 710, 244]
+    Оголошена змінна totalPlayTime
+    Значення змінної totalPlayTime - це число 2692
+    Для перебирання масиву playtimes використовується метод reduce()
+    Оголошена змінна averagePlayTime
+    Значення змінної averagePlayTime - це число 673
+
+*/
+
+const players = {
+  mango: 1270,
+  poly: 468,
+  ajax: 710,
+  kiwi: 244
+};
+const playtimes = Object.values(players); // [1270, 468, 710, 244]
+console.log(playtimes);
+/*
+Найлегше уявити його роботу на прикладі підрахунку суми елементів масиву.
+
+const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+  return previousValue + number;
+}, 0);
+
+console.log(total); // 32
+*/
+// Change code below this line
+
+const totalPlayTime = playtimes.reduce((previousValue, timeGap) => { return previousValue + timeGap; }, 0);
+
+// Change code above this line
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+console.log(totalPlayTime);
+console.log(averagePlayTime);
+
+/*
+Оголошена змінна `players`
+Оголошена змінна `playtimes`
+Оголошена змінна `totalPlayTime`
+Оголошена змінна `averagePlayTime`
+Значення змінної `players` - це об'єкт гравців з ігровим часом кожного
+Значення змінної `playtimes` - це масив `[1270, 468, 710, 244]`
+Значення змінної `totalPlayTime` - це число `2692`
+Значення змінної `averagePlayTime` - це число `673`
+Для перебирання масиву `playtimes` використовується метод `reduce()`
+*/
+
+console.log('');
+console.log('tsk 4.35');
+
+/*
+
+
+Під час роботи з масивом об'єктів виконується редукування за значенням певної властивості.
+ Наприклад, у нас є масив студентів з балами за тест. Необхідно отримати середній бал.
+
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+];
+
+// Назва акумулятора може бути довільною, це просто параметр функції
+const totalScore = students.reduce((total, student) => {
+  return total + student.score;
+}, 0);
+
+const averageScore = totalScore / students.length;
+
+
+*/
+
+/*
+Нашому сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця,
+ і отримати загальну суму цих значень часу. Розрахувати час для кожного з гравців можна, розділивши 
+ його час (властивість playtime) на кількість ігор (властивість gamesPlayed).
+
+    Оголошена змінна players
+    Значення змінної players - це масив об'єктів гравців
+    Оголошена змінна totalAveragePlaytimePerGame
+    Значення змінної totalAveragePlaytimePerGame - це число 1023
+    Для перебирання масиву players використовується метод reduce()
+
+*/
+
+const players35 = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players35.reduce((total, player) => {
+    return (total + (player.playtime / player.gamesPlayed));
+}, 0);
+
+console.log(totalAveragePlaytimePerGame);
+
+/*
+ Оголошена змінна `players`
+Оголошена змінна `totalAveragePlaytimePerGame`
+Значення змінної `players` - це масив об'єктів гравців
+Значення змінної `totalAveragePlaytimePerGame` - це число `1023`
+Для перебирання масиву `players` використовується метод `reduce()`
+*/
+
+console.log('');
+console.log('tsk 4.36');
