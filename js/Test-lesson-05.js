@@ -41,7 +41,7 @@ console.log(bookShelf.getAuthors()); // ["Bernard Cornwell", "Robert Sheckley", 
 */
 
 const pizzaPalace = {
-  pizzas: ["Supercheese", "Smoked", "Four meats"],
+  pizzas: ['Supercheese', 'Smoked', 'Four meats'],
   // Change code below this line
   checkPizza(pizzaName) {
     return this.pizzas.includes(pizzaName);
@@ -58,10 +58,10 @@ const pizzaPalace = {
   // Change code above this line
 };
 
-console.log(pizzaPalace.order("Smoked"));
-console.log(pizzaPalace.order("Four meats"));
-console.log(pizzaPalace.order("Big Mike"));
-console.log(pizzaPalace.order("Viennese"));
+console.log(pizzaPalace.order('Smoked'));
+console.log(pizzaPalace.order('Four meats'));
+console.log(pizzaPalace.order('Big Mike'));
+console.log(pizzaPalace.order('Viennese'));
 console.log('');
 
 /*
@@ -72,7 +72,6 @@ console.log('');
 Виклик `pizzaPalace.order('Big Mike')` повертає рядок 'Sorry, there is no pizza named «Big Mike»'
 Виклик `pizzaPalace.order('Viennese')` повертає рядок 'Sorry, there is no pizza named «Viennese»'
 */
-
 
 console.log('');
 console.log('tsk 5.02');
@@ -102,10 +101,10 @@ console.log('tsk 5.02');
 */
 
 const customer = {
-  username: "Mango",
+  username: 'Mango',
   balance: 24000,
   discount: 0.1,
-  orders: ["Burger", "Pizza", "Salad"],
+  orders: ['Burger', 'Pizza', 'Salad'],
   // Change code below this line
   getBalance() {
     return this.balance;
@@ -128,16 +127,15 @@ const customer = {
 
 customer.setDiscount(0.15);
 console.log(customer.getDiscount()); // 0.15
-customer.addOrder(5000, "Steak");
+customer.addOrder(5000, 'Steak');
 console.log(customer.getBalance()); // 19750
 console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
-
 
 console.log(customer.getDiscount());
 console.log(customer.setDiscount(0.15));
 console.log(customer.getBalance());
 console.log(customer.getOrders());
-console.log(customer.addOrder(5000, "Steak"));
+console.log(customer.addOrder(5000, 'Steak'));
 
 /*
 Оголошена змінна `customer`
@@ -154,12 +152,10 @@ console.log(customer.addOrder(5000, "Steak"));
 Метод `addOrder` об'єкта `customer` використовує оператор `this`
 */
 
-
 console.log('');
 console.log('tsk 5.03');
 
 //Задача: історія замовлень
-
 
 /*
 Тестувальники знайшли баги в коді сервісу зберігання історії замовлень їжі. Тобі необхідно виправити їх,
@@ -180,17 +176,15 @@ console.log('tsk 5.03');
 
 const historyService = {
   orders: [
-    { email: "jacob@hotmail.com", dish: "Burrito" },
-    { email: "solomon@topmail.net", dish: "Burger" },
-    { email: "artemis@coldmail.net", dish: "Pizza" },
-    { email: "solomon@topmail.net", dish: "Apple pie" },
-    { email: "jacob@hotmail.com", dish: "Taco" },
+    { email: 'jacob@hotmail.com', dish: 'Burrito' },
+    { email: 'solomon@topmail.net', dish: 'Burger' },
+    { email: 'artemis@coldmail.net', dish: 'Pizza' },
+    { email: 'solomon@topmail.net', dish: 'Apple pie' },
+    { email: 'jacob@hotmail.com', dish: 'Taco' },
   ],
   // Change code below this line
   getOrdersLog() {
-    return this.orders
-      .map(order => `email: ${order.email} dish: ${order.dish}`)
-      .join(" - ");
+    return this.orders.map(order => `email: ${order.email} dish: ${order.dish}`).join(' - ');
   },
   getEmails() {
     const emails = this.orders.map(order => order.email);
@@ -205,8 +199,8 @@ const historyService = {
 
 console.log(historyService.getOrdersLog());
 console.log(historyService.getEmails());
-console.log(historyService.getOrdersByEmail("solomon@topmail.net"));
-console.log(historyService.getOrdersByEmail("artemis@coldmail.net"));
+console.log(historyService.getOrdersByEmail('solomon@topmail.net'));
+console.log(historyService.getOrdersByEmail('artemis@coldmail.net'));
 
 /*
  Оголошена змінна `historyService`
@@ -219,7 +213,6 @@ console.log(historyService.getOrdersByEmail("artemis@coldmail.net"));
 Метод `getEmails` об'єкта `historyService` використовує `this`
 Метод `getOrdersByEmail` об'єкта `historyService` використовує `this`
  */
-
 
 console.log('');
 console.log('tsk 5.04');
@@ -287,25 +280,25 @@ console.log(dog.legs); // 4
 */
 
 const parent04 = {
-  name: "Stacey",
-  surname: "Moore",
+  name: 'Stacey',
+  surname: 'Moore',
   age: 54,
-  heritage: "Irish",
+  heritage: 'Irish',
 };
 // Change code below this line
 
 const child04 = Object.create(parent04);
 
 // Change code above this line
-child04.name = "Jason";
+child04.name = 'Jason';
 child04.age = 27;
 
-console.log(parent04.hasOwnProperty("surname"));
-console.log(parent04.hasOwnProperty("heritage"));
-console.log(child04.hasOwnProperty("name"));
-console.log(child04.hasOwnProperty("age"));
-console.log(child04.hasOwnProperty("surname"));
-console.log(child04.hasOwnProperty("heritage"));
+console.log(parent04.hasOwnProperty('surname'));
+console.log(parent04.hasOwnProperty('heritage'));
+console.log(child04.hasOwnProperty('name'));
+console.log(child04.hasOwnProperty('age'));
+console.log(child04.hasOwnProperty('surname'));
+console.log(child04.hasOwnProperty('heritage'));
 console.log(parent04.isPrototypeOf(child04));
 
 /*
@@ -371,32 +364,32 @@ console.log('tsk 5.05');
 */
 
 const ancestor = {
-  name: "Paul",
+  name: 'Paul',
   age: 83,
-  surname: "Dawson",
-  heritage: "Irish",
+  surname: 'Dawson',
+  heritage: 'Irish',
 };
 // Change code below this line
 
 const parent = Object.create(ancestor);
-parent.name = "Stacey";
-parent.surname = "Moore";
+parent.name = 'Stacey';
+parent.surname = 'Moore';
 parent.age = 54;
 
 const child = Object.create(parent);
-child.name = "Jason";
+child.name = 'Jason';
 child.age = 27;
 
 // Change code above this line
 
-console.log(ancestor.isPrototypeOf("parent"));
-console.log(parent.isPrototypeOf("child"));
-console.log(ancestor.hasOwnProperty("surname"));
-console.log(parent.hasOwnProperty("surname"));
-console.log(child.hasOwnProperty("surname"));
-console.log(ancestor.hasOwnProperty("heritage"));
-console.log(parent.hasOwnProperty("heritage"));
-console.log(child.hasOwnProperty("heritage"));
+console.log(ancestor.isPrototypeOf('parent'));
+console.log(parent.isPrototypeOf('child'));
+console.log(ancestor.hasOwnProperty('surname'));
+console.log(parent.hasOwnProperty('surname'));
+console.log(child.hasOwnProperty('surname'));
+console.log(ancestor.hasOwnProperty('heritage'));
+console.log(parent.hasOwnProperty('heritage'));
+console.log(child.hasOwnProperty('heritage'));
 console.log(child.heritage);
 
 /*
@@ -460,7 +453,7 @@ console.log(poly); // {}
     Результат виклику new Car() - це порожній об'єкт
 
 */
-class Car { }
+class Car {}
 
 console.log(Car);
 
@@ -521,19 +514,18 @@ console.log(poly); // { name: 'Poly', email: 'poly@mail.com' }
 
 class Car07 {
   // Change code below this line
-    constructor( brand, model, price) { 
-        this.brand = brand;
-        this.model = model;
-        this.price = price;
-    }
-
+  constructor(brand, model, price) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
 
   // Change code above this line
 }
 
-const carAudi = new Car07("Audi", "Q3", 36000);
-const carBMW = new Car07("BMW", "X5", 58900);
-const carNissan = new Car07("Nissan", "Murano", 31700);
+const carAudi = new Car07('Audi', 'Q3', 36000);
+const carBMW = new Car07('BMW', 'X5', 58900);
+const carNissan = new Car07('Nissan', 'Murano', 31700);
 
 console.log(carAudi);
 console.log(carBMW);
@@ -546,7 +538,6 @@ console.log(carNissan);
 В результаті виклику `new Car( 'BMW', 'X5', 58900)` утвориться об'єкт `{brand: 'BMW', model: 'X5', price: 58900 }`
 В результаті виклику `new Car( 'Nissan', 'Murano', 31700)` утвориться об'єкт `{brand: 'Nissan', model: 'Murano', price: 31700 }`
 */
-
 
 console.log('');
 console.log('tsk 5.08');
@@ -599,7 +590,7 @@ console.log(poly); // { name: "Poly", email: "poly@mail.com" }
 
 class Car08 {
   // Change code below this line
-    constructor({ brand, model, price }) {
+  constructor({ brand, model, price }) {
     this.brand = brand;
     this.model = model;
     this.price = price;
@@ -607,9 +598,9 @@ class Car08 {
   // Change code above this line
 }
 
-const hereAudy = new Car({ brand: "Audi", model: "Q3", price: 36000 });
-const hereBMW = new Car({ brand: "BMW", model: "X5", price: 58900 });
-const hereNissan = new Car({ brand: "Nissan", model: "Murano", price: 31700 }) ;
+const hereAudy = new Car({ brand: 'Audi', model: 'Q3', price: 36000 });
+const hereBMW = new Car({ brand: 'BMW', model: 'X5', price: 58900 });
+const hereNissan = new Car({ brand: 'Nissan', model: 'Murano', price: 31700 });
 
 console.log(hereAudy);
 console.log(hereBMW);
@@ -670,12 +661,12 @@ class Car09 {
     this.price = price;
   }
   // Change code below this line
-    getPrice() { 
-        return this.price;
-    }
-    changePrice(newPrice) { 
-        this.price = newPrice;
-    }
+  getPrice() {
+    return this.price;
+  }
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
 
   // Change code above this line
 }
@@ -692,7 +683,6 @@ class Car09 {
 В об'єкта, створеного викликом `new Car({ brand: 'Audi', model: 'Q3', price: 36000 })`, 
 виклик метода `changePrice(35000)` і за наступного виклику `getPrice()` поверне число `35000`
 */
-
 
 //------------------------------------------
 
@@ -733,27 +723,27 @@ console.log('tsk 5.10');
 */
 
 class Storage {
-    constructor(args) { //[...args] - теж працює!
-        this.items = [...args];
-    }
-    getItems() {
-        return this.items
-    }
-    addItem(newItem) { 
-        this.items.push(newItem); 
-    }
-    removeItem(itemToRemove) { 
-        this.items.splice(this.items.indexOf(itemToRemove),1);
-    }
+  constructor(args) {
+    //[...args] - теж працює!
+    this.items = [...args];
+  }
+  getItems() {
+    return this.items;
+  }
+  addItem(newItem) {
+    this.items.push(newItem);
+  }
+  removeItem(itemToRemove) {
+    this.items.splice(this.items.indexOf(itemToRemove), 1);
+  }
 }
 
-
 // Change code above this line
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
+storage.addItem('Droid');
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
+storage.removeItem('Prolonger');
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 /*
@@ -768,10 +758,8 @@ console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 Об'єкт `storage` містить властивість `items`
 */
 
-
 console.log('');
 console.log('tsk 5.11');
-
 
 //Задача: конструктор рядків
 /*
@@ -806,23 +794,32 @@ console.log('tsk 5.11');
 
 */
 
-class StringBuilder { 
-    constructor(valueInit)
-    { this.value = valueInit; }
-    getValue() { return this.value; }
-    padEnd(str) { this.value += str; }
-    padStart(str) { this.value = str + this.value; }
-    padBoth(str) { this.value = (str + this.value) + str; }
+class StringBuilder {
+  constructor(valueInit) {
+    this.value = valueInit;
+  }
+  getValue() {
+    return this.value;
+  }
+  padEnd(str) {
+    this.value += str;
+  }
+  padStart(str) {
+    this.value = str + this.value;
+  }
+  padBoth(str) {
+    this.value = str + this.value + str;
+  }
 }
 
 // Change code above this line
-const builder = new StringBuilder(".");
+const builder = new StringBuilder('.');
 console.log(builder.getValue()); // "."
-builder.padStart("^");
+builder.padStart('^');
 console.log(builder.getValue()); // "^."
-builder.padEnd("^");
+builder.padEnd('^');
 console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
+builder.padBoth('=');
 console.log(builder.getValue()); // "=^.^="
 
 /*
@@ -909,22 +906,24 @@ console.log(mango.#email); // Виникне помилка, це приватн
 */
 class Car12 {
   // Change code below this line
-    #brand;
+  #brand;
   constructor({ brand, model, price }) {
     this.#brand = brand;
     this.model = model;
     this.price = price;
   }
-    getBrand() { return this.#brand }
-    changeBrand(newBrand) { 
-        return this.#brand = newBrand;
-    }
+  getBrand() {
+    return this.#brand;
+  }
+  changeBrand(newBrand) {
+    return (this.#brand = newBrand);
+  }
   // Change code above this line
 }
 
-const privatAudi = new Car12({ brand: "Audi", model: "Q3", price: 36000 });
-const privatBMW = new Car12({ brand: "bmw", model: "X5", price: 58900 });
-const privatNissan = new Car12({ brand: "Nissan", model: "Murano", price: 31700 });
+const privatAudi = new Car12({ brand: 'Audi', model: 'Q3', price: 36000 });
+const privatBMW = new Car12({ brand: 'bmw', model: 'X5', price: 58900 });
+const privatNissan = new Car12({ brand: 'Nissan', model: 'Murano', price: 31700 });
 
 console.log(privatAudi);
 console.log(privatBMW);
@@ -945,5 +944,496 @@ console.log(privatNissan);
 console.log('');
 console.log('tsk 5.13');
 
+//Задача: склад 2.0
 /*
+Виконай рефакторинг класу Storage, зробивши властивість items приватною.
+
+Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, 
+в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
+
+    Оголошений клас Storage
+    Об'єкт storage не містить властивості items
+    В класі Storage оголошений метод getItems
+    В класі Storage оголошений метод addItem
+    В класі Storage оголошений метод removeItem
+    Властивість items в класі Storage оголошена приватною
+    Конструктор класу приймає властивість items
+    В результаті виклику new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значення змінної storage - це об'єкт
+    Перший виклик storage.getItems(), відразу після ініціалізації екземпляра, повертає масив ["Nanitoids", "Prolonger", "Antigravitator"]
+    Другий виклик, storage.getItems(), після виклику storage.addItem("Droid"), повертає масив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+    Третій виклик storage.getItems(), після виклику storage.removeItem("Prolonger"), повертає масив ["Nanitoids", "Antigravitator", "Droid"]
+
+
 */
+
+class Storage13 {
+  // Change code below this line
+  #items;
+  constructor(items) {
+    this.#items = items;
+  }
+
+  getItems() {
+    return this.#items;
+  }
+
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter(item => item !== itemToRemove);
+  }
+}
+
+// Change code above this line
+const storage13 = new Storage13(['Nanitoids', 'Prolonger', 'Antigravitator']);
+console.log(storage13.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage13.addItem('Droid');
+console.log(storage13.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage13.removeItem('Prolonger');
+console.log(storage13.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+
+/*
+Оголошений клас `Storage`
+Об'єкт `storage` не містить властивості `items`
+В класі `Storage` оголошений метод `getItems`
+В класі `Storage` оголошений метод `addItem`
+В класі `Storage` оголошений метод `removeItem`
+Властивість `items` в класі `Storage` оголошена приватною
+Конструктор класу приймає властивість `items`
+В результаті виклику `new Storage([ 'Nanitoids', 'Prolonger', 'Antigravitator' ])` значення змінної `storage` - це об'єкт
+Перший виклик `storage.getItems()`, відразу після інціалізаціі екземпляра, повертає масив `['Nanitoids', 'Prolonger', 'Antigravitator']`
+Другий виклик, `storage.getItems()`, після виклику `storage.addItem('Droid')`, повертає масив `['Nanitoids', 'Prolonger', 'Antigravitator', 'Droid']`
+Третій виклик `storage.getItems()`, після виклику `storage.removeItem('Prolonger')`, повертає масив `['Nanitoids', 'Antigravitator', 'Droid']`
+*/
+
+console.log('');
+console.log('tsk 5.14');
+
+//Задача: конструктор рядків 2.0
+
+/*
+Виконай рефакторинг класу StringBuilder, зробивши властивість value приватною.
+
+Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, 
+в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
+
+    Оголошений клас StringBuilder
+
+    Властивість value в класі StringBuilder оголошена приватною
+
+    В класі StringBuilder оголошений метод getValue
+
+    В класі StringBuilder оголошений метод padEnd
+
+    В класі StringBuilder оголошений метод padStart
+
+    В класі StringBuilder оголошений метод padBoth
+
+    В результаті виклику new StringBuilder('.') значення змінної builder - це об'єкт
+
+    Об'єкт builder не містить властивості value
+
+    Перший виклик builder.getValue(), відразу після ініціалізації екземпляра, повертає рядок .
+
+    Другий виклик builder.getValue(), після виклику builder.padStart("^"), повертає рядок ^.
+
+    Третій виклик builder.getValue(), після виклику builder.padEnd("^"), повертає рядок ^.^
+
+    Четвертий виклик builder.getValue(), після виклику builder.padBoth("="), повертає рядок =^.^=
+
+*/
+
+class StringBuilder14 {
+  // Change code below this line
+  #value;
+  constructor(initialValue) {
+    this.#value = initialValue;
+  }
+
+  getValue() {
+    return this.#value;
+  }
+
+  padEnd(str) {
+    this.#value += str;
+  }
+
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+
+  padBoth(str) {
+    this.padStart(str);
+    this.padEnd(str);
+  }
+}
+
+// Change code above this line
+const builder14 = new StringBuilder14('.');
+console.log(builder14.getValue()); // "."
+builder14.padStart('^');
+console.log(builder14.getValue()); // "^."
+builder14.padEnd('^');
+console.log(builder14.getValue()); // "^.^"
+builder14.padBoth('=');
+console.log(builder14.getValue()); // "=^.^="
+
+/*
+.
+^.
+^.^
+=^.^=
+*/
+/*
+Оголошений клас `StringBuilder`
+Властивість `value` в класі `StringBuilder` оголошена приватною
+В класі `StringBuilder` оголошений метод `getValue`
+В класі `StringBuilder` оголошений метод `padEnd`
+В класі `StringBuilder` оголошений метод `padStart`
+В класі `StringBuilder` оголошений метод `padBoth`
+В результаті виклику `new StringBuilder('.')` значення змінної `builder` - це об'єкт
+Об'єкт `builder` не містить властивості `value`
+Перший виклик `builder.getValue()`, відразу після ініціалізації екземпляра, повертає рядок '.'
+Другий виклик `builder.getValue()`, після виклику `builder.padStart('^')`, повертає рядок '^.'
+Третій виклик `builder.getValue()`, після виклику `builder.padEnd('^')`, повертає рядок '^.^'
+Четвертий виклик `builder.getValue()`, після виклику `builder.padBoth('=')`, повертає рядок '=^.^='
+*/
+
+console.log('');
+console.log('tsk 5.15');
+
+/*
+
+
+Гетери та сетери — це коротший синтаксис оголошення методів для взаємодії з властивостями.
+ Геттер і сетер імітують звичайну публічну властивість класу, але дозволяють змінювати інші
+  властивості зручнішим способом. Геттер виконується при спробі отримати значення властивості, 
+  а сетер - при спробі його змінити.
+
+Гетери та сетери доречно використовувати для простих операцій читання і зміни значення властивостей, 
+особливо приватних, як їх публічний інтерфейс. Для роботи з властивістю, яка зберігає масив або об'єкт, вони не підійдуть.
+
+class User {
+  #email;
+
+  constructor({ name, email }) {
+    this.name = name;
+    this.#email = email;
+  }
+
+  // Геттер email
+  get email() {
+    return this.#email;
+  }
+
+  // Сеттер email
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+Ми оголосили гетер і сетер email, поставивши перед ім'ям властивості ключові слова get і set. 
+Всередині цих методів ми або повертаємо значення приватної властивості #email, або змінюємо її значення. 
+Геттер і сетер застосовуються в парі та повинні називатися однаково.
+
+const mango = new User({ name: "Mango", email: "mango@mail.com" });
+console.log(mango.email); // mango@mail.com
+mango.email = "mango@supermail.com";
+console.log(mango.email); // mango@supermail.com
+
+Звертаючись до mango.email, викликається гетер get email() {...} і виконується його код. При спробі 
+запису mango.email = "mango@supermail.com" 
+викликається сетер set email(newEmail) {...} і рядок "mango@supermail.com" буде значенням параметра newEmail.
+
+Перевага в тому, що це методи, а значить, під час запису можна виконати додатковий код, 
+наприклад, з будь-якими перевірками, на відміну від виконання цієї ж операції безпосередньо з властивістю.
+
+set email(newEmail) {
+  if(newEmail === "") {
+    console.error("Помилка! Пошта не може бути порожнім рядком!");
+    return;
+  }
+
+  this.#email = newEmail;
+}
+
+
+*/
+
+/*
+Виконай рефакторинг класу Car. Зроби властивості model і price приватними, а також #brand. 
+Стандартизуй публічний інтерфейс класу, замінивши вже оголошені методи на гетери та сетери brand, 
+model і price, для взаємодії з приватними властивостями.
+
+    Оголошений клас Car
+    В класі Car оголошена приватна властивість brand
+    В класі Car оголошена приватна властивість model
+    В класі Car оголошена приватна властивість price
+    Конструктор класу приймає об'єкт з властивостями brand, model і price
+    В класі Car оголошений гетер brand
+    В класі Car оголошений сетер brand
+    В класі Car оголошений гетер model
+    В класі Car оголошений сетер model
+    В класі Car оголошений гетер price
+    В класі Car оголошений сетер price
+
+*/
+
+class Car15 {
+  // Change code below this line
+  #brand;
+  #model;
+  #price;
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.#model = model;
+    this.#price = price;
+  }
+
+  get brand() {
+    return this.#brand;
+  }
+
+  set brand(newBrand) {
+    this.#brand = newBrand;
+  }
+
+  /*changeBrand(newBrand) {
+    this.#brand = newBrand;
+  }*/
+
+  get model() {
+    return this.#model;
+  }
+
+  set model(newModel) {
+    this.#model = newModel;
+  }
+
+  /*updateModel(newModel) {
+    this.#model = newModel;
+  }*/
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    this.#price = newPrice;
+  }
+  // Change code above this line
+}
+
+/*
+
+*/
+
+console.log('');
+console.log('tsk 5.16');
+
+/*
+
+
+Крім публічних і приватних властивостей майбутнього екземпляра, в класі можна оголосити його власні властивості, 
+доступні тільки класові, але не його екземплярам - статичні властивості (static). Вони корисні для зберігання 
+інформації, що стосується класу.
+
+Додамо класу користувача приватну властивість role - його роль, що визначає набір прав, наприклад, адміністратор, 
+редактор, звичайний користувач тощо. Можливі ролі користувачів будемо зберігати як статичну властивість Roles - 
+об'єкт з властивостями.
+
+Статичні властивості оголошуються в тілі класу. Перед ім'ям властивості додається ключове слово static.
+
+class User {
+  // Оголошення та ініціалізація статичної властивості
+  static Roles = {
+    ADMIN: "admin",
+    EDITOR: "editor",
+  };
+
+  #email;
+  #role;
+
+  constructor({ email, role }) {
+    this.#email = email;
+    this.#role = role;
+  }
+
+  get role() {
+    return this.#role;
+  }
+
+  set role(newRole) {
+    this.#role = newRole;
+  }
+}
+
+const mango = new User({
+  email: "mango@mail.com",
+  role: User.Roles.ADMIN,
+});
+
+console.log(mango.Roles); // undefined
+console.log(User.Roles); // { ADMIN: "admin", EDITOR: "editor" }
+
+console.log(mango.role); // "admin"
+mango.role = User.Roles.EDITOR;
+console.log(mango.role); // "editor"
+
+Статичні властивості також можуть бути приватними, тобто доступними тільки всередині класу. 
+Для цього ім'я властивості повинно починатися з символу #, так само, як приватні властивості. 
+Звернення до приватної статичної властивості за межами тіла класу викличе помилку.
+
+*/
+
+/*
+Виконай рефакторинг класу Car. Додай публічну статичну властивість MAX_PRICE зі значенням 50000 -
+ максимально допустима ціна автомобіля.
+
+Додай сетеру price перевірку значення параметра newPrice, що передається. Якщо воно більше за MAX_PRICE, 
+сеттер нічого не робить, а якщо менше або дорівнює, то перезаписує ціну автомобіля.
+
+    Оголошений клас Car
+    Клас Car містить статичну властивість MAX_PRICE
+    Значення статичної властивості MAX_PRICE - це число 50000
+    Екземпляр не містить властивості MAX_PRICE
+    В класі Car оголошений гетер price
+    В класі Car оголошений сетер price
+    Виклик сетера price в екземпляра класу, зі значенням аргументу меншим за значення MAX_PRICE, змінює властивість #price
+    Виклик сетера price в екземпляра класу, зі значенням аргументу більшим за значення MAX_PRICE, не змінює властивість #price
+
+*/
+class Car16 {
+  // Change code below this line
+
+  static MAX_PRICE = 50000;
+  #price;
+
+  constructor({ price }) {
+    this.#price = price;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    if (newPrice <= Car16.MAX_PRICE) this.#price = newPrice; //this.MAX_PRICE - не підходить
+  }
+  // Change code above this line
+}
+
+const audi = new Car16({ price: 35000 });
+console.log(audi.price); // 35000
+
+audi.price = 49000;
+console.log(audi.price); // 49000
+
+audi.price = 51000;
+console.log(audi.price); // 49000
+
+
+
+/*
+JS V2 block-5
+
+Оголошений клас `Car`
+Клас `Car` містить статичну властивість `MAX_PRICE`
+Значення статичної властивості `MAX_PRICE` - це число `50000`
+Екземпляр не містить властивості `MAX_PRICE`
+В класі `Car` оголошений гетер `price`
+В класі `Car` оголошений сетер `price`
+Виклик сетера `price` в екземпляра класу, зі значенням аргументу
+ меншим за значення `MAX_PRICE`, змінює властивість `#price`
+Виклик сетера `price` в екземпляра класу, зі значенням аргументу 
+більшим за значення `MAX_PRICE`, не змінює властивість `#price`
+*/
+
+
+console.log('');
+console.log('tsk 5.17');
+
+/*
+
+
+В класі можна оголосити не тільки методи майбутнього екземпляра, а також методи, 
+доступні тільки класу - статичні методи, які можуть бути як публічні, так і приватні. 
+Синтаксис оголошення аналогічний статичним властивостям, за винятком того, що значенням буде метод.
+
+class User {
+  static #takenEmails = [];
+
+  static isEmailTaken(email) {
+    return User.#takenEmails.includes(email);
+  }
+
+  #email;
+
+  constructor({ email }) {
+    this.#email = email;
+    User.#takenEmails.push(email);
+  }
+}
+
+const mango = new User({ email: "mango@mail.com" });
+
+console.log(User.isEmailTaken("poly@mail.com"));
+console.log(User.isEmailTaken("mango@mail.com"));
+
+Особливість статичних методів полягає у тому, що під час їх виклику ключове слово this посилається на сам клас.
+ Це означає, що статичний метод може отримати доступ до статичних властивостей класу, але не до властивостей
+  екземпляра. Логічно, тому що статичні методи викликає сам клас, а не його екземпляри.
+
+*/
+
+/*
+Додай класу Car публічний статичний метод checkPrice (price), що приймає ціну автомобіля. Метод повинен порівняти 
+значення параметра price і приватної статичного властивості MAX_PRICE.
+
+    Якщо ціна автомобіля перевищує максимальну, метод повинен повернути рядок "Error! Price exceeds the maximum".
+    В іншому випадку метод повинен повернути рядок "Success! Price is within acceptable limits".
+
+Під оголошенням класу ми додали ініціалізацію екземпляра і виклики методів, щоб показати, як буде використовуватися
+ метод checkPrice(price).
+
+    Оголошений клас Car
+    Клас Car містить статичний метод checkPrice(price)
+    Виклик Car.checkPrice(36000) повертає рядок "Success! Price is within acceptable limits"
+    Виклик Car.checkPrice(18000) повертає рядок "Success! Price is within acceptable limits"
+    Виклик Car.checkPrice(64000) повертає рядок "Error! Price exceeds the maximum"
+    Виклик Car.checkPrice(57000) повертає рядок "Error! Price exceeds the maximum"
+
+
+*/
+
+class Car17 {
+  static #MAX_PRICE = 50000;
+  // Change code below this line
+    static checkPrice(price) { 
+        return (price > Car17.#MAX_PRICE) ? "Error! Price exceeds the maximum" : "Success! Price is within acceptable limits";
+    }
+  // Change code above this line
+  constructor({ price }) {
+    this.price = price;
+  }
+}
+
+const audi17 = new Car17({ price: 36000 });
+const bmw17 = new Car17({ price: 64000 });
+
+console.log(Car17.checkPrice(audi17.price)); // "Success! Price is within acceptable limits"
+console.log(Car17.checkPrice(bmw17.price)); // "Error! Price exceeds the maximum"
+
+/*
+Оголошений клас `Car`
+Клас `Car` містить статичний метод `checkPrice(price)`
+Виклик `Car.checkPrice(36000)` повертає рядок `'Success! Price is within acceptable limits'
+Виклик `Car.checkPrice(18000)` повертає рядок `'Success! Price is within acceptable limits'
+Виклик `Car.checkPrice(64000)` повертає рядок `'Error! Price exceeds the maximum'
+Виклик `Car.checkPrice(57000)` повертає рядок `'Error! Price exceeds the maximum'
+*/
+
+
+
