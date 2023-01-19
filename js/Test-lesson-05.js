@@ -1506,8 +1506,7 @@ console.log(editor.email); // "mango@mail.com"
 
 */
 
-
-class User {
+class User18 {
   constructor(email) {
     this.email = email;
   }
@@ -1522,12 +1521,12 @@ class User {
 }
 // Change code below this line
 
-class Admin extends User { 
+class Admin18 extends User18 { 
     static AccessLevel = { BASIC: "basic", SUPERUSER: "superuser" };
 }
 
-console.log(Admin.AccessLevel.BASIC);
-console.log(Admin.AccessLevel.SUPERUSER);
+console.log(Admin18.AccessLevel.BASIC);
+console.log(Admin18.AccessLevel.SUPERUSER);
 
 /*
 Оголошений клас `Admin`
@@ -1718,19 +1717,25 @@ class User20 {
     this.email = newEmail;
   }
 }
-class Admin20 extends User {
+class Admin20 extends User20 {
   // Change code below this line
 
   static AccessLevel = {
     BASIC: "basic",
     SUPERUSER: "superuser",
   };
-
+  
   constructor({ email, accessLevel }) {
     super(email);
-    this.accessLevel = accessLevel;
+      this.accessLevel = accessLevel;
+      this.blacklistedEmails = [];
   }
-
+    blacklist(email) { 
+        this.blacklistedEmails.push(email);
+    }
+    isBlacklisted(email) { 
+        return (this.blacklistedEmails.indexOf(email) > -1) ? true : false;
+    }
   // Change code above this line
 }
 
@@ -1742,8 +1747,26 @@ const mango20 = new Admin20({
 console.log(mango20.email); // "mango@mail.com"
 console.log(mango20.accessLevel); // "superuser"
 
-mango.blacklist("poly@mail.com");
+mango20.blacklist("poly@mail.com");
 console.log(mango20.blacklistedEmails); // ["poly@mail.com"]
 console.log(mango20.isBlacklisted("mango@mail.com")); // false
 console.log(mango20.isBlacklisted("poly@mail.com")); // true
 
+/*
+Оголошений клас `Admin`
+Клас `Admin` наслідує від класу `User`
+Клас `Admin` містить публічну властивість `blacklistedEmails`
+Клас `Admin` містить публічну властивість `blacklist`
+Клас `Admin` містить публічну властивість `isBlacklisted`
+Після виклику `mango.blacklist('poly@mail.com')` значення властивості `blacklistedEmails` - це масив `[ 'poly@mail.com' ]`
+Виклик `mango.isBlacklisted('mango@mail.com')` повертає `false`
+Виклик `mango.isBlacklisted('poly@mail.com')` повертає `true`
+*/
+
+/*
+mango@mail.com
+superuser
+[ 'poly@mail.com' ]
+false
+true
+*/
