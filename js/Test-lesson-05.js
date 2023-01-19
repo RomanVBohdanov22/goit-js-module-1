@@ -733,7 +733,7 @@ console.log('tsk 5.10');
 */
 
 class Storage {
-    constructor([...args]) { 
+    constructor(args) { //[...args]
         this.items = [...args];
     }
     getItems() {
@@ -806,9 +806,14 @@ console.log('tsk 5.11');
 
 */
 
-/*
-
-
+class StringBuilder { 
+    constructor(valueInit)
+    { this.value = valueInit; }
+    getValue() { return this.value; }
+    padEnd(str) { this.value += str; }
+    padStart(str) { this.value = str + this.value; }
+    padBoth(str) { this.value = (str + this.value) + str; }
+}
 
 // Change code above this line
 const builder = new StringBuilder(".");
@@ -820,4 +825,12 @@ console.log(builder.getValue()); // "^.^"
 builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
 
+/*
+ Оголошений клас `StringBuilder`
+В класі `StringBuilder` оголошений метод `getValue`
+Метод `getValue` повертає значення властивості `value` екземпляра класу, який його викликає
+В класі `StringBuilder` оголошений метод `padEnd`
+Метод `padEnd` змінює властивість `value` екземпляра класу, який його викликає
+В класі `StringBuilder` оголошений метод `padStart`
+Метод `padStart` змінює властивість `value` екземпляра класу, який його викликає
 */
