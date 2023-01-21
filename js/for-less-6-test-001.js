@@ -57,3 +57,17 @@ console.log(activeLink.href); // https://s.codepen.io/about
 const image = document.querySelector(".image");
 console.log(image.src); // https://placeimg.com/640/480/animals
 image.src = 'https://placeimg.com/640/480/tech';
+
+
+/*
+Властивість textContent
+elem.textContent повертає текстовий контент всередині елемента. Доступний для читання і запису. Неважливо, що буде передано в textContent, дані завжди будуть записані як текс
+
+*/
+
+const text = document.querySelector(".article-text");
+console.log(text.textContent); // text inside p.article-text
+
+const title = document.querySelector(".article-title");
+title.textContent = 'Welcome to Bahamas!';
+
